@@ -1,0 +1,44 @@
+# ============================================================================
+#  CODEOWNERS — Revisores automáticos
+#  DOBLE COMPUERTA: Tech Lead (técnico) + @edgarcoroneln (proceso)
+#
+#  PENDIENTE: sustituye @usuario-xxx por el usuario REAL de GitHub de cada
+#  Tech Lead. Si el usuario no existe o no es colaborador, GitHub ignora la
+#  línea SIN AVISAR y te quedas sin revisor.
+# ============================================================================
+
+*                           @edgarcoroneln
+
+# Célula 1 · Data Engineering (Diana Alvarez)
+/src/ingesta/               @usuario-diana @edgarcoroneln
+/dbt/                       @usuario-diana @edgarcoroneln
+/dags/                      @usuario-diana @edgarcoroneln
+/great_expectations/        @usuario-diana @edgarcoroneln
+/14_Data_Sources/           @usuario-diana @edgarcoroneln
+
+# Célula 2 · Analytics & BI (Manuel Serranía)
+/superset/                  @usuario-manuel @edgarcoroneln
+/04_UX_Design/              @usuario-manuel @edgarcoroneln
+
+# Célula 3 · ML & Agente (Andrés González Habib)
+/src/modelos/               @usuario-andres @edgarcoroneln
+/src/agente/                @usuario-andres @edgarcoroneln
+/15_ML_Models/              @usuario-andres @edgarcoroneln
+
+# Célula 4 · Backend & Seguridad (Karla Monter)
+/src/api/                   @usuario-karla @edgarcoroneln
+/07_Security/               @usuario-karla @edgarcoroneln
+
+# Célula 5 · Cloud & DevOps (Luis Téllez)
+/.github/                   @usuario-luis @edgarcoroneln
+/docker-compose.yml         @usuario-luis @edgarcoroneln
+/Dockerfile*                @usuario-luis @edgarcoroneln
+/08_CICD_DevOps/            @usuario-luis @edgarcoroneln
+/11_Operations/             @usuario-luis @edgarcoroneln
+
+# Gobernanza del vault (solo PM)
+/_Meta/                     @edgarcoroneln
+/01_Product/                @edgarcoroneln
+/02_Requirements/           @edgarcoroneln
+/12_Roadmap_Sprints/        @edgarcoroneln
+/09_AI_Governance/          @edgarcoroneln

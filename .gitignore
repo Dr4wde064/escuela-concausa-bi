@@ -1,0 +1,53 @@
+# ---- Secretos (NUNCA versionar) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+credentials.yaml
+credentials.yml
+secrets/
+secrets.json
+secrets.yaml
+secrets.yml
+service-account*.json
+
+# ---- Ambiente Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---- Datos reales (van a Cloud Storage, no al repo) ----
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+*.parquet
+*.csv
+!tests/fixtures/*.csv
+*.xlsx
+
+# ---- Herramientas ----
+dbt_packages/
+target/
+logs/
+mlruns/
+mlartifacts/
+great_expectations/uncommitted/
+airflow.db
+superset.db
+
+# ---- SO / editores ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Obsidian ----
+.obsidian/workspace*
+.obsidian/cache
