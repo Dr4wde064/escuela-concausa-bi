@@ -44,7 +44,11 @@ jobs:
           pip install graphifyy
 
       - name: Generar grafo del proyecto
-        run: graphify .
+        # --code-only: usa solo AST local (tree-sitter), sin API key ni tokens.
+        # Los documentos del vault no se grafan a proposito.
+        run: |
+          graphify . --code-only
+          graphify cluster-only .
 
       - name: Validar salida
         run: |
