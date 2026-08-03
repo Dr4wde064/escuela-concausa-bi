@@ -5,7 +5,7 @@ owner: "Marina Garcia del Buey"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-211", "US-212", "US-213", "US-214", "US-215"]
+traces_down: ["US-211a", "US-212", "US-214a", "US-215a"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-2, nivel-medio]
 ---
@@ -44,12 +44,12 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 
 ## 3. Tus historias de usuario
 
-### `US-211` · Modelar metricas y jerarquias para los cubos
+### `US-211a` · Modelar metricas y jerarquias de los cubos de DB-03 y DB-04
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Traducir los cubos de la Celula 1 a datasets de Superset con jerarquia entidad->municipio->escuela. |
+| **Objetivo** | Cubos y capa semantica que alimentan DB-03 (ficha de escuela) y DB-04 (comparador de municipios): metricas, jerarquias y granos. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/marina-buey-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
@@ -62,32 +62,24 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/marina-buey-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-213` · Construir DB-05 Analisis por driver y DB-08 Explorador del cubo
-
-| | |
-|---|---|
-| **Sprint** | S4 — Lun 24 - Dom 30 ago |
-| **Objetivo** | Un tab por driver D1-D6 y una tabla dinamica libre sobre Gold. |
-| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
-| **Cómo se entrega** | Rama `feat/marina-buey-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
-
-### `US-214` · Implementar filtros dinamicos globales y drill-down cruzado
+### `US-214a` · Filtros dinamicos y drill-down en DB-03 y DB-04
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Filtros por ciclo, entidad, nivel educativo y driver, consistentes en los 10 tableros. |
+| **Objetivo** | Filtros globales (ciclo, entidad, nivel) y drill-down cruzado aplicados a DB-03 y DB-04. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/marina-buey-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-215` · Pruebas de usabilidad y accesibilidad
+### `US-215a` · Pruebas de usabilidad y accesibilidad de DB-03 y DB-04
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Checklist de `04_UX_Design/Accessibility.md`: contraste, etiquetas, navegacion por teclado. |
+| **Objetivo** | Pruebas de usabilidad y accesibilidad sobre DB-03 y DB-04. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/marina-buey-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -295,11 +287,10 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-211` | Modelar metricas y jerarquias para los cub | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-211a` | Cubos y metricas de DB-03 y DB-04 | ⬜ Por iniciar | 0% | — | Dom 23 ago |
 | `US-212` | Construir DB-03 Ficha de escuela y DB-04 C | ⬜ Por iniciar | 0% | — | Dom 30 ago |
-| `US-213` | Construir DB-05 Analisis por driver y DB-0 | ⬜ Por iniciar | 0% | — | Dom 30 ago |
-| `US-214` | Implementar filtros dinamicos globales y d | ⬜ Por iniciar | 0% | — | Dom 6 sep |
-| `US-215` | Pruebas de usabilidad y accesibilidad | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-214a` | Filtros y drill-down en DB-03 y DB-04 | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-215a` | Usabilidad/accesibilidad DB-03 y DB-04 | ⬜ Por iniciar | 0% | — | Dom 6 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

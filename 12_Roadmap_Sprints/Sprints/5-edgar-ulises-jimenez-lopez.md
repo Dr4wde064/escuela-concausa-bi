@@ -5,7 +5,7 @@ owner: "Edgar Ulises Jimenez Lopez"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-521", "US-522", "US-523", "US-524", "US-525"]
+traces_down: ["US-521b", "US-522b", "US-523b", "US-524b", "US-525b"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-5, nivel-bajo]
 ---
@@ -44,50 +44,51 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 
 ## 3. Tus historias de usuario
 
-### `US-521` · Preparar la guia de ambiente local reproducible
+### `US-521b` · Guia de ambiente local reproducible — Airflow y jobs ML
 
 | | |
 |---|---|
 | **Sprint** | S1 — Lun 3 - Dom 9 ago |
-| **Objetivo** | Documentar el setup de venv + Docker para los 21 integrantes en `05_Engineering/Environment_Setup.md` y probarlo con alguien de otra celula. |
+| **Objetivo** | Documentar el setup local de Airflow y los jobs de ML (MLflow): variables, puertos y verificacion. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edgar-lopez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-522` · Contenerizar los servicios asignados
+### `US-522b` · Contenerizar Airflow y los jobs de ML
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Dockerfiles con multi-stage build para API, agente y jobs de ML. |
+| **Objetivo** | Dockerfile y servicios en docker-compose para Airflow y los jobs de ML/MLflow, con healthchecks. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edgar-lopez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-523` · Configurar branch protection y quality gates
+### `US-523b` · Quality gate de CI: lint y pruebas
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Rama `main` protegida, revision obligatoria y checks verdes para poder mergear. |
+| **Objetivo** | Configurar el gate de CI que corre lint y `pytest`; bloquea el merge si falla. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edgar-lopez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-524` · Configurar monitoreo, logs y alertas
+### `US-524b` · Monitoreo, logs y alertas de Airflow y jobs ML
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Cloud Logging, uptime check de la URL publica y alerta de presupuesto en free tier. |
+| **Objetivo** | Metricas, logs y alertas para Airflow y los jobs de ML. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edgar-lopez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-525` · Ejecutar y documentar el runbook de rollback
+### `US-525b` · Runbook de rollback de Airflow y jobs ML
 
 | | |
 |---|---|
 | **Sprint** | S6 — Lun 7 - Mar 8 sep |
-| **Objetivo** | Probar que se puede revertir el despliegue. Documentar en `08_CICD_DevOps/Rollback_Runbook.md`. |
+| **Objetivo** | Procedimiento probado de rollback para Airflow y los jobs de ML. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edgar-lopez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -300,11 +301,11 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-521` | Preparar la guia de ambiente local reprodu | ⬜ Por iniciar | 0% | — | Dom 9 ago |
-| `US-522` | Contenerizar los servicios asignados | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-523` | Configurar branch protection y quality gat | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-524` | Configurar monitoreo, logs y alertas | ⬜ Por iniciar | 0% | — | Dom 6 sep |
-| `US-525` | Ejecutar y documentar el runbook de rollba | ⬜ Por iniciar | 0% | — | Mar 8 sep |
+| `US-521b` | Guia ambiente local: Airflow y ML | ⬜ Por iniciar | 0% | — | Dom 9 ago |
+| `US-522b` | Contenerizar Airflow y jobs ML | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-523b` | Quality gate CI: lint y pruebas | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-524b` | Monitoreo de Airflow y jobs ML | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-525b` | Runbook rollback Airflow y ML | ⬜ Por iniciar | 0% | — | Mar 8 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

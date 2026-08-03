@@ -5,7 +5,7 @@ owner: "Estefany Lucero Hernandez Loredo"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-321", "US-322", "US-323"]
+traces_down: ["US-321", "US-322", "US-325"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-3, nivel-bajo]
 ---
@@ -62,14 +62,15 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/estefany-loredo-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-323` · Construir el set de evaluacion del agente
+### `US-325` · Analizar el sesgo por cobertura parcial en las features
 
 | | |
 |---|---|
-| **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | 20 preguntas de negocio con su respuesta esperada, para probar el agente de forma objetiva. |
+| **Sprint** | S4 — Lun 24 - Dom 30 ago |
+| **Objetivo** | Medir cuantas escuelas tienen SIN_DATO por driver, verificar si esa ausencia se concentra geograficamente y documentar el riesgo de que el modelo aprenda un sesgo territorial. Conecta con `indice_completitud_drivers` y el tablero DB-07. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/estefany-loredo-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -284,7 +285,7 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 |---|---|---|---|---|---|
 | `US-321` | Entrenar el Modelo 3 - Clustering de escue | ⬜ Por iniciar | 0% | — | Dom 30 ago |
 | `US-322` | Analisis exploratorio y seleccion de varia | ⬜ Por iniciar | 0% | — | Dom 30 ago |
-| `US-323` | Construir el set de evaluacion del agente | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-325` | Sesgo por cobertura parcial en features | ⬜ Por iniciar | 0% | — | Dom 30 ago |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

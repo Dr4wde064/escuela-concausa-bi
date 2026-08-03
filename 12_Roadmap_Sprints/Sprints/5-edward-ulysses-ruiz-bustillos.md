@@ -5,7 +5,7 @@ owner: "Edward Ulysses Ruiz Bustillos"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-521", "US-522", "US-523", "US-524", "US-525"]
+traces_down: ["US-521c", "US-522c", "US-523c", "US-524c", "US-525c"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-5, nivel-bajo]
 ---
@@ -44,50 +44,51 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 
 ## 3. Tus historias de usuario
 
-### `US-521` · Preparar la guia de ambiente local reproducible
+### `US-521c` · Guia de ambiente local reproducible — Superset y agente
 
 | | |
 |---|---|
 | **Sprint** | S1 — Lun 3 - Dom 9 ago |
-| **Objetivo** | Documentar el setup de venv + Docker para los 21 integrantes en `05_Engineering/Environment_Setup.md` y probarlo con alguien de otra celula. |
+| **Objetivo** | Documentar el setup local de Superset y el agente (RAG/ChromaDB): variables, puertos y verificacion. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-522` · Contenerizar los servicios asignados
+### `US-522c` · Contenerizar Superset y el agente
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Dockerfiles con multi-stage build para API, agente y jobs de ML. |
+| **Objetivo** | Dockerfile y servicios en docker-compose para Superset y el agente (RAG/ChromaDB), con healthchecks. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-523` · Configurar branch protection y quality gates
+### `US-523c` · Quality gate de vault_lint y plantilla de PR
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Rama `main` protegida, revision obligatoria y checks verdes para poder mergear. |
+| **Objetivo** | Configurar el gate que corre `vault_lint.py` y verifica la plantilla de PR completa. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-524` · Configurar monitoreo, logs y alertas
+### `US-524c` · Monitoreo, logs y alertas de Superset y agente
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Cloud Logging, uptime check de la URL publica y alerta de presupuesto en free tier. |
+| **Objetivo** | Metricas, logs y alertas para Superset y el agente. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-525` · Ejecutar y documentar el runbook de rollback
+### `US-525c` · Runbook de rollback de Superset y agente
 
 | | |
 |---|---|
 | **Sprint** | S6 — Lun 7 - Mar 8 sep |
-| **Objetivo** | Probar que se puede revertir el despliegue. Documentar en `08_CICD_DevOps/Rollback_Runbook.md`. |
+| **Objetivo** | Procedimiento probado de rollback para Superset y el agente. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -300,11 +301,11 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-521` | Preparar la guia de ambiente local reprodu | ⬜ Por iniciar | 0% | — | Dom 9 ago |
-| `US-522` | Contenerizar los servicios asignados | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-523` | Configurar branch protection y quality gat | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-524` | Configurar monitoreo, logs y alertas | ⬜ Por iniciar | 0% | — | Dom 6 sep |
-| `US-525` | Ejecutar y documentar el runbook de rollba | ⬜ Por iniciar | 0% | — | Mar 8 sep |
+| `US-521c` | Guia ambiente local: Superset y agente | ⬜ Por iniciar | 0% | — | Dom 9 ago |
+| `US-522c` | Contenerizar Superset y agente | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-523c` | Quality gate vault_lint y PR | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-524c` | Monitoreo de Superset y agente | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-525c` | Runbook rollback Superset y agente | ⬜ Por iniciar | 0% | — | Mar 8 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

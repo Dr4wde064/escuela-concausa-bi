@@ -5,7 +5,7 @@ owner: "Andres Gonzalez Habib"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-301", "US-302", "US-303", "US-304"]
+traces_down: ["US-301", "US-302", "US-303", "US-304a"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-3, nivel-alto]
 ---
@@ -71,12 +71,12 @@ Tienes asignadas las historias de **mayor complejidad técnica y de diseño**. A
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/andres-habib-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-304` · Construir el agente conversacional RAG / Text-to-SQL
+### `US-304a` · Diseno del agente: prompt del sistema y guardarraines de seguridad
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Responde preguntas de negocio en lenguaje natural sobre Gold. Debe rechazar consultas fuera de alcance y nunca ejecutar DELETE/UPDATE/DROP. |
+| **Objetivo** | Diseno del agente conversacional, prompt del sistema y guardarraines de seguridad: rechazar consultas fuera de alcance y nunca ejecutar DELETE/UPDATE/DROP. La capa de recuperacion (indexado y contexto) la construye Carlos en US-304b. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/andres-habib-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
@@ -289,7 +289,7 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 | `US-301` | Disenar la estrategia de modelado y el pro | ⬜ Por iniciar | 0% | — | Dom 23 ago |
 | `US-302` | Entrenar el Modelo 2 - Clasificacion de dr | ⬜ Por iniciar | 0% | — | Dom 30 ago |
 | `US-303` | Registrar los 3 modelos en MLflow y expone | ⬜ Por iniciar | 0% | — | Dom 30 ago |
-| `US-304` | Construir el agente conversacional RAG / T | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-304a` | Diseno del agente: prompt y guardarraines | ⬜ Por iniciar | 0% | — | Dom 6 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

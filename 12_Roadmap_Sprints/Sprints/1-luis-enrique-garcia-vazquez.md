@@ -5,7 +5,7 @@ owner: "Luis Enrique Garcia Vazquez"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-121", "US-122", "US-123", "US-124"]
+traces_down: ["US-121b", "US-122b", "US-123b", "US-124b"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-1, nivel-bajo]
 ---
@@ -44,41 +44,42 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 
 ## 3. Tus historias de usuario
 
-### `US-121` · Prueba de descarga real de las fuentes asignadas
+### `US-121b` · Prueba de descarga real de DS-04 (SESNSP) y DS-05 (SINAICA)
 
 | | |
 |---|---|
 | **Sprint** | S1 — Lun 3 - Dom 9 ago |
-| **Objetivo** | Descargar fisicamente, abrir, contar registros y documentar en `14_Data_Sources/`. NO basta con leer la pagina del portal. |
+| **Objetivo** | SOLO tus fuentes DS-04 y DS-05: descargar/llamar la API, abrir, contar registros, verificar esquema y llave y llenar la prueba en `14_Data_Sources/DS-04_SESNSP_Incidencia_Delictiva.md` y `DS-05_SINAICA_Calidad_Aire.md`. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/luis-vazquez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-122` · Escribir los extractores de sus fuentes
+### `US-122b` · Escribir los extractores de DS-04 (SESNSP) y DS-05 (SINAICA)
 
 | | |
 |---|---|
 | **Sprint** | S2 — Lun 10 - Dom 16 ago |
-| **Objetivo** | Un script Python por fuente que deposite en Bronze como Parquet con `_ingested_at`, `_source`, `_source_url`. Idempotente. |
+| **Objetivo** | Un extractor idempotente por fuente (DS-04 mensual, DS-05 API horaria) que deposite en Bronze como Parquet con `_ingested_at`, `_source`, `_source_url`. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/luis-vazquez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-123` · Implementar validaciones con Great Expectations
+### `US-123b` · Validaciones Great Expectations de DS-04 y DS-05
 
 | | |
 |---|---|
 | **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Suites por capa: nulos, duplicados, rangos fisicos, tipos y catalogos validos. Generar Data Docs publicables. |
+| **Objetivo** | Suite GE para las tablas de DS-04 y DS-05: nulos, duplicados, rangos fisicos, tipos y llave. Data Docs publicables. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/luis-vazquez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-124` · Generar los fixtures de prueba anonimizados
+### `US-124b` · Fixtures de prueba anonimizados de DS-04 y DS-05
 
 | | |
 |---|---|
 | **Sprint** | S4 — Lun 24 - Dom 30 ago |
-| **Objetivo** | Muestra <=500 filas por capa para que CI corra sin descargar datos reales. |
+| **Objetivo** | Muestra <=500 filas de DS-04 y DS-05 para que CI corra sin descargar datos reales. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/luis-vazquez-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -291,10 +292,10 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-121` | Prueba de descarga real de las fuentes asi | ⬜ Por iniciar | 0% | — | Dom 9 ago |
-| `US-122` | Escribir los extractores de sus fuentes | ⬜ Por iniciar | 0% | — | Dom 16 ago |
-| `US-123` | Implementar validaciones con Great Expecta | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-124` | Generar los fixtures de prueba anonimizado | ⬜ Por iniciar | 0% | — | Dom 30 ago |
+| `US-121b` | Prueba de descarga real DS-04 y DS-05 | ⬜ Por iniciar | 0% | — | Dom 9 ago |
+| `US-122b` | Extractores de DS-04 y DS-05 | ⬜ Por iniciar | 0% | — | Dom 16 ago |
+| `US-123b` | Great Expectations de DS-04 y DS-05 | ⬜ Por iniciar | 0% | — | Dom 23 ago |
+| `US-124b` | Fixtures de DS-04 y DS-05 | ⬜ Por iniciar | 0% | — | Dom 30 ago |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

@@ -3,7 +3,7 @@ id: PLAN-MAESTRO
 title: "Plan Maestro del Proyecto FARO"
 owner: "Edgar Edmundo Coronel Navarrete"
 status: approved
-version: "1.1"
+version: "1.2"
 source_of_truth: true
 traces_up: ["01_Product/PRD"]
 last_reviewed: "2026-08-03"
@@ -60,7 +60,7 @@ y no capta datos individualizados de alumnos ni maestros. Todo el proyecto opera
 - **`DS-04`** — Ingesta continua #1.
 - **`DS-05`** — Ingesta continua #2. COBERTURA PARCIAL - ver estrategia de cobertura.
 - **`DS-06`** — Ingesta continua #3.
-- **`DS-07`** — Dimension de contexto y validacion.
+- **`DS-07`** — Dimension de contexto y validación.
 - **`DS-08`** — Permite comparar municipios de distinto tamano.
 
 **Cumplimiento del PRD:** son **7 fuentes distintas** (el mínimo exigido es 5), de las cuales **3 son de
@@ -123,14 +123,14 @@ La rúbrica asigna 2.5 puntos al frontend BI. Se construyen **10 tableros** en A
 
 | ID | Dashboard | Contenido |
 |---|---|---|
-| `DB-01` | **Ejecutivo / Home** | KPIs globales, tendencia de matricula, escuelas en riesgo, alertas |
+| `DB-01` | **Ejecutivo / Home** | KPIs globales, tendencia de matrícula, escuelas en riesgo, alertas |
 | `DB-02` | **Mapa de riesgo territorial** | Coropletico municipal + puntos de escuela, color por indice de riesgo |
-| `DB-03` | **Ficha de escuela** | Drill-down individual: perfil, drivers, prediccion y recomendacion |
+| `DB-03` | **Ficha de escuela** | Drill-down individual: perfil, drivers, predicción y recomendacion |
 | `DB-04` | **Comparador de municipios** | Benchmark lado a lado entre municipios de las 4 entidades |
-| `DB-05` | **Analisis por driver** | Un tab por driver (D1-D6) con distribucion y correlacion con matricula |
+| `DB-05` | **Análisis por driver** | Un tab por driver (D1-D6) con distribucion y correlacion con matrícula |
 | `DB-06` | **Predicciones y escenarios** | Salida de los 3 modelos + panel interactivo de simulacion |
 | `DB-07` | **Calidad y cobertura de datos** | Completitud por driver, Data Docs de Great Expectations, mapa de vacios |
-| `DB-08` | **Explorador del cubo (pivot)** | Tabla dinamica libre sobre los cubos de Gold |
+| `DB-08` | **Explorador del cubo (pivot)** | Tabla dinámica libre sobre los cubos de Gold |
 | `DB-09` | **Recomendaciones prescriptivas** | Que intervencion toca a cada escuela segun su driver dominante |
 | `DB-10` | **Monitor del pipeline** | Estado de los DAGs, frescura de cada fuente, ultima ingesta exitosa |
 
@@ -142,14 +142,14 @@ La rúbrica asigna 2.5 puntos al frontend BI. Se construyen **10 tableros** en A
 FUENTES (7)          BRONZE              SILVER              GOLD
 ─────────────        ─────────────       ─────────────       ─────────────────────
 SEP Formato 911  ┐   Parquet crudo       Tipado             ⭐ ESQUEMA ESTRELLA
-Catálogo CCT     │   particionado    →   Deduplicado    →   fact_escuela_ciclo
+Catálogo CCT     │   particiónado    →   Deduplicado    →   fact_escuela_ciclo
 SESNSP (mensual) │   por fecha           CCT homologado      dim_escuela
 SINAICA (horaria)├→  _ingested_at        Municipio INEGI     dim_municipio
 CONAGUA (diaria) │   _source             Validado con GE     dim_tiempo · dim_driver
 CONEVAL          │                                           ─────────────────────
 CONAPO           ┘                                           CUBOS materializados
                                                              features_escuela (ML)
-        ▲                                                    predicciones
+        ▲                                                    predicciónes
         │                                                            │
    AIRFLOW (orquestación · ingesta continua)                        ▼
                                                     ┌────────────────────────────┐
@@ -180,7 +180,7 @@ La rúbrica premia que Gold quede impecable. Debe contener:
   población, rezago), **`dim_tiempo`** (ciclo escolar), **`dim_driver`** (catálogo de los 6 drivers).
 - **Cubos materializados** — agregaciones pre-calculadas para que Superset responda rápido.
 - **`features_escuela`** — tabla de features versionada, contrato cerrado con la Célula 3.
-- **`predicciones`** — salida batch de los 3 modelos, reincorporada a Gold.
+- **`predicciónes`** — salida batch de los 3 modelos, reincorporada a Gold.
 
 ---
 
@@ -229,14 +229,14 @@ perfil Bajo. Quien no tenía nivel especificado se consideró Bajo.
 | `US-002` | PO | Cargar el PRD del profesor con criterios de aceptacion | Edgar Edmundo Coronel Navarrete |
 | `US-003` | PO | Registrar a los 21 integrantes y crear sus Agent Contexts | Edgar Edmundo Coronel Navarrete |
 | `US-101` | Célula 1 | Disenar el modelo de datos medallon completo | Diana Aracely Alvarez Varela |
-| `US-121` | Célula 1 | Prueba de descarga real de las fuentes asignadas | Emilio Galnares Ruiz |
-| `US-121` | Célula 1 | Prueba de descarga real de las fuentes asignadas | Luis Enrique García Vázquez |
+| `US-121a` | Célula 1 | Prueba de descarga real de DS-06 (CONAGUA) y DS-08 (CONAPO) | Emilio Galnares Ruiz |
+| `US-121b` | Célula 1 | Prueba de descarga real de DS-04 (SESNSP) y DS-05 (SINAICA) | Luis Enrique García Vázquez |
 | `US-201` | Célula 2 | Disenar el portafolio de 10 dashboards y el catalogo de KPIs | Manuel Alejandro Serranía Reinada |
 | `US-401` | Célula 4 | Definir y publicar el contrato de la API (OpenAPI) | Karla Alejandra Monter Benitez |
 | `US-501` | Célula 5 | Desplegar el 'hola mundo' en GCP con URL publica | Luis Téllez Domínguez |
-| `US-521` | Célula 5 | Preparar la guia de ambiente local reproducible | Alejandro Velázquez Mendoza |
-| `US-521` | Célula 5 | Preparar la guia de ambiente local reproducible | Edgar Ulises Jiménez López |
-| `US-521` | Célula 5 | Preparar la guia de ambiente local reproducible | Edward Ulysses Ruiz Bustillos |
+| `US-521a` | Célula 5 | Guia de ambiente local: API y Postgres | Alejandro Velázquez Mendoza |
+| `US-521b` | Célula 5 | Guia de ambiente local: Airflow y jobs de ML | Edgar Ulises Jiménez López |
+| `US-521c` | Célula 5 | Guia de ambiente local: Superset y agente | Edward Ulysses Ruiz Bustillos |
 
 ### S2 · Lun 10 - Dom 16 ago
 **Foco: Ingesta continua y capa Bronze**
@@ -244,10 +244,10 @@ perfil Bajo. Quien no tenía nivel especificado se consideró Bajo.
 | ID | Célula | Historia | Responsable |
 |---|---|---|---|
 | `US-004` | PO | Sembrar y mantener la Traceability_Matrix | Edgar Edmundo Coronel Navarrete |
-| `US-102` | Célula 1 | Construir el DAG maestro de orquestacion en Airflow | Diana Aracely Alvarez Varela |
+| `US-102` | Célula 1 | Construir el DAG maestro de orquestación en Airflow | Diana Aracely Alvarez Varela |
 | `US-111` | Célula 1 | Implementar transformaciones Bronze -> Silver con dbt | Deni Garrido Fragoso |
-| `US-122` | Célula 1 | Escribir los extractores de sus fuentes | Emilio Galnares Ruiz |
-| `US-122` | Célula 1 | Escribir los extractores de sus fuentes | Luis Enrique García Vázquez |
+| `US-122a` | Célula 1 | Extractores de DS-06 y DS-08 | Emilio Galnares Ruiz |
+| `US-122b` | Célula 1 | Extractores de DS-04 y DS-05 | Luis Enrique García Vázquez |
 | `US-502` | Célula 5 | Disenar el docker-compose completo del ecosistema | Luis Téllez Domínguez |
 | `US-503` | Célula 5 | Configurar el pipeline de CI en GitHub Actions | Luis Téllez Domínguez |
 
@@ -261,21 +261,21 @@ perfil Bajo. Quien no tenía nivel especificado se consideró Bajo.
 | `US-105` | Célula 1 | Implementar la estrategia de cobertura parcial e indice de confianza | Diana Aracely Alvarez Varela |
 | `US-112` | Célula 1 | Implementar transformaciones Silver -> Gold con dbt | Deni Garrido Fragoso |
 | `US-113` | Célula 1 | Construir los cubos de agregacion | Deni Garrido Fragoso |
-| `US-123` | Célula 1 | Implementar validaciones con Great Expectations | Emilio Galnares Ruiz |
-| `US-123` | Célula 1 | Implementar validaciones con Great Expectations | Luis Enrique García Vázquez |
+| `US-123a` | Célula 1 | Validaciones Great Expectations para DS-06 y DS-08 | Emilio Galnares Ruiz |
+| `US-123b` | Célula 1 | Validaciones Great Expectations para DS-04 y DS-05 | Luis Enrique García Vázquez |
 | `US-202` | Célula 2 | Configurar Superset: conexion, datasets y capa semantica | Manuel Alejandro Serranía Reinada |
-| `US-211` | Célula 2 | Modelar metricas y jerarquias para los cubos | Marina García del Buey |
-| `US-211` | Célula 2 | Modelar metricas y jerarquias para los cubos | Monserrat Xcaret Miranda Olivas |
+| `US-211a` | Célula 2 | Modelar métricas y jerarquías para DB-03 y DB-04 | Marina García del Buey |
+| `US-211b` | Célula 2 | Modelar métricas y jerarquías para DB-05 y DB-08 | Monserrat Xcaret Miranda Olivas |
 | `US-221` | Célula 2 | Construir los graficos base de KPIs | Eloisa González Rubio |
-| `US-301` | Célula 3 | Disenar la estrategia de modelado y el protocolo de validacion | Andrés González Habib |
+| `US-301` | Célula 3 | Disenar la estrategia de modelado y el protocolo de validación | Andrés González Habib |
 | `US-411` | Célula 4 | Implementar los endpoints de datos sobre Gold | Christian Imanol Ruiz Hurtado |
 | `US-421` | Célula 4 | Implementar el esqueleto de FastAPI y healthcheck | Oscar Antonio Quiroz Lázaro |
-| `US-522` | Célula 5 | Contenerizar los servicios asignados | Alejandro Velázquez Mendoza |
-| `US-522` | Célula 5 | Contenerizar los servicios asignados | Edgar Ulises Jiménez López |
-| `US-522` | Célula 5 | Contenerizar los servicios asignados | Edward Ulysses Ruiz Bustillos |
-| `US-523` | Célula 5 | Configurar branch protection y quality gates | Alejandro Velázquez Mendoza |
-| `US-523` | Célula 5 | Configurar branch protection y quality gates | Edgar Ulises Jiménez López |
-| `US-523` | Célula 5 | Configurar branch protection y quality gates | Edward Ulysses Ruiz Bustillos |
+| `US-522a` | Célula 5 | Contenerizar la API y Postgres | Alejandro Velázquez Mendoza |
+| `US-522b` | Célula 5 | Contenerizar Airflow y los jobs de ML | Edgar Ulises Jiménez López |
+| `US-522c` | Célula 5 | Contenerizar Superset y el agente | Edward Ulysses Ruiz Bustillos |
+| `US-523a` | Célula 5 | Configurar branch protection y quality gates | Alejandro Velázquez Mendoza |
+| `US-523b` | Célula 5 | Configurar el pipeline de CI para jobs y DAGs | Edgar Ulises Jiménez López |
+| `US-523c` | Célula 5 | Documentar la arquitectura de despliegue | Edward Ulysses Ruiz Bustillos |
 
 ### S4 · Lun 24 - Dom 30 ago
 **Foco: Modelos ML, FastAPI, Auth y Dashboards**
@@ -283,56 +283,54 @@ perfil Bajo. Quien no tenía nivel especificado se consideró Bajo.
 | ID | Célula | Historia | Responsable |
 |---|---|---|---|
 | `US-005` | PO | Coordinar la rotacion del Vault Steward | Edgar Edmundo Coronel Navarrete |
-| `US-124` | Célula 1 | Generar los fixtures de prueba anonimizados | Emilio Galnares Ruiz |
-| `US-124` | Célula 1 | Generar los fixtures de prueba anonimizados | Luis Enrique García Vázquez |
+| `US-124a` | Célula 1 | Fixtures de prueba de DS-06 y DS-08 | Emilio Galnares Ruiz |
+| `US-124b` | Célula 1 | Fixtures de prueba de DS-04 y DS-05 | Luis Enrique García Vázquez |
 | `US-203` | Célula 2 | Construir DB-01 Ejecutivo y DB-02 Mapa de riesgo territorial | Manuel Alejandro Serranía Reinada |
 | `US-204` | Célula 2 | Construir DB-06 Predicciones y DB-09 Recomendaciones prescriptivas | Manuel Alejandro Serranía Reinada |
 | `US-212` | Célula 2 | Construir DB-03 Ficha de escuela y DB-04 Comparador de municipios | Marina García del Buey |
-| `US-212` | Célula 2 | Construir DB-03 Ficha de escuela y DB-04 Comparador de municipios | Monserrat Xcaret Miranda Olivas |
-| `US-213` | Célula 2 | Construir DB-05 Analisis por driver y DB-08 Explorador del cubo | Marina García del Buey |
-| `US-213` | Célula 2 | Construir DB-05 Analisis por driver y DB-08 Explorador del cubo | Monserrat Xcaret Miranda Olivas |
+| `US-213` | Célula 2 | Construir DB-05 Análisis por driver y DB-08 Explorador del cubo | Monserrat Xcaret Miranda Olivas |
 | `US-222` | Célula 2 | Construir DB-07 Calidad y cobertura de datos | Eloisa González Rubio |
 | `US-302` | Célula 3 | Entrenar el Modelo 2 - Clasificacion de driver dominante | Andrés González Habib |
 | `US-303` | Célula 3 | Registrar los 3 modelos en MLflow y exponerlos via API | Andrés González Habib |
-| `US-311` | Célula 3 | Entrenar el Modelo 1 - Regresion de matricula | Héctor Rafael Morales Marbán |
-| `US-321` | Célula 3 | Entrenar el Modelo 3 - Clustering de escuelas | Carlos Guillermo Mayorga Tapia |
+| `US-311` | Célula 3 | Entrenar el Modelo 1 - Regresion de matrícula | Héctor Rafael Morales Marbán |
 | `US-321` | Célula 3 | Entrenar el Modelo 3 - Clustering de escuelas | Estefany Lucero Hernández Loredo |
-| `US-322` | Célula 3 | Analisis exploratorio y seleccion de variables | Carlos Guillermo Mayorga Tapia |
-| `US-322` | Célula 3 | Analisis exploratorio y seleccion de variables | Estefany Lucero Hernández Loredo |
+| `US-322` | Célula 3 | Análisis exploratorio y seleccion de variables | Estefany Lucero Hernández Loredo |
+| `US-325` | Célula 3 | Analizar el sesgo por cobertura parcial en las features | Estefany Lucero Hernández Loredo |
 | `US-402` | Célula 4 | Implementar OAuth2 + JWT con refresh/access tokens | Karla Alejandra Monter Benitez |
 | `US-403` | Célula 4 | Implementar RBAC con los 2 roles del PRD | Karla Alejandra Monter Benitez |
 | `US-412` | Célula 4 | Implementar los endpoints de inferencia ML | Juan Carlos Macías Mayen |
 | `US-415` | Célula 4 | Implementar el contrato de datos entre API y modelos | Juan Carlos Macías Mayen |
-| `US-422` | Célula 4 | Escribir pruebas unitarias y de integración de la API | Oscar Antonio Quiroz Lázaro |
+| `US-422` | Célula 4 | Escribir pruebas unitarias y de integracion de la API | Oscar Antonio Quiroz Lázaro |
 | `US-504` | Célula 5 | Aprovisionar Cloud SQL, Artifact Registry y secretos | Luis Téllez Domínguez |
 
 ### S5 · Lun 31 ago - Dom 6 sep
-**Foco: Agente RAG, integración y CODE FREEZE**
+**Foco: Agente RAG, integracion y CODE FREEZE**
 
 | ID | Célula | Historia | Responsable |
 |---|---|---|---|
 | `US-106` | Célula 1 | Congelar esquema y documentar linaje completo | Diana Aracely Alvarez Varela |
 | `US-114` | Célula 1 | Optimizar consultas y crear indices | Deni Garrido Fragoso |
 | `US-205` | Célula 2 | Integrar y armonizar los 10 dashboards | Manuel Alejandro Serranía Reinada |
-| `US-214` | Célula 2 | Implementar filtros dinamicos globales y drill-down cruzado | Marina García del Buey |
-| `US-214` | Célula 2 | Implementar filtros dinamicos globales y drill-down cruzado | Monserrat Xcaret Miranda Olivas |
-| `US-215` | Célula 2 | Pruebas de usabilidad y accesibilidad | Marina García del Buey |
-| `US-215` | Célula 2 | Pruebas de usabilidad y accesibilidad | Monserrat Xcaret Miranda Olivas |
+| `US-214a` | Célula 2 | Filtros dinámicos y drill-down en DB-03 y DB-04 | Marina García del Buey |
+| `US-214b` | Célula 2 | Filtros dinámicos y drill-down en DB-05 y DB-08 | Monserrat Xcaret Miranda Olivas |
+| `US-215a` | Célula 2 | Pruebas de usabilidad de DB-03 y DB-04 | Marina García del Buey |
+| `US-215b` | Célula 2 | Pruebas de usabilidad de DB-05 y DB-08 | Monserrat Xcaret Miranda Olivas |
 | `US-223` | Célula 2 | Construir DB-10 Monitor del pipeline | Eloisa González Rubio |
 | `US-224` | Célula 2 | Documentar el manual de usuario de los dashboards | Eloisa González Rubio |
-| `US-304` | Célula 3 | Construir el agente conversacional RAG / Text-to-SQL | Andrés González Habib |
-| `US-312` | Célula 3 | Evaluar modelos y documentar metricas | Héctor Rafael Morales Marbán |
-| `US-313` | Célula 3 | Integrar predicciones y recomendaciones a Gold | Héctor Rafael Morales Marbán |
+| `US-304a` | Célula 3 | Disenar el agente conversacional: prompt y guardarraíles | Andrés González Habib |
+| `US-304b` | Célula 3 | Construir la capa de recuperación del agente | Carlos Guillermo Mayorga Tapia |
+| `US-312` | Célula 3 | Evaluar modelos y documentar métricas | Héctor Rafael Morales Marbán |
+| `US-313` | Célula 3 | Integrar predicciónes y recomendaciones a Gold | Héctor Rafael Morales Marbán |
 | `US-323` | Célula 3 | Construir el set de evaluación del agente | Carlos Guillermo Mayorga Tapia |
-| `US-323` | Célula 3 | Construir el set de evaluación del agente | Estefany Lucero Hernández Loredo |
+| `US-324` | Célula 3 | Documentar las fichas de modelo (model cards) | Carlos Guillermo Mayorga Tapia |
 | `US-404` | Célula 4 | Hardening de la API | Karla Alejandra Monter Benitez |
 | `US-413` | Célula 4 | Endpoints administrativos protegidos | Christian Imanol Ruiz Hurtado |
 | `US-414` | Célula 4 | Documentar la API en OpenAPI y publicar la coleccion | Christian Imanol Ruiz Hurtado |
 | `US-416` | Célula 4 | Implementar cache y manejo de errores de inferencia | Juan Carlos Macías Mayen |
-| `US-423` | Célula 4 | Pruebas de seguridad de la autenticación | Oscar Antonio Quiroz Lázaro |
-| `US-524` | Célula 5 | Configurar monitoreo, logs y alertas | Alejandro Velázquez Mendoza |
-| `US-524` | Célula 5 | Configurar monitoreo, logs y alertas | Edgar Ulises Jiménez López |
-| `US-524` | Célula 5 | Configurar monitoreo, logs y alertas | Edward Ulysses Ruiz Bustillos |
+| `US-423` | Célula 4 | Pruebas de seguridad de la autenticacion | Oscar Antonio Quiroz Lázaro |
+| `US-524a` | Célula 5 | Monitoreo y logs de API y Postgres | Alejandro Velázquez Mendoza |
+| `US-524b` | Célula 5 | Monitoreo de DAGs y jobs de entrenamiento | Edgar Ulises Jiménez López |
+| `US-524c` | Célula 5 | Monitoreo de Superset y del agente | Edward Ulysses Ruiz Bustillos |
 
 ### S6 · Lun 7 - Mar 8 sep
 **Foco: Pruebas finales, seguridad, GCP y ensayo**
@@ -341,9 +339,9 @@ perfil Bajo. Quien no tenía nivel especificado se consideró Bajo.
 |---|---|---|---|
 | `US-006` | PO | Preparar y ensayar el pitch de la demo en vivo | Edgar Edmundo Coronel Navarrete |
 | `US-505` | Célula 5 | Despliegue final productivo y verificacion | Luis Téllez Domínguez |
-| `US-525` | Célula 5 | Ejecutar y documentar el runbook de rollback | Alejandro Velázquez Mendoza |
-| `US-525` | Célula 5 | Ejecutar y documentar el runbook de rollback | Edgar Ulises Jiménez López |
-| `US-525` | Célula 5 | Ejecutar y documentar el runbook de rollback | Edward Ulysses Ruiz Bustillos |
+| `US-525a` | Célula 5 | Runbook de rollback de API y base de datos | Alejandro Velázquez Mendoza |
+| `US-525b` | Célula 5 | Runbook de rollback de Airflow y modelos | Edgar Ulises Jiménez López |
+| `US-525c` | Célula 5 | Runbook de rollback de Superset y agente | Edward Ulysses Ruiz Bustillos |
 
 
 ### Standups

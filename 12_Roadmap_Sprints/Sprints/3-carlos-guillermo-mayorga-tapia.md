@@ -5,7 +5,7 @@ owner: "Carlos Guillermo Mayorga Tapia"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-321", "US-322", "US-323"]
+traces_down: ["US-304b", "US-323", "US-324"]
 last_reviewed: "2026-07-31"
 tags: [sprint, plan, celula-3, nivel-bajo]
 ---
@@ -44,21 +44,12 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 
 ## 3. Tus historias de usuario
 
-### `US-321` · Entrenar el Modelo 3 - Clustering de escuelas
+### `US-304b` · Construir la capa de recuperacion del agente (RAG)
 
 | | |
 |---|---|
-| **Sprint** | S4 — Lun 24 - Dom 30 ago |
-| **Objetivo** | KMeans sobre el perfil de escuelas; validar con Silhouette y perfilar cada grupo con lenguaje de negocio. |
-| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
-| **Cómo se entrega** | Rama `feat/carlos-tapia-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
-
-### `US-322` · Analisis exploratorio y seleccion de variables
-
-| | |
-|---|---|
-| **Sprint** | S4 — Lun 24 - Dom 30 ago |
-| **Objetivo** | EDA sobre features, correlaciones, y deteccion de fuga de informacion y de sesgo por cobertura. |
+| **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
+| **Objetivo** | Indexar el esquema de Gold en ChromaDB (embeddings con sentence-transformers) y construir la consulta de contexto que alimenta al agente disenado por Andres en US-304a. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/carlos-tapia-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
@@ -70,6 +61,16 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 | **Objetivo** | 20 preguntas de negocio con su respuesta esperada, para probar el agente de forma objetiva. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/carlos-tapia-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
+### `US-324` · Documentar las fichas de modelo (model cards) de ML-01, ML-02 y ML-03
+
+| | |
+|---|---|
+| **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
+| **Objetivo** | Una ficha por modelo en `15_ML_Models/`: proposito, features de entrada, metrica obtenida, limitaciones conocidas y en que contextos NO debe usarse la prediccion. |
+| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
+| **Cómo se entrega** | Rama `feat/carlos-tapia-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
 
 
 ---
@@ -282,9 +283,9 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-321` | Entrenar el Modelo 3 - Clustering de escue | ⬜ Por iniciar | 0% | — | Dom 30 ago |
-| `US-322` | Analisis exploratorio y seleccion de varia | ⬜ Por iniciar | 0% | — | Dom 30 ago |
+| `US-304b` | Capa de recuperacion del agente (RAG) | ⬜ Por iniciar | 0% | — | Dom 6 sep |
 | `US-323` | Construir el set de evaluacion del agente | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-324` | Model cards de ML-01, ML-02 y ML-03 | ⬜ Por iniciar | 0% | — | Dom 6 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 
