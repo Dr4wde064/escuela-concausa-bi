@@ -13,7 +13,7 @@ tags: [moc, architecture]
 | Documento | Contenido |
 |---|---|
 | [[03_Architecture/System_Design]] | Arquitectura de alto nivel |
-| [[03_Architecture/Data_Model]] | Modelo de datos / schema |
+| [[03_Architecture/Data_Model]] | **Arquitectura medallón completa** (Bronze/Silver/Gold), esquema estrella, contratos Pydantic + Great Expectations, diccionario de datos y linaje. Implementa REQ-001 (US-101). |
 | [[03_Architecture/API_Specification]] | Contratos de API |
 | [[03_Architecture/Technical_Guide]] | Stack y decisiones técnicas |
 | [[03_Architecture/ADRs/_index]] | Architecture Decision Records |

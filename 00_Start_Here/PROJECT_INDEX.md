@@ -20,6 +20,9 @@ tags: [index, moc]
 - [[00_Start_Here/Glossary]] — términos del dominio
 - [[CLAUDE]] — contexto del proyecto para agentes de IA (Claude Code)
 - [[AGENTS]] — protocolo de trabajo y de handoff entre LLMs: cómo pasar el contexto de un asistente a otro para que sobreviva a los límites de tokens y a los cambios de asistente
+- [[GEMINI]] — apuntador de contexto para Gemini CLI (redirige a AGENTS.md)
+- `.cursorrules` — apuntador equivalente para **Cursor** (redirige a AGENTS.md; sin frontmatter porque no es `.md` del vault)
+- `.github/copilot-instructions.md` — apuntador equivalente para **GitHub Copilot** (redirige a AGENTS.md; sin frontmatter porque no es `.md` del vault)
 - [[00_Start_Here/Vault_Changelog]] — cambios del vault
 
 ## 🧭 Ciclo de vida (carpetas)

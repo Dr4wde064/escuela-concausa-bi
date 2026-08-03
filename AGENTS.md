@@ -27,6 +27,20 @@ Cualquier agente que abra este repositorio debe leer, en este orden:
 
 Solo después de eso, empezar a leer archivos individuales.
 
+## 1.bis Apuntadores por herramienta
+
+Cada asistente lee un archivo distinto por convención de su harness, pero **todos redirigen a este
+`AGENTS.md`** como documento canónico. Si tu herramienta no está en la lista, lee `AGENTS.md` a mano.
+
+| Asistente | Archivo que lee | `.md` del vault |
+|---|---|---|
+| Claude Code | `CLAUDE.md` | sí (contexto del proyecto) |
+| Codex / genérico | `AGENTS.md` | sí (este archivo, canónico) |
+| Gemini CLI | `GEMINI.md` | sí (apuntador) |
+| Cursor | `.cursorrules` | no |
+| GitHub Copilot | `.github/copilot-instructions.md` | no |
+| Otros harness | — | leer `AGENTS.md` manualmente |
+
 ## 2. Consulta el grafo antes de leer archivos
 
 Cuando exista `graphify-out/`, úsalo antes de abrir archivos a ciegas:
