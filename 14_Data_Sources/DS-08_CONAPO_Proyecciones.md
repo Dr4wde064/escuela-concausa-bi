@@ -1,0 +1,63 @@
+---
+id: DS-08
+title: "DS-08 · CONAPO Proyecciones de Población"
+owner: "Emilio Galnares Ruiz"
+status: draft
+traces_up: ["01_Product/PRD", "12_Roadmap_Sprints/PLAN_MAESTRO"]
+tags: [data-source, bronze, denominador]
+---
+
+# DS-08 · CONAPO Proyecciones de Población
+
+> → [[14_Data_Sources/_index]] · Prueba de descarga real **PENDIENTE** (Semana 1)
+
+## 1. Identificación
+- **Nombre oficial:** Proyecciones de la Población de México.
+- **Institución responsable:** CONAPO (Consejo Nacional de Población).
+- **Qué aporta al proyecto:** población por municipio, edad y año. Es el **denominador** para calcular
+  tasas y normalizar (permite comparar municipios de distinto tamaño).
+
+## 2. Acceso
+- **URL de descarga:** PENDIENTE-CONFIRMAR (portal esperado: gob.mx/conapo).
+- **Formato:** CSV.
+- **Tamaño aproximado:** PENDIENTE-CONFIRMAR.
+
+## 3. Frecuencia real de actualización
+- **Anual** (proyección por año; la serie completa se republica al recalibrar).
+
+## 4. Cobertura geográfica y temporal
+- **Geográfica:** Nacional, desagregado municipal (y por grupo de edad).
+- **Temporal:** serie proyectada (histórico + años futuros); confirmar rango en la prueba de descarga.
+
+## 5. Esquema esperado (confirmar en prueba de descarga)
+| Columna | Tipo | Nota |
+|---|---|---|
+| `cve_ent` | str (2) | Clave entidad |
+| `cve_mun` | str (5) | Clave INEGI municipal |
+| `anio` | int | Año de proyección |
+| `edad` / `grupo_edad` | int/str | Edad o grupo etario |
+| `poblacion` | int | Población proyectada |
+
+## 6. Llave de unión
+- **Clave INEGI de 5 dígitos** (municipio); filtrable por grupo de edad escolar.
+
+## 7. Driver que alimenta
+- Ninguno directamente: es el **denominador** para tasas y normalización; junto con DS-07 sustenta
+  **D1** y normaliza los cruces municipales de otros drivers.
+
+## 8. Licencia de uso
+- Términos de Libre Uso MX (CONAPO) — **confirmar** en la ficha oficial.
+
+## 9. Prueba de descarga real — **PENDIENTE** (Semana 1)
+- [ ] Archivo descargado físicamente
+- [ ] Abierto y con datos utilizables
+- [ ] Registros contados: `______`
+- [ ] Esquema verificado (columnas y tipos)
+- [ ] Llave confirmada: `cve_mun` de 5 dígitos + grupo de edad
+- **Responsable:** Emilio Galnares Ruiz · **Fecha:** ______
+
+## 10. Riesgos conocidos
+- Son **proyecciones**, no censos: hay incertidumbre inherente.
+- Recalibraciones que cambian valores históricos entre ediciones.
+- Necesidad de filtrar el grupo de edad escolar correcto para el denominador.
+- Compatibilidad de claves municipales con las demás fuentes.
