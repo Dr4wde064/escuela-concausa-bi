@@ -50,3 +50,12 @@ tags: [meta, rules, governance]
 - Correr `_Meta/scripts/vault_lint.py`.
 - Revisar documentos con `last_reviewed` > 90 días.
 - Cerrar o archivar riesgos/bugs/incidentes resueltos.
+
+## Excepciones al linter
+
+- **`graphify-out/`** queda **fuera del alcance de `vault_lint.py`** (se excluye en `find_md`). Es
+  **salida generada y regenerable** por Graphify, no un artefacto del vault: aplicarle *Definition of
+  Filed* (frontmatter, `_index`, no-huérfano) sería incorrecto conceptualmente y frágil, porque se
+  sobrescribe en cada corrida. **Sí se versiona a propósito** (`graph.json`, `GRAPH_REPORT.md`,
+  `graph.html`): es el mapa que consultan los LLMs y que [[AGENTS]] referencia explícitamente; lo que
+  no se versiona (`cache/`, `cost.json`, `*.tmp`) ya está en `.gitignore`.

@@ -26,7 +26,9 @@ FM_EXEMPT = {"README.md", "PULL_REQUEST_TEMPLATE.md"}
 
 def find_md(root):
     for dirpath, _, files in os.walk(root):
-        if "/.git" in dirpath or "/.obsidian" in dirpath:
+        # graphify-out/ es SALIDA GENERADA por Graphify (regenerable en cada corrida),
+        # no artefacto del vault: queda fuera del alcance del linter (no aplica Definition of Filed).
+        if "/.git" in dirpath or "/.obsidian" in dirpath or "/graphify-out" in dirpath:
             continue
         for f in files:
             if f.endswith(".md"):
