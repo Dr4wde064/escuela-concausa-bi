@@ -19,6 +19,7 @@ tags: [index, moc]
 - [[00_Start_Here/How_To_Navigate]] — cómo se organiza y enlaza el vault
 - [[00_Start_Here/Glossary]] — términos del dominio
 - [[CLAUDE]] — contexto del proyecto para agentes de IA (Claude Code)
+- [[AGENTS]] — protocolo de trabajo y de handoff entre LLMs: cómo pasar el contexto de un asistente a otro para que sobreviva a los límites de tokens y a los cambios de asistente
 - [[00_Start_Here/Vault_Changelog]] — cambios del vault
 
 ## 🧭 Ciclo de vida (carpetas)

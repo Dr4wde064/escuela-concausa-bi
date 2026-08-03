@@ -1,0 +1,72 @@
+name: Update Project Graph
+
+# Corre cuando un PR se acepta (merge a main) o manualmente.
+# NOTA: activar este workflow hasta que exista codigo real en src/.
+# Con el repo solo-documentacion no aporta valor y consume minutos de Actions.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'dbt/**'
+      - 'dags/**'
+      - '03_Architecture/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: project-graph
+  cancel-in-progress: true
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Evita ciclo infinito: ignora los commits del propio bot
+    if: "!contains(github.event.head_commit.message, 'update project graph')"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar Graphify
+        # IMPORTANTE: el paquete es graphifyy con DOBLE y.
+        # 'graphify' con una sola y es un paquete NO relacionado.
+        run: |
+          python -m pip install --upgrade pip
+          pip install graphifyy
+
+      - name: Generar grafo del proyecto
+        run: graphify .
+
+      - name: Validar salida
+        run: |
+          test -f graphify-out/graph.json
+          test -f graphify-out/GRAPH_REPORT.md
+          echo "Grafo generado correctamente"
+
+      - name: Verificar que no se filtren secretos
+        run: |
+          if grep -rEi '(api[_-]?key|secret|password|token)["'\'']?\s*[:=]\s*["'\''][^"'\'']{8,}' graphify-out/ 2>/dev/null; then
+            echo "Posible secreto en la salida del grafo"; exit 1
+          fi
+          echo "OK"
+
+      - name: Commitear cambios del grafo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add graphify-out/graph.json graphify-out/GRAPH_REPORT.md
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el grafo"
+          else
+            git commit -m "docs: update project graph [skip ci]"
+            git push
+          fi
