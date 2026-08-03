@@ -12,5 +12,6 @@ tags: [moc, roadmap, sprint]
 
 | Documento | Contenido |
 |---|---|
+| [[12_Roadmap_Sprints/PLAN_MAESTRO]] | **Plan Maestro del proyecto** (fuente de verdad del CÓMO ejecutamos: fuentes, alcance, arquitectura, equipo, calendario, riesgos). Traza a `PRD`. |
 | [[12_Roadmap_Sprints/Roadmap]] | Fases del producto |
-| [[12_Roadmap_Sprints/Sprints/_index]] | Sprints (overview, backlog, retro) |
+| [[12_Roadmap_Sprints/Sprints/_index]] | Planes de trabajo individuales de los 21 integrantes |

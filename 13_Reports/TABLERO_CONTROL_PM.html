@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FARO · Tablero de Control del Proyecto</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2545;--navy2:#13315C;--teal:#009999;--teal2:#00BEDC;--ink:#12202F;--mut:#5E7089;--line:#DDE4EC;--bg:#F5F7FA;--card:#fff;
+--ok:#0E9F6E;--warn:#D97706;--hot:#DC2626;--info:#2563EB;--f:'Inter',sans-serif;--m:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;line-height:1.5}
+.wrap{max-width:1400px;margin:0 auto;padding:0 28px}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:26px 0 0}
+.htop{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:18px}
+h1{font-size:26px;font-weight:700;letter-spacing:-.4px}
+h1 span{color:var(--teal2)}
+.sub{color:#A8BDD4;font-size:13px;margin-top:4px}
+.cd{text-align:right}.cd .n{font-family:var(--m);font-size:34px;font-weight:700;line-height:1}
+.cd .l{font-size:11px;color:#A8BDD4;letter-spacing:.5px;text-transform:uppercase}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0;padding-bottom:22px}
+.kpi{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:12px 14px}
+.kpi .v{font-family:var(--m);font-size:23px;font-weight:700}
+.kpi .k{font-size:10.5px;color:#A8BDD4;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+nav{background:var(--navy2);position:sticky;top:0;z-index:60;border-top:1px solid rgba(255,255,255,.1)}
+.nv{display:flex;gap:2px;overflow-x:auto}
+.nv button{background:none;border:none;color:#A8BDD4;font-family:var(--f);font-size:12.5px;font-weight:500;padding:12px 16px;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent}
+.nv button:hover{color:#fff}.nv button.on{color:#fff;border-bottom-color:var(--teal2);background:rgba(255,255,255,.06)}
+main{padding:26px 0 60px}
+.pane{display:none}.pane.on{display:block}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:20px;margin-bottom:18px}
+.sec h2{font-size:16px;font-weight:700;margin-bottom:3px;color:var(--navy)}
+.sec .d{font-size:12.5px;color:var(--mut);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:1000px){.g2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);padding:8px 9px;border-bottom:2px solid var(--line);font-weight:600;background:#FAFBFC}
+td{padding:9px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:hover td{background:#FAFBFC}
+.tag{display:inline-block;font-family:var(--m);font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px}
+.t-alto{background:#E0F2F1;color:#00695C}.t-medio{background:#E3F2FD;color:#1565C0}.t-bajo{background:#F3E5F5;color:#6A1B9A}
+.t-crit{background:#FEE2E2;color:#991B1B}
+.mono{font-family:var(--m);font-size:11.5px}
+.bar{height:7px;background:var(--line);border-radius:4px;overflow:hidden;min-width:80px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+/* GANTT */
+.gantt{overflow-x:auto}
+.gh{display:grid;grid-template-columns:190px repeat(6,1fr);gap:3px;margin-bottom:5px;min-width:820px}
+.gh div{font-family:var(--m);font-size:10px;color:var(--mut);text-align:center;padding:5px 2px;background:#FAFBFC;border-radius:4px;font-weight:600}
+.gh div:first-child{text-align:left;padding-left:9px}
+.gr{display:grid;grid-template-columns:190px repeat(6,1fr);gap:3px;margin-bottom:3px;min-width:820px;align-items:center}
+.gl{font-size:12px;font-weight:600;padding:6px 9px;background:#FAFBFC;border-radius:4px;border-left:3px solid var(--teal)}
+.gl small{display:block;font-weight:400;color:var(--mut);font-size:10.5px}
+.gc{height:28px;border-radius:4px;background:#F0F3F7;position:relative}
+.gb{position:absolute;inset:2px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--m);font-size:9.5px;color:#fff;font-weight:600;overflow:hidden}
+.b1{background:var(--teal)}.b2{background:var(--navy2)}.b3{background:var(--info)}.b4{background:var(--warn)}.b5{background:var(--hot)}
+/* CRITICAL PATH */
+.cp{display:flex;flex-direction:column;gap:0}
+.cpi{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.cpn{width:34px;height:34px;border-radius:50%;background:var(--hot);color:#fff;display:grid;place-items:center;font-family:var(--m);font-weight:700;font-size:13px}
+.cpi b{font-size:13px}.cpi .m{font-size:11.5px;color:var(--mut)}
+/* ALERTS */
+.al{display:grid;grid-template-columns:auto 1fr;gap:13px;padding:13px;border-radius:8px;margin-bottom:9px;border-left:4px solid}
+.a-hot{background:#FEF2F2;border-color:var(--hot)}.a-warn{background:#FFFBEB;border-color:var(--warn)}.a-info{background:#EFF6FF;border-color:var(--info)}
+.al .ic{font-size:18px}.al b{font-size:13px;display:block;margin-bottom:2px}.al p{font-size:12.5px;color:var(--mut)}
+.pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:10.5px;font-weight:600;font-family:var(--m)}
+.p-ok{background:#DEF7EC;color:#03543F}.p-w{background:#FEF3C7;color:#92400E}.p-h{background:#FEE2E2;color:#991B1B}.p-n{background:#EEF2F7;color:#475569}
+.psel{width:100%;padding:9px;border:1px solid var(--line);border-radius:7px;font-family:var(--f);font-size:13.5px;background:#fff;margin-bottom:16px}
+.note{background:#F0F9FA;border-left:3px solid var(--teal);padding:11px 13px;border-radius:0 7px 7px 0;font-size:12.5px;color:var(--ink);margin-top:14px}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--mut);margin-top:12px;font-family:var(--m)}
+.leg span{display:flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+.print{background:var(--teal);color:#fff;border:none;padding:8px 15px;border-radius:7px;font-family:var(--f);font-weight:600;font-size:12.5px;cursor:pointer}
+@media print{nav,.print{display:none}.pane{display:block!important}body{background:#fff}}
+</style></head><body>
+
+<header><div class="wrap">
+  <div class="htop">
+    <div>
+      <h1>FARO <span>· Tablero de Control</span></h1>
+      <div class="sub">Escuela como Sensor Social · Proyecto Integrador de Inteligencia de Negocios · MTIIA Anáhuac</div>
+    </div>
+    <div class="cd"><div class="n" id="dd">—</div><div class="l">días a la demo · 9 sep</div></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="v" id="k1">21</div><div class="k">Integrantes</div></div>
+    <div class="kpi"><div class="v" id="k2">—</div><div class="k">Historias totales</div></div>
+    <div class="kpi"><div class="v" id="k3">6</div><div class="k">Sprints</div></div>
+    <div class="kpi"><div class="v" id="k4">8</div><div class="k">Fuentes de datos</div></div>
+    <div class="kpi"><div class="v" id="k5">10</div><div class="k">Dashboards BI</div></div>
+    <div class="kpi"><div class="v" id="k6">11</div><div class="k">Hitos ruta crítica</div></div>
+  </div>
+</div></header>
+
+<nav><div class="wrap"><div class="nv">
+  <button class="on" data-p="exec">Resumen ejecutivo</button>
+  <button data-p="tl">Timeline general</button>
+  <button data-p="sp">Sprint actual</button>
+  <button data-p="eq">Equipo</button>
+  <button data-p="per">Detalle por persona</button>
+  <button data-p="cp">Ruta crítica</button>
+  <button data-p="urg">Urgente</button>
+  <button data-p="al">Alcance</button>
+</div></div></nav>
+
+<main><div class="wrap">
+
+<!-- EJECUTIVO -->
+<div class="pane on" id="p-exec">
+  <div class="sec">
+    <h2>Situación del proyecto</h2>
+    <div class="d">Lectura ejecutiva para dirección y para el profesor.</div>
+    <div class="g2">
+      <div>
+        <table><thead><tr><th>Indicador</th><th>Estado</th></tr></thead><tbody>
+          <tr><td>Repositorio y vault</td><td><span class="pill p-ok">Listo · lint verde</span></td></tr>
+          <tr><td>Enforcement (CI + ramas)</td><td><span class="pill p-w">Configurado · pendiente activar</span></td></tr>
+          <tr><td>PRD y requisitos</td><td><span class="pill p-h">Pendiente de carga</span></td></tr>
+          <tr><td>Fuentes de datos</td><td><span class="pill p-w">8 identificadas · sin probar</span></td></tr>
+          <tr><td>Despliegue GCP</td><td><span class="pill p-h">No iniciado — riesgo techo 6.0</span></td></tr>
+          <tr><td>Equipo asignado</td><td><span class="pill p-ok">21 · 5 células</span></td></tr>
+        </tbody></table>
+      </div>
+      <div>
+        <div class="al a-hot"><div class="ic">■</div><div><b>Riesgo #1 — Techo de 6.0</b><p>Sin URL pública funcionando al evaluar, la nota máxima es 6.0 sin importar la calidad del resto. El "hola mundo" debe estar desplegado en la Semana 1.</p></div></div>
+        <div class="al a-warn"><div class="ic">■</div><div><b>Riesgo #2 — Fuentes sin validar</b><p>Ninguna de las 8 fuentes ha pasado la prueba de descarga real. Si una falla, debe sustituirse en Semana 1, no en Semana 5.</p></div></div>
+        <div class="al a-info"><div class="ic">■</div><div><b>Dependencia externa</b><p>Faltan los usuarios de GitHub de los 5 Tech Leads para activar CODEOWNERS.</p></div></div>
+      </div>
+    </div>
+    <div class="note"><b>Nuestro Faro:</b> que ninguna escuela pierda alumnos por una causa que pudimos anticipar y nombrar.</div>
+  </div>
+
+  <div class="sec">
+    <h2>Distribución de la carga</h2>
+    <div class="d">Historias asignadas por célula y por nivel de experiencia.</div>
+    <div class="g2">
+      <div><table><thead><tr><th>Célula</th><th>Personas</th><th>Historias</th><th>Rúbrica</th></tr></thead><tbody id="tCell"></tbody></table></div>
+      <div><table><thead><tr><th>Nivel</th><th>Personas</th><th>Historias</th><th>Promedio</th></tr></thead><tbody id="tLvl"></tbody></table>
+      <div class="note">La carga se asignó por nivel: las historias de mayor complejidad técnica y de diseño a perfil Alto, las intermedias con autonomía a Medio, y las acotadas y bien definidas a Bajo.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE GENERAL -->
+<div class="pane" id="p-tl">
+  <div class="sec">
+    <h2>Timeline general del proyecto</h2>
+    <div class="d">6 sprints · 3 de agosto al 9 de septiembre · Code freeze el 6 de septiembre.</div>
+    <div class="gantt">
+      <div class="gh"><div>Célula / Frente</div><div>S1<br>3-9 ago</div><div>S2<br>10-16</div><div>S3<br>17-23</div><div>S4<br>24-30</div><div>S5<br>31-6 sep</div><div>S6<br>7-8 sep</div></div>
+      <div id="gantt"></div>
+    </div>
+    <div class="leg">
+      <span><i class="sw b1"></i>Trabajo principal</span><span><i class="sw b3"></i>Soporte</span>
+      <span><i class="sw b5"></i>Hito crítico</span><span><i class="sw b4"></i>Congelamiento</span>
+    </div>
+    <div class="note"><b>Regla de paralelismo:</b> las 5 células arrancan el día 1. La Célula 4 publica el contrato de API en S1 para que las Células 2 y 3 trabajen contra mocks sin esperar a que Gold exista.</div>
+  </div>
+  <div class="sec">
+    <h2>Hitos que no se mueven</h2>
+    <table><thead><tr><th>Fecha</th><th>Hito</th><th>Responsable</th></tr></thead><tbody>
+      <tr><td class="mono">Dom 9 ago</td><td>URL pública viva + 8 fuentes probadas</td><td>Luis Téllez · Diana Alvarez</td></tr>
+      <tr><td class="mono">Dom 16 ago</td><td>Ingesta continua automatizada → Bronze</td><td>Diana Alvarez</td></tr>
+      <tr><td class="mono">Dom 23 ago</td><td>Medallón + Great Expectations + cubos</td><td>Diana Alvarez · Deni Garrido</td></tr>
+      <tr><td class="mono">Dom 30 ago</td><td>3 modelos + API con OAuth2/RBAC + dashboards</td><td>Andrés · Karla · Manuel</td></tr>
+      <tr><td class="mono">Dom 6 sep</td><td><b>CODE FREEZE</b> — agente integrado, todo end-to-end</td><td>Todos</td></tr>
+      <tr><td class="mono">Mar 8 sep</td><td>Dry-run completo de la demo</td><td>Edgar Coronel</td></tr>
+      <tr><td class="mono">Mié 9 sep</td><td><b>DEMO EN VIVO AL PROFESOR</b></td><td>Todos</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- SPRINT ACTUAL -->
+<div class="pane" id="p-sp">
+  <div class="sec">
+    <h2>Sprint en curso</h2>
+    <div class="d" id="spInfo">—</div>
+    <table><thead><tr><th>ID</th><th>Historia</th><th>Responsable</th><th>Célula</th><th>Crítica</th><th>Estado</th></tr></thead><tbody id="tSprint"></tbody></table>
+  </div>
+</div>
+
+<!-- EQUIPO -->
+<div class="pane" id="p-eq">
+  <div class="sec">
+    <h2>Estado por integrante</h2>
+    <div class="d">Carga asignada, revisor y avance. El PM actualiza esta vista antes de cada standup.</div>
+    <table><thead><tr><th>Integrante</th><th>Nivel</th><th>Célula</th><th>Rol</th><th>Historias</th><th>Revisor</th><th>Avance</th></tr></thead><tbody id="tTeam"></tbody></table>
+  </div>
+</div>
+
+<!-- POR PERSONA -->
+<div class="pane" id="p-per">
+  <div class="sec">
+    <h2>Timeline detallado por integrante</h2>
+    <div class="d">Selecciona a una persona para ver su carga sprint por sprint.</div>
+    <select class="psel" id="sel"></select>
+    <div id="perOut"></div>
+  </div>
+</div>
+
+<!-- RUTA CRITICA -->
+<div class="pane" id="p-cp">
+  <div class="sec">
+    <h2>Ruta crítica</h2>
+    <div class="d">Historias cuyo retraso mueve la fecha de entrega. Se revisan en cada standup, sin excepción.</div>
+    <div class="cp" id="cpOut"></div>
+    <div class="note"><b>Cadena de bloqueo:</b> Célula 5 habilita a todas → Célula 1 produce Gold → Células 2, 3 y 4 dependen de Gold → Célula 2 consume la API de la 4 y los modelos de la 3. Un retraso en Célula 1 bloquea a tres células a la vez.</div>
+  </div>
+</div>
+
+<!-- URGENTE -->
+<div class="pane" id="p-urg">
+  <div class="sec">
+    <h2>Acción inmediata</h2>
+    <div class="d">Lo que debe resolverse esta semana para no comprometer la fecha del 9 de septiembre.</div>
+    <div class="al a-hot"><div class="ic">1</div><div><b>Desplegar "hola mundo" en GCP con URL pública</b><p>Luis Téllez + Manuel Serranía · <b>Vence: 9 ago.</b> Es lo único que elimina el riesgo del techo de 6.0. Si no está en S1, todo el proyecto queda expuesto.</p></div></div>
+    <div class="al a-hot"><div class="ic">2</div><div><b>Prueba de descarga real de las 8 fuentes</b><p>Célula 1 completa · <b>Vence: 9 ago.</b> Bajar el archivo, abrirlo, contar registros. No basta leer el portal.</p></div></div>
+    <div class="al a-warn"><div class="ic">3</div><div><b>Cargar PRD y derivar requisitos REQ/AC</b><p>Edgar Coronel · <b>Vence: 9 ago.</b> Sin requisitos rastreables no hay matriz de trazabilidad ni Definition of Filed.</p></div></div>
+    <div class="al a-warn"><div class="ic">4</div><div><b>Recabar usuarios de GitHub e invitar colaboradores</b><p>Edgar Coronel · <b>Vence: 5 ago.</b> Dependencia externa: sin esto, CODEOWNERS no asigna revisores y nadie puede abrir PRs.</p></div></div>
+    <div class="al a-warn"><div class="ic">5</div><div><b>Publicar el contrato de API (OpenAPI)</b><p>Karla Monter · <b>Vence: 9 ago.</b> Desbloquea a las Células 2 y 3 para trabajar en paralelo con mocks.</p></div></div>
+    <div class="al a-info"><div class="ic">6</div><div><b>Activar branch protection</b><p>Edgar Coronel · Después de cargar el PRD y los 21 planes. Antes bloquearía la carga inicial.</p></div></div>
+  </div>
+</div>
+
+<!-- ALCANCE -->
+<div class="pane" id="p-al">
+  <div class="sec">
+    <h2>Alcance y arquitectura</h2>
+    <div class="d">Bronze y Silver nacionales · Gold, modelos y dashboards en 4 entidades vía parámetro de configuración.</div>
+    <div class="g2">
+      <div><h2 style="font-size:13px;margin-bottom:9px">Fuentes de datos</h2>
+        <table><thead><tr><th>ID</th><th>Fuente</th><th>Frecuencia</th><th>Cobertura</th></tr></thead><tbody id="tSrc"></tbody></table></div>
+      <div><h2 style="font-size:13px;margin-bottom:9px">Los 6 drivers</h2>
+        <table><thead><tr><th>ID</th><th>Driver</th><th>Cobertura</th></tr></thead><tbody id="tDrv"></tbody></table>
+        <div class="note">Donde no hay dato se marca <b>SIN_DATO</b> explícito, nunca cero ni nulo silencioso. El tablero DB-07 mapea los vacíos de información del país — la limitación convertida en hallazgo.</div></div>
+    </div>
+  </div>
+  <div class="sec"><h2>Portafolio de dashboards BI</h2><div class="d">10 tableros en Apache Superset — 2.5 puntos de la rúbrica.</div>
+    <table><thead><tr><th>ID</th><th>Dashboard</th></tr></thead><tbody id="tDb"></tbody></table></div>
+</div>
+
+</div></main>
+
+<script>
+const D = {"people": [{"n": "Edgar Edmundo Coronel Navarrete", "lvl": "Medio", "cell": 0, "cellName": "PO", "cellDesc": "Direccion de Proyecto", "role": "Lider de Proyecto / Product Owner", "tl": "PM", "file": "0-edgar-edmundo-coronel-navarrete.md", "st": [{"id": "US-001", "sp": "S1", "t": "Crear el repositorio nuevo y adaptar el vault"}, {"id": "US-002", "sp": "S1", "t": "Cargar el PRD del profesor con criterios de aceptacion"}, {"id": "US-003", "sp": "S1", "t": "Registrar a los 21 integrantes y crear sus Agent Contexts"}, {"id": "US-004", "sp": "S2", "t": "Sembrar y mantener la Traceability_Matrix"}, {"id": "US-005", "sp": "S4", "t": "Coordinar la rotacion del Vault Steward"}, {"id": "US-006", "sp": "S6", "t": "Preparar y ensayar el pitch de la demo en vivo"}]}, {"n": "Diana Aracely Alvarez Varela", "lvl": "Alto", "cell": 1, "cellName": "Celula 1", "cellDesc": "Data Engineering & Quality", "role": "Tech Lead · Data Engineering", "tl": "Diana Aracely Alvarez Varela", "file": "1-diana-aracely-alvarez-varela.md", "st": [{"id": "US-101", "sp": "S1", "t": "Disenar el modelo de datos medallon completo"}, {"id": "US-102", "sp": "S2", "t": "Construir el DAG maestro de orquestacion en Airflow"}, {"id": "US-103", "sp": "S3", "t": "Modelar la capa GOLD como esquema estrella"}, {"id": "US-104", "sp": "S3", "t": "Definir e implementar la tabla de features para ML"}, {"id": "US-105", "sp": "S3", "t": "Implementar la estrategia de cobertura parcial e indice de confianza"}, {"id": "US-106", "sp": "S5", "t": "Congelar esquema y documentar linaje completo"}]}, {"n": "Deni Garrido Fragoso", "lvl": "Medio", "cell": 1, "cellName": "Celula 1", "cellDesc": "Data Engineering & Quality", "role": "Ingeniera de datos · Transformaciones dbt", "tl": "Diana Aracely Alvarez Varela", "file": "1-deni-garrido-fragoso.md", "st": [{"id": "US-111", "sp": "S2", "t": "Implementar transformaciones Bronze -> Silver con dbt"}, {"id": "US-112", "sp": "S3", "t": "Implementar transformaciones Silver -> Gold con dbt"}, {"id": "US-113", "sp": "S3", "t": "Construir los cubos de agregacion"}, {"id": "US-114", "sp": "S5", "t": "Optimizar consultas y crear indices"}]}, {"n": "Luis Enrique Garcia Vazquez", "lvl": "Bajo", "cell": 1, "cellName": "Celula 1", "cellDesc": "Data Engineering & Quality", "role": "Ingeniero de datos jr · Extraccion de fuentes", "tl": "Diana Aracely Alvarez Varela", "file": "1-luis-enrique-garcia-vazquez.md", "st": [{"id": "US-121", "sp": "S1", "t": "Prueba de descarga real de las fuentes asignadas"}, {"id": "US-122", "sp": "S2", "t": "Escribir los extractores de sus fuentes"}, {"id": "US-123", "sp": "S3", "t": "Implementar validaciones con Great Expectations"}, {"id": "US-124", "sp": "S4", "t": "Generar los fixtures de prueba anonimizados"}]}, {"n": "Emilio Galnares Ruiz", "lvl": "Bajo", "cell": 1, "cellName": "Celula 1", "cellDesc": "Data Engineering & Quality", "role": "Ingeniero de datos jr · Calidad de datos", "tl": "Diana Aracely Alvarez Varela", "file": "1-emilio-galnares-ruiz.md", "st": [{"id": "US-121", "sp": "S1", "t": "Prueba de descarga real de las fuentes asignadas"}, {"id": "US-122", "sp": "S2", "t": "Escribir los extractores de sus fuentes"}, {"id": "US-123", "sp": "S3", "t": "Implementar validaciones con Great Expectations"}, {"id": "US-124", "sp": "S4", "t": "Generar los fixtures de prueba anonimizados"}]}, {"n": "Manuel Alejandro Serrania Reinada", "lvl": "Alto", "cell": 2, "cellName": "Celula 2", "cellDesc": "Analytics & Business Intelligence", "role": "Tech Lead · Analytics & BI", "tl": "Manuel Alejandro Serrania Reinada", "file": "2-manuel-alejandro-serrania-reinada.md", "st": [{"id": "US-201", "sp": "S1", "t": "Disenar el portafolio de 10 dashboards y el catalogo de KPIs"}, {"id": "US-202", "sp": "S3", "t": "Configurar Superset: conexion, datasets y capa semantica"}, {"id": "US-203", "sp": "S4", "t": "Construir DB-01 Ejecutivo y DB-02 Mapa de riesgo territorial"}, {"id": "US-204", "sp": "S4", "t": "Construir DB-06 Predicciones y DB-09 Recomendaciones prescriptivas"}, {"id": "US-205", "sp": "S5", "t": "Integrar y armonizar los 10 dashboards"}]}, {"n": "Marina Garcia del Buey", "lvl": "Medio", "cell": 2, "cellName": "Celula 2", "cellDesc": "Analytics & Business Intelligence", "role": "Analista BI · Dashboards ejecutivos", "tl": "Manuel Alejandro Serrania Reinada", "file": "2-marina-garcia-del-buey.md", "st": [{"id": "US-211", "sp": "S3", "t": "Modelar metricas y jerarquias para los cubos"}, {"id": "US-212", "sp": "S4", "t": "Construir DB-03 Ficha de escuela y DB-04 Comparador de municipios"}, {"id": "US-213", "sp": "S4", "t": "Construir DB-05 Analisis por driver y DB-08 Explorador del cubo"}, {"id": "US-214", "sp": "S5", "t": "Implementar filtros dinamicos globales y drill-down cruzado"}, {"id": "US-215", "sp": "S5", "t": "Pruebas de usabilidad y accesibilidad"}]}, {"n": "Monserrat Xcaret Miranda Olivas", "lvl": "Medio", "cell": 2, "cellName": "Celula 2", "cellDesc": "Analytics & Business Intelligence", "role": "Analista BI · Modelado semantico y cubos", "tl": "Manuel Alejandro Serrania Reinada", "file": "2-monserrat-xcaret-miranda-olivas.md", "st": [{"id": "US-211", "sp": "S3", "t": "Modelar metricas y jerarquias para los cubos"}, {"id": "US-212", "sp": "S4", "t": "Construir DB-03 Ficha de escuela y DB-04 Comparador de municipios"}, {"id": "US-213", "sp": "S4", "t": "Construir DB-05 Analisis por driver y DB-08 Explorador del cubo"}, {"id": "US-214", "sp": "S5", "t": "Implementar filtros dinamicos globales y drill-down cruzado"}, {"id": "US-215", "sp": "S5", "t": "Pruebas de usabilidad y accesibilidad"}]}, {"n": "Eloisa Gonzalez Rubio", "lvl": "Bajo", "cell": 2, "cellName": "Celula 2", "cellDesc": "Analytics & Business Intelligence", "role": "Analista BI jr · Graficos, mapas y KPIs", "tl": "Manuel Alejandro Serrania Reinada", "file": "2-eloisa-gonzalez-rubio.md", "st": [{"id": "US-221", "sp": "S3", "t": "Construir los graficos base de KPIs"}, {"id": "US-222", "sp": "S4", "t": "Construir DB-07 Calidad y cobertura de datos"}, {"id": "US-223", "sp": "S5", "t": "Construir DB-10 Monitor del pipeline"}, {"id": "US-224", "sp": "S5", "t": "Documentar el manual de usuario de los dashboards"}]}, {"n": "Andres Gonzalez Habib", "lvl": "Alto", "cell": 3, "cellName": "Celula 3", "cellDesc": "Machine Learning & AI Agent", "role": "Tech Lead · Machine Learning & Agente IA", "tl": "Andres Gonzalez Habib", "file": "3-andres-gonzalez-habib.md", "st": [{"id": "US-301", "sp": "S3", "t": "Disenar la estrategia de modelado y el protocolo de validacion"}, {"id": "US-302", "sp": "S4", "t": "Entrenar el Modelo 2 - Clasificacion de driver dominante"}, {"id": "US-303", "sp": "S4", "t": "Registrar los 3 modelos en MLflow y exponerlos via API"}, {"id": "US-304", "sp": "S5", "t": "Construir el agente conversacional RAG / Text-to-SQL"}]}, {"n": "Hector Rafael Morales Marban", "lvl": "Medio", "cell": 3, "cellName": "Celula 3", "cellDesc": "Machine Learning & AI Agent", "role": "Cientifico de datos · Modelos supervisados", "tl": "Andres Gonzalez Habib", "file": "3-hector-rafael-morales-marban.md", "st": [{"id": "US-311", "sp": "S4", "t": "Entrenar el Modelo 1 - Regresion de matricula"}, {"id": "US-312", "sp": "S5", "t": "Evaluar modelos y documentar metricas"}, {"id": "US-313", "sp": "S5", "t": "Integrar predicciones y recomendaciones a Gold"}]}, {"n": "Estefany Lucero Hernandez Loredo", "lvl": "Bajo", "cell": 3, "cellName": "Celula 3", "cellDesc": "Machine Learning & AI Agent", "role": "Analista ML jr · Clustering y features", "tl": "Andres Gonzalez Habib", "file": "3-estefany-lucero-hernandez-loredo.md", "st": [{"id": "US-321", "sp": "S4", "t": "Entrenar el Modelo 3 - Clustering de escuelas"}, {"id": "US-322", "sp": "S4", "t": "Analisis exploratorio y seleccion de variables"}, {"id": "US-323", "sp": "S5", "t": "Construir el set de evaluacion del agente"}]}, {"n": "Carlos Guillermo Mayorga Tapia", "lvl": "Bajo", "cell": 3, "cellName": "Celula 3", "cellDesc": "Machine Learning & AI Agent", "role": "Analista ML jr · Agente RAG y evaluacion", "tl": "Andres Gonzalez Habib", "file": "3-carlos-guillermo-mayorga-tapia.md", "st": [{"id": "US-321", "sp": "S4", "t": "Entrenar el Modelo 3 - Clustering de escuelas"}, {"id": "US-322", "sp": "S4", "t": "Analisis exploratorio y seleccion de variables"}, {"id": "US-323", "sp": "S5", "t": "Construir el set de evaluacion del agente"}]}, {"n": "Karla Alejandra Monter Benitez", "lvl": "Alto", "cell": 4, "cellName": "Celula 4", "cellDesc": "Backend, API & Seguridad", "role": "Tech Lead · Backend, API & Seguridad", "tl": "Karla Alejandra Monter Benitez", "file": "4-karla-alejandra-monter-benitez.md", "st": [{"id": "US-401", "sp": "S1", "t": "Definir y publicar el contrato de la API (OpenAPI)"}, {"id": "US-402", "sp": "S4", "t": "Implementar OAuth2 + JWT con refresh/access tokens"}, {"id": "US-403", "sp": "S4", "t": "Implementar RBAC con los 2 roles del PRD"}, {"id": "US-404", "sp": "S5", "t": "Hardening de la API"}]}, {"n": "Christian Imanol Ruiz Hurtado", "lvl": "Medio", "cell": 4, "cellName": "Celula 4", "cellDesc": "Backend, API & Seguridad", "role": "Desarrollador backend · Endpoints y RBAC", "tl": "Karla Alejandra Monter Benitez", "file": "4-christian-imanol-ruiz-hurtado.md", "st": [{"id": "US-411", "sp": "S3", "t": "Implementar los endpoints de datos sobre Gold"}, {"id": "US-413", "sp": "S5", "t": "Endpoints administrativos protegidos"}, {"id": "US-414", "sp": "S5", "t": "Documentar la API en OpenAPI y publicar la coleccion"}]}, {"n": "Juan Carlos Macias Mayen", "lvl": "Medio", "cell": 4, "cellName": "Celula 4", "cellDesc": "Backend, API & Seguridad", "role": "Desarrollador backend · Inferencia ML y contratos de API", "tl": "Karla Alejandra Monter Benitez", "file": "4-juan-carlos-macias-mayen.md", "st": [{"id": "US-412", "sp": "S4", "t": "Implementar los endpoints de inferencia ML"}, {"id": "US-415", "sp": "S4", "t": "Implementar el contrato de datos entre API y modelos"}, {"id": "US-416", "sp": "S5", "t": "Implementar cache y manejo de errores de inferencia"}]}, {"n": "Oscar Antonio Quiroz Lazaro", "lvl": "Bajo", "cell": 4, "cellName": "Celula 4", "cellDesc": "Backend, API & Seguridad", "role": "Desarrollador jr · Pruebas de API", "tl": "Karla Alejandra Monter Benitez", "file": "4-oscar-antonio-quiroz-lazaro.md", "st": [{"id": "US-421", "sp": "S3", "t": "Implementar el esqueleto de FastAPI y healthcheck"}, {"id": "US-422", "sp": "S4", "t": "Escribir pruebas unitarias y de integracion de la API"}, {"id": "US-423", "sp": "S5", "t": "Pruebas de seguridad de la autenticacion"}]}, {"n": "Luis Tellez Dominguez", "lvl": "Medio", "cell": 5, "cellName": "Celula 5", "cellDesc": "Cloud Infrastructure & DevOps", "role": "Tech Lead · Cloud & DevOps", "tl": "Luis Tellez Dominguez", "file": "5-luis-tellez-dominguez.md", "st": [{"id": "US-501", "sp": "S1", "t": "Desplegar el 'hola mundo' en GCP con URL publica"}, {"id": "US-502", "sp": "S2", "t": "Disenar el docker-compose completo del ecosistema"}, {"id": "US-503", "sp": "S2", "t": "Configurar el pipeline de CI en GitHub Actions"}, {"id": "US-504", "sp": "S4", "t": "Aprovisionar Cloud SQL, Artifact Registry y secretos"}, {"id": "US-505", "sp": "S6", "t": "Despliegue final productivo y verificacion"}]}, {"n": "Edgar Ulises Jimenez Lopez", "lvl": "Bajo", "cell": 5, "cellName": "Celula 5", "cellDesc": "Cloud Infrastructure & DevOps", "role": "DevOps jr · Contenedores", "tl": "Luis Tellez Dominguez", "file": "5-edgar-ulises-jimenez-lopez.md", "st": [{"id": "US-521", "sp": "S1", "t": "Preparar la guia de ambiente local reproducible"}, {"id": "US-522", "sp": "S3", "t": "Contenerizar los servicios asignados"}, {"id": "US-523", "sp": "S3", "t": "Configurar branch protection y quality gates"}, {"id": "US-524", "sp": "S5", "t": "Configurar monitoreo, logs y alertas"}, {"id": "US-525", "sp": "S6", "t": "Ejecutar y documentar el runbook de rollback"}]}, {"n": "Alejandro Velazquez Mendoza", "lvl": "Bajo", "cell": 5, "cellName": "Celula 5", "cellDesc": "Cloud Infrastructure & DevOps", "role": "DevOps jr · Ambientes y despliegue", "tl": "Luis Tellez Dominguez", "file": "5-alejandro-velazquez-mendoza.md", "st": [{"id": "US-521", "sp": "S1", "t": "Preparar la guia de ambiente local reproducible"}, {"id": "US-522", "sp": "S3", "t": "Contenerizar los servicios asignados"}, {"id": "US-523", "sp": "S3", "t": "Configurar branch protection y quality gates"}, {"id": "US-524", "sp": "S5", "t": "Configurar monitoreo, logs y alertas"}, {"id": "US-525", "sp": "S6", "t": "Ejecutar y documentar el runbook de rollback"}]}, {"n": "Edward Ulysses Ruiz Bustillos", "lvl": "Bajo", "cell": 5, "cellName": "Celula 5", "cellDesc": "Cloud Infrastructure & DevOps", "role": "DevOps jr · Monitoreo y documentacion", "tl": "Luis Tellez Dominguez", "file": "5-edward-ulysses-ruiz-bustillos.md", "st": [{"id": "US-521", "sp": "S1", "t": "Preparar la guia de ambiente local reproducible"}, {"id": "US-522", "sp": "S3", "t": "Contenerizar los servicios asignados"}, {"id": "US-523", "sp": "S3", "t": "Configurar branch protection y quality gates"}, {"id": "US-524", "sp": "S5", "t": "Configurar monitoreo, logs y alertas"}, {"id": "US-525", "sp": "S6", "t": "Ejecutar y documentar el runbook de rollback"}]}], "sprints": [{"c": "S1", "d": "Lun 3 - Dom 9 ago", "f": "Cimientos, fuentes y despliegue temprano"}, {"c": "S2", "d": "Lun 10 - Dom 16 ago", "f": "Ingesta continua y capa Bronze"}, {"c": "S3", "d": "Lun 17 - Dom 23 ago", "f": "Silver, Gold, Great Expectations y cubos"}, {"c": "S4", "d": "Lun 24 - Dom 30 ago", "f": "Modelos ML, FastAPI, Auth y Dashboards"}, {"c": "S5", "d": "Lun 31 ago - Dom 6 sep", "f": "Agente RAG, integracion y CODE FREEZE"}, {"c": "S6", "d": "Lun 7 - Mar 8 sep", "f": "Pruebas finales, seguridad, GCP y ensayo"}], "cells": {"0": {"name": "PO", "desc": "Direccion de Proyecto", "pts": "0.5 pts (equipo, Git, documentacion)"}, "1": {"name": "Celula 1", "desc": "Data Engineering & Quality", "pts": "2.5 pts"}, "2": {"name": "Celula 2", "desc": "Analytics & Business Intelligence", "pts": "2.5 pts"}, "3": {"name": "Celula 3", "desc": "Machine Learning & AI Agent", "pts": "1.5 + 0.5 pts"}, "4": {"name": "Celula 4", "desc": "Backend, API & Seguridad", "pts": "1.5 pts"}, "5": {"name": "Celula 5", "desc": "Cloud Infrastructure & DevOps", "pts": "1.0 pt"}}, "crit": ["US-501", "US-121", "US-101", "US-401", "US-102", "US-103", "US-104", "US-302", "US-303", "US-203", "US-505"], "drivers": [{"id": "D1", "n": "Pobreza y rezago social", "src": "CONEVAL + CONAPO", "cov": "Nacional"}, {"id": "D2", "n": "Inseguridad del entorno", "src": "SESNSP", "cov": "Nacional"}, {"id": "D3", "n": "Infraestructura escolar", "src": "CEMABE (agua, drenaje, luz, sanitarios)", "cov": "Nacional · nivel escuela"}, {"id": "D4", "n": "Conectividad digital", "src": "CEMABE (internet/computadoras)", "cov": "Nacional · nivel escuela"}, {"id": "D5", "n": "Estres hidrico regional", "src": "CONAGUA SINA", "cov": "Regional"}, {"id": "D6", "n": "Calidad del aire", "src": "SINAICA", "cov": "~80 zonas urbanas"}], "dashboards": [{"id": "DB-01", "n": "Ejecutivo / Home"}, {"id": "DB-02", "n": "Mapa de riesgo territorial"}, {"id": "DB-03", "n": "Ficha de escuela"}, {"id": "DB-04", "n": "Comparador de municipios"}, {"id": "DB-05", "n": "Analisis por driver"}, {"id": "DB-06", "n": "Predicciones y escenarios"}, {"id": "DB-07", "n": "Calidad y cobertura de datos"}, {"id": "DB-08", "n": "Explorador del cubo (pivot)"}, {"id": "DB-09", "n": "Recomendaciones prescriptivas"}, {"id": "DB-10", "n": "Monitor del pipeline"}], "sources": [{"id": "DS-01", "n": "SEP · Formato 911 (SIGED / datos.gob.mx)", "f": "Anual (ciclo escolar)", "cov": "Nacional"}, {"id": "DS-02", "n": "SEP · Catalogo CCT", "f": "Continua", "cov": "Nacional"}, {"id": "DS-03", "n": "SEP · CEMABE", "f": "Censo 2013", "cov": "Nacional"}, {"id": "DS-04", "n": "SESNSP · Incidencia delictiva municipal", "f": "MENSUAL (dia 20)", "cov": "Nacional"}, {"id": "DS-05", "n": "SINAICA / INECC · Calidad del aire", "f": "HORARIA (API JSON)", "cov": "~80 zonas urbanas"}, {"id": "DS-06", "n": "CONAGUA · SINA", "f": "DIARIA", "cov": "Regional"}, {"id": "DS-07", "n": "CONEVAL · Rezago social y pobreza municipal", "f": "Bienal/quinquenal", "cov": "Nacional"}, {"id": "DS-08", "n": "CONAPO · Proyecciones de poblacion", "f": "Anual", "cov": "Nacional"}]};
+const SPI = {S1:0,S2:1,S3:2,S4:3,S5:4,S6:5};
+
+// countdown
+const demo=new Date(2026,8,9), hoy=new Date();
+document.getElementById('dd').textContent=Math.max(0,Math.ceil((demo-hoy)/864e5));
+const tot=D.people.reduce((a,p)=>a+p.st.length,0);
+document.getElementById('k2').textContent=tot;
+
+// sprint actual
+let cur=0; const starts=[new Date(2026,7,3),new Date(2026,7,10),new Date(2026,7,17),new Date(2026,7,24),new Date(2026,7,31),new Date(2026,8,7)];
+starts.forEach((s,i)=>{if(hoy>=s)cur=i;});
+document.getElementById('spInfo').textContent=D.sprints[cur].c+' · '+D.sprints[cur].d+' · '+D.sprints[cur].f;
+
+// nav
+document.querySelectorAll('.nv button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.nv button').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); document.getElementById('p-'+b.dataset.p).classList.add('on');
+});
+
+const lvlTag=l=>`<span class="tag t-${l.toLowerCase()}">${l}</span>`;
+
+// tabla celulas
+const cellAgg={};
+D.people.forEach(p=>{const k=p.cell;cellAgg[k]=cellAgg[k]||{n:0,h:0,name:p.cellName,desc:p.cellDesc};cellAgg[k].n++;cellAgg[k].h+=p.st.length;});
+document.getElementById('tCell').innerHTML=Object.keys(cellAgg).sort().map(k=>
+ `<tr><td><b>${cellAgg[k].name}</b><br><span style="font-size:11px;color:var(--mut)">${cellAgg[k].desc}</span></td>
+  <td class="mono">${cellAgg[k].n}</td><td class="mono">${cellAgg[k].h}</td><td class="mono">${D.cells[k].pts}</td></tr>`).join('');
+
+// tabla niveles
+const lv={};D.people.forEach(p=>{lv[p.lvl]=lv[p.lvl]||{n:0,h:0};lv[p.lvl].n++;lv[p.lvl].h+=p.st.length;});
+document.getElementById('tLvl').innerHTML=['Alto','Medio','Bajo'].filter(l=>lv[l]).map(l=>
+ `<tr><td>${lvlTag(l)}</td><td class="mono">${lv[l].n}</td><td class="mono">${lv[l].h}</td><td class="mono">${(lv[l].h/lv[l].n).toFixed(1)}</td></tr>`).join('');
+
+// GANTT
+const rows=[
+ {l:'Célula 5 · Cloud/DevOps',s:'Habilita a todas',b:[[0,'b5','Deploy'],[1,'b1','Docker+CI'],[2,'b1',''],[3,'b1','Cloud SQL'],[4,'b1',''],[5,'b5','Deploy final']]},
+ {l:'Célula 1 · Data Eng',s:'Ruta crítica',b:[[0,'b5','Fuentes'],[1,'b1','Bronze'],[2,'b5','Silver+Gold'],[3,'b3','Soporte'],[4,'b1','Freeze'],[5,'b4','']]},
+ {l:'Célula 4 · Backend',s:'Desbloquea 2 y 3',b:[[0,'b5','API spec'],[1,'b3',''],[2,'b1','Endpoints'],[3,'b5','OAuth+RBAC'],[4,'b1','Hardening'],[5,'b4','']]},
+ {l:'Célula 3 · ML & Agente',s:'Corazón prescriptivo',b:[[0,'b3','Marco'],[1,'b3','Features'],[2,'b1','Estrategia'],[3,'b5','3 modelos'],[4,'b5','Agente RAG'],[5,'b4','']]},
+ {l:'Célula 2 · BI',s:'Escaparate',b:[[0,'b3','Diseño'],[1,'b3','Mockups'],[2,'b1','Superset'],[3,'b5','Dashboards'],[4,'b1','Integración'],[5,'b4','']]},
+ {l:'PM · Gobernanza',s:'Transversal',b:[[0,'b5','PRD+vault'],[1,'b1','Matriz'],[2,'b1',''],[3,'b1',''],[4,'b1',''],[5,'b5','Pitch']]}];
+document.getElementById('gantt').innerHTML=rows.map(r=>{
+ let c=Array(6).fill('<div class="gc"></div>');
+ r.b.forEach(([i,cl,tx])=>c[i]=`<div class="gc"><div class="gb ${cl}">${tx}</div></div>`);
+ return `<div class="gr"><div class="gl">${r.l}<small>${r.s}</small></div>${c.join('')}</div>`;}).join('');
+
+// sprint actual tabla
+const spCode=D.sprints[cur].c;
+let sr=[];D.people.forEach(p=>p.st.filter(s=>s.sp===spCode).forEach(s=>sr.push({...s,p})));
+document.getElementById('tSprint').innerHTML=sr.length?sr.map(s=>
+ `<tr><td class="mono">${s.id}</td><td>${s.t}</td><td>${s.p.n}</td><td class="mono">${s.p.cellName}</td>
+  <td>${D.crit.includes(s.id)?'<span class="tag t-crit">CRÍTICA</span>':''}</td>
+  <td><span class="pill p-n">Por iniciar</span></td></tr>`).join(''):'<tr><td colspan="6">Sin historias — sprint de cierre y estabilización.</td></tr>';
+
+// equipo
+document.getElementById('tTeam').innerHTML=D.people.map(p=>{
+ const crit=p.st.filter(s=>D.crit.includes(s.id)).length;
+ const rev=p.role.includes('Tech Lead')?'Edgar Coronel (PM)':(p.cell===0?'Linter / CI':p.tl.split(' ')[0]+' → PM');
+ return `<tr><td><b>${p.n}</b>${crit?' <span class="tag t-crit">'+crit+' crítica'+(crit>1?'s':'')+'</span>':''}</td>
+ <td>${lvlTag(p.lvl)}</td><td class="mono">${p.cellName}</td><td style="font-size:12px;color:var(--mut)">${p.role}</td>
+ <td class="mono">${p.st.length}</td><td style="font-size:11.5px">${rev}</td>
+ <td><div class="bar"><i style="width:0%"></i></div></td></tr>`;}).join('');
+
+// selector persona
+const sel=document.getElementById('sel');
+sel.innerHTML=D.people.map((p,i)=>`<option value="${i}">${p.n} — ${p.cellName} (${p.lvl})</option>`).join('');
+function renderPer(i){
+ const p=D.people[i];
+ const bySp={};p.st.forEach(s=>{(bySp[s.sp]=bySp[s.sp]||[]).push(s);});
+ const rev=p.role.includes('Tech Lead')?'Edgar Coronel (PM)':(p.cell===0?'Linter / CI':`${p.tl} (técnica) → Edgar Coronel (proceso)`);
+ let h=`<table style="margin-bottom:16px"><tbody>
+  <tr><th style="width:170px">Rol</th><td>${p.role}</td></tr>
+  <tr><th>Nivel</th><td>${lvlTag(p.lvl)}</td></tr>
+  <tr><th>Célula</th><td>${p.cellName} — ${p.cellDesc}</td></tr>
+  <tr><th>Quién revisa su código</th><td>${rev}</td></tr>
+  <tr><th>Carga total</th><td class="mono">${p.st.length} historias</td></tr>
+  <tr><th>Plan individual</th><td class="mono">12_Roadmap_Sprints/Sprints/${p.file}</td></tr></tbody></table>`;
+ h+='<div class="gantt"><div class="gh"><div>Sprint</div><div>S1</div><div>S2</div><div>S3</div><div>S4</div><div>S5</div><div>S6</div></div>';
+ h+=p.st.map(s=>{let c=Array(6).fill('<div class="gc"></div>');
+   c[SPI[s.sp]]=`<div class="gc"><div class="gb ${D.crit.includes(s.id)?'b5':'b1'}">${s.sp}</div></div>`;
+   return `<div class="gr"><div class="gl mono" style="font-size:11px">${s.id}<small>${s.t.slice(0,34)}</small></div>${c.join('')}</div>`;}).join('');
+ h+='</div>';
+ h+='<table style="margin-top:16px"><thead><tr><th>ID</th><th>Sprint</th><th>Historia</th><th>Prioridad</th><th>Estado</th></tr></thead><tbody>';
+ h+=p.st.map(s=>`<tr><td class="mono">${s.id}</td><td class="mono">${s.sp}</td><td>${s.t}</td>
+   <td>${D.crit.includes(s.id)?'<span class="tag t-crit">CRÍTICA</span>':'<span class="pill p-n">Normal</span>'}</td>
+   <td><span class="pill p-n">Por iniciar</span></td></tr>`).join('');
+ h+='</tbody></table>';
+ document.getElementById('perOut').innerHTML=h;
+}
+sel.onchange=e=>renderPer(+e.target.value); renderPer(0);
+
+// ruta critica
+const owner={};D.people.forEach(p=>p.st.forEach(s=>owner[s.id]={n:p.n,sp:s.sp,t:s.t,c:p.cellName}));
+document.getElementById('cpOut').innerHTML=D.crit.map((id,i)=>{
+ const o=owner[id];if(!o)return'';
+ return `<div class="cpi"><div class="cpn">${i+1}</div>
+ <div><b>${o.t}</b><div class="m">${o.n} · ${o.c} · <span class="mono">${id}</span></div></div>
+ <div class="mono" style="color:var(--hot);font-weight:600">${o.sp}</div></div>`;}).join('');
+
+// alcance
+document.getElementById('tSrc').innerHTML=D.sources.map(s=>`<tr><td class="mono">${s.id}</td><td>${s.n}</td><td class="mono" style="font-size:11px">${s.f}</td><td style="font-size:11.5px">${s.cov}</td></tr>`).join('');
+document.getElementById('tDrv').innerHTML=D.drivers.map(d=>`<tr><td class="mono">${d.id}</td><td>${d.n}<br><span style="font-size:11px;color:var(--mut)">${d.src}</span></td><td style="font-size:11.5px">${d.cov}</td></tr>`).join('');
+document.getElementById('tDb').innerHTML=D.dashboards.map(d=>`<tr><td class="mono">${d.id}</td><td>${d.n}</td></tr>`).join('');
+</script>
+</body></html>

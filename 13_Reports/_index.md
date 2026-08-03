@@ -12,6 +12,7 @@ tags: [moc, reports]
 
 | Documento | Contenido |
 |---|---|
+| [`TABLERO_CONTROL_PM.html`](TABLERO_CONTROL_PM.html) | **Tablero de Control del Proyecto (PM)** — dashboard HTML de seguimiento del avance. Owner: Edgar Edmundo Coronel Navarrete. |
 | [[13_Reports/Executive_Dashboard_template]] | Plantilla de reporte ejecutivo |
 | [[13_Reports/Audit_Report_template]] | Plantilla de auditoría |
 

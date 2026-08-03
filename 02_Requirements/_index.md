@@ -13,6 +13,6 @@ tags: [moc, requirements]
 | Documento | Contenido |
 |---|---|
 | [[02_Requirements/Requirements_General]] | Requisitos de alto nivel (por épica/capacidad) |
-| [[02_Requirements/Requirements_Detailed]] | Requisitos detallados `REQ-###` |
+| [[02_Requirements/Requirements_Detailed]] | Requisitos detallados `REQ-001`…`REQ-007` (uno por módulo de rúbrica) + criterios `AC-###` |
 | [[02_Requirements/User_Stories]] | Historias `US-###` + criterios de aceptación |
 | [[02_Requirements/Traceability_Matrix]] | ⭐ Matriz viva REQ→…→Release |

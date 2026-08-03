@@ -21,6 +21,7 @@ Toda sesión con IA **debe** generar una entrada de DevLog **antes del push** (p
 | Fecha | Descripción | Autor | Agente/Modelo | IDs tocados |
 |---|---|---|---|---|
 | 2026-08-01 | (ejemplo) inicialización | Edgar Edmundo Coronel Navarrete | Claude Code | — |
+| [[_DevLog/2026-08-02-edgar-edmundo-coronel-navarrete\|2026-08-02]] | Frontmatter PRD-GENERAL, redacción PRD FARO e índice 01_Product | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | PRD-GENERAL, PRD, MOC-01 |
 
 ## Campos del frontmatter
 | Campo | Obligatorio |
