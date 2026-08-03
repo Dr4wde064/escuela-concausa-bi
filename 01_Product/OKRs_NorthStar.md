@@ -1,18 +1,18 @@
 ---
 id: DOC-OKR
-title: "OKRs & North Star"
+title: "OKRs & Nuestro Faro"
 owner: "Edgar Edmundo Coronel Navarrete"
 status: draft
 traces_up: ["PRD#2"]
 tags: [product, okr, metrics]
 ---
 
-# OKRs & North Star — FARO
+# OKRs & Nuestro Faro — FARO
 
 > → [[01_Product/_index]]
 
-## North Star Metric
-**{{NORTH_STAR}}** — <definición y por qué>
+## Nuestro Faro (métrica estrella)
+**Que ninguna escuela pierda alumnos por una causa que pudimos anticipar y nombrar** — <definición y por qué>
 
 ## OKRs del ciclo
 | Objetivo | Key Result | Meta | Actual |

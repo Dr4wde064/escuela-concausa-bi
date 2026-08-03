@@ -1,3 +1,14 @@
+---
+id: DOC-CLAUDE
+title: "CLAUDE.md — Contexto del proyecto para agentes de IA"
+owner: "Edgar Edmundo Coronel Navarrete"
+status: approved
+version: "1.0"
+source_of_truth: true
+traces_up: ["00_Start_Here/PROJECT_INDEX"]
+tags: [ai-governance, context, meta]
+---
+
 # CLAUDE.md — Contexto del proyecto para agentes de IA
 
 > Este archivo lo lee Claude Code automáticamente al abrir el repositorio.

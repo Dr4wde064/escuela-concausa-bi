@@ -13,5 +13,5 @@ tags: [moc, product]
 | Documento | Contenido |
 |---|---|
 | [[01_Product/PRD]] | Product Requirements Document (fuente de verdad) |
-| [[01_Product/OKRs_NorthStar]] | Métrica estrella y OKRs |
+| [[01_Product/OKRs_NorthStar]] | Nuestro Faro y OKRs |
 | [[01_Product/Personas]] | Personas y casos de uso |

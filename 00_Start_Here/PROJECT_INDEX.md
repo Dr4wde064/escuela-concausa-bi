@@ -12,12 +12,13 @@ tags: [index, moc]
 # FARO — Índice del Proyecto (MOC maestro)
 
 > Punto de entrada único al vault. Desde aquí llegas a todo.
-> **North Star:** {{NORTH_STAR}} · **PM:** Edgar Edmundo Coronel Navarrete
+> **Nuestro Faro:** Que ninguna escuela pierda alumnos por una causa que pudimos anticipar y nombrar · **PM:** Edgar Edmundo Coronel Navarrete
 
 ## 🚀 Empieza aquí
 - [[00_Start_Here/Developer_Onboarding]] — configurar entorno y flujo
 - [[00_Start_Here/How_To_Navigate]] — cómo se organiza y enlaza el vault
 - [[00_Start_Here/Glossary]] — términos del dominio
+- [[CLAUDE]] — contexto del proyecto para agentes de IA (Claude Code)
 - [[00_Start_Here/Vault_Changelog]] — cambios del vault
 
 ## 🧭 Ciclo de vida (carpetas)
