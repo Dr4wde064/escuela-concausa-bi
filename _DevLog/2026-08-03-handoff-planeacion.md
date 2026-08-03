@@ -19,11 +19,14 @@ tags: [devlog, handoff, planeacion]
   requisitos, fuentes, historias, gobernanza de IA y modelo de datos) antes de escribir código.
 - **Current branch:** `main`. **Los cambios NO están en una rama de PR todavía** (hay cambios sin
   commitear; ver §Risks). El PR se hará cuando todo esté listo para arrancar, por decisión del PM.
-- **Latest graph status:** **sin grafo aún** — `graphify-out/` no existe y `graphify` no está en el
-  PATH. Está configurada la automatización (`.github/workflows/update-project-graph.yml`,
-  `.graphifyignore`) pero aún no se ha corrido `graphify update`.
-- **Relevant Graphify queries:** ninguna (grafo no generado). Al existir, empezar por
-  `graphify explain "03_Architecture/Data_Model"` y `graphify query "que alimenta features_escuela"`.
+- **Latest graph status:** **grafo parcial (`--code-only`)** generado con **Graphify v0.9.32** (instalado
+  vía `pipx`). Automatización ya configurada (`.github/workflows/update-project-graph.yml`,
+  `.graphifyignore`). El **grafo completo (docs + código) queda pendiente para el Sprint 2**, cuando
+  exista código real en `src/`: hoy solo hay **1 archivo de código** y grafar los **75 documentos**
+  exigiría API key y consumo de tokens sin aportar valor todavía.
+- **Relevant Graphify queries:** ninguna aún de valor (el grafo `--code-only` cubre 1 archivo). Cuando
+  haya código en `src/`, empezar por `graphify explain "03_Architecture/Data_Model"` y
+  `graphify query "que alimenta features_escuela"`.
 - **Files changed (por área, lo cerrado hoy):**
   - **Producto:** `01_Product/PRD_General_Materia.md` (frontmatter `PRD-GENERAL`), `01_Product/PRD.md`
     (PRD FARO completo y autosuficiente), `01_Product/_index.md`.
@@ -65,9 +68,13 @@ tags: [devlog, handoff, planeacion]
   - `git status` → cambios sin commitear de la sesión (planeación + apuntadores multi-LLM); pendientes
     de rama + PR.
 - **Next recommended action:**
-  1. Falta por planear: `03_Architecture/System_Design.md`, `API_Specification.md`, primer(os) **ADR**,
-     y la **Traceability_Matrix** (se siembra al final, cuando existan todos los artefactos a enlazar).
-  2. Cuando todo esté Filed y el linter verde: **DevLog de cierre + rama `docs/...` + PR** (nunca push
+  1. Falta por planear: `03_Architecture/System_Design.md`, primer(os) **ADR**, y la
+     **Traceability_Matrix** (se siembra al final, cuando existan todos los artefactos a enlazar).
+     *(`API_Specification.md` ya quedó cerrado — US-401.)*
+  2. **Graphify:** grafo `--code-only` ya generado con v0.9.32 (pipx). **Correr el grafo completo
+     (docs + código) hasta el Sprint 2**, cuando haya código real en `src/`; hoy no aporta valor (1
+     archivo de código, 75 docs, requeriría API key y tokens).
+  3. Cuando todo esté Filed y el linter verde: **DevLog de cierre + rama `docs/...` + PR** (nunca push
      directo a `main`).
 
 ## Estado de "lo cerrado hoy" (checklist)
@@ -80,9 +87,10 @@ tags: [devlog, handoff, planeacion]
 - [x] **21 Agent Contexts** con scope 🟢/🟡/🔴 por persona
 - [x] `Data_Model.md` — arquitectura medallón completa (US-101)
 - [x] `AGENTS.md` registrado en el índice del proyecto
-- [x] Graphify configurado (workflow + `.graphifyignore`) — grafo aún sin generar
+- [x] Graphify v0.9.32 instalado (pipx) + configurado (workflow + `.graphifyignore`); grafo `--code-only` generado. Grafo completo → Sprint 2 (cuando haya código en `src/`)
 - [x] Apuntadores multi-LLM consistentes (`GEMINI.md` con frontmatter, `.cursorrules` y `copilot-instructions.md` documentados; tabla en AGENTS.md §1.bis)
 - [x] `vault_lint` verde
-- [ ] System_Design · API_Specification · ADRs
+- [x] API_Specification (US-401) — contrato que desbloquea a C2 y C3
+- [ ] System_Design · ADRs
 - [ ] Traceability_Matrix sembrada
 - [ ] DevLog de cierre + rama + PR

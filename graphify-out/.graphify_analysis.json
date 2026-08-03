@@ -38,7 +38,7 @@
     },
     {
       "id": "meta_scripts_vault_lint_rationale_37",
-      "label": "Quita bloques y spans de c\u00f3digo para no leer links de ejemplo.",
+      "label": "Quita bloques y spans de código para no leer links de ejemplo.",
       "degree": 1
     }
   ],
@@ -52,11 +52,19 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
-      "note": "Bridges community 1 \u2192 community 0"
+      "note": "Bridges community 1 → community 0"
     }
   ],
-  "tokens": {
-    "input": 0,
-    "output": 0
-  }
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `strip_code()` connect `strip_code` to `vault_lint.py`?",
+      "why": "High betweenness centrality (0.400) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `main()` connect `vault_lint.py` to `strip_code`?",
+      "why": "High betweenness centrality (0.250) - this node is a cross-community bridge."
+    }
+  ]
 }

@@ -9,9 +9,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint",
       "community": 0,
-      "norm_label": "vault_lint.py"
+      "norm_label": "vault_lint.py",
+      "id": "meta_scripts_vault_lint",
+      "community_name": "vault_lint.py"
     },
     {
       "label": "find_md()",
@@ -19,9 +20,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint_find_md",
       "community": 0,
-      "norm_label": "find_md()"
+      "norm_label": "find_md()",
+      "id": "meta_scripts_vault_lint_find_md",
+      "community_name": "vault_lint.py"
     },
     {
       "label": "strip_code()",
@@ -29,9 +31,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint_strip_code",
       "community": 1,
-      "norm_label": "strip_code()"
+      "norm_label": "strip_code()",
+      "id": "meta_scripts_vault_lint_strip_code",
+      "community_name": "strip_code"
     },
     {
       "label": "stem()",
@@ -39,9 +42,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint_stem",
       "community": 0,
-      "norm_label": "stem()"
+      "norm_label": "stem()",
+      "id": "meta_scripts_vault_lint_stem",
+      "community_name": "vault_lint.py"
     },
     {
       "label": "main()",
@@ -49,9 +53,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint_main",
       "community": 0,
-      "norm_label": "main()"
+      "norm_label": "main()",
+      "id": "meta_scripts_vault_lint_main",
+      "community_name": "vault_lint.py"
     },
     {
       "label": "Quita bloques y spans de c\u00f3digo para no leer links de ejemplo.",
@@ -59,9 +64,10 @@
       "source_file": "_Meta/scripts/vault_lint.py",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "meta_scripts_vault_lint_rationale_37",
       "community": 1,
-      "norm_label": "quita bloques y spans de codigo para no leer links de ejemplo."
+      "norm_label": "quita bloques y spans de codigo para no leer links de ejemplo.",
+      "id": "meta_scripts_vault_lint_rationale_37",
+      "community_name": "strip_code"
     }
   ],
   "links": [
@@ -72,9 +78,9 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint",
-      "target": "meta_scripts_vault_lint_find_md",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_find_md"
     },
     {
       "relation": "contains",
@@ -83,9 +89,9 @@
       "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint",
-      "target": "meta_scripts_vault_lint_main",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_main"
     },
     {
       "relation": "contains",
@@ -94,9 +100,9 @@
       "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint",
-      "target": "meta_scripts_vault_lint_stem",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_stem"
     },
     {
       "relation": "contains",
@@ -105,9 +111,9 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint",
-      "target": "meta_scripts_vault_lint_strip_code",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_strip_code"
     },
     {
       "relation": "calls",
@@ -117,9 +123,9 @@
       "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint_main",
-      "target": "meta_scripts_vault_lint_find_md",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_find_md"
     },
     {
       "relation": "calls",
@@ -129,9 +135,9 @@
       "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint_main",
-      "target": "meta_scripts_vault_lint_strip_code",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_strip_code"
     },
     {
       "relation": "rationale_for",
@@ -140,9 +146,9 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint_rationale_37",
-      "target": "meta_scripts_vault_lint_strip_code",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_strip_code"
     },
     {
       "relation": "calls",
@@ -152,11 +158,11 @@
       "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "meta_scripts_vault_lint_main",
-      "target": "meta_scripts_vault_lint_stem",
-      "confidence_score": 1.0
+      "target": "meta_scripts_vault_lint_stem"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a5c49227ec1c10fc782351d44f58dda47c4d0812"
+  "built_at_commit": "c826afa825199128fe6e69442ff4e2dc9ff1d49a"
 }
