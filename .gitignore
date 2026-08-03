@@ -56,3 +56,4 @@ Thumbs.db
 graphify-out/cost.json
 graphify-out/.cache/
 graphify-out/*.tmp
+setup_proyecto.sh
