@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-ESTEFANY-HERNANDEZ
-title: "Agent Context — Estefany Lucero Hernandez Loredo"
-owner: "Estefany Lucero Hernandez Loredo"
+title: "Agent Context — Estefany Lucero Hernández Loredo"
+owner: "Estefany Lucero Hernández Loredo"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/3-estefany-lucero-hernandez-loredo"]
 tags: [ai, agent-context, ownership, celula-3]
 ---
 
-# Agent Context — Estefany Lucero Hernandez Loredo
+# Agent Context — Estefany Lucero Hernández Loredo
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,12 +19,12 @@ tags: [ai, agent-context, ownership, celula-3]
 
 | | |
 |---|---|
-| **Nombre** | Estefany Lucero Hernandez Loredo |
+| **Nombre** | Estefany Lucero Hernández Loredo |
 | **Célula** | Celula 3 — Machine Learning & AI Agent |
 | **Nivel** | Bajo |
 | **Rol** | Analista ML jr · Clustering y features |
-| **Tech Lead de la célula** | Andres Gonzalez Habib |
-| **Quién revisa su código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Andrés González Habib |
+| **Quién revisa su código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-003 (3 modelos de ML) y REQ-006 (agente conversacional) |
 
 ---

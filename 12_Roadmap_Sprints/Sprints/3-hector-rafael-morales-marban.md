@@ -1,7 +1,7 @@
 ---
 id: SPRINT-HECTOR-RAFAEL-MORALES-MA
-title: "Plan de Sprints — Hector Rafael Morales Marban"
-owner: "Hector Rafael Morales Marban"
+title: "Plan de Sprints — Héctor Rafael Morales Marbán"
+owner: "Héctor Rafael Morales Marbán"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-3, nivel-medio]
 ---
 
 # FARO · Plan de trabajo individual
-## Hector Rafael Morales Marban
+## Héctor Rafael Morales Marbán
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 3 — Machine Learning & AI Agent · **Peso en rúbrica:** 1.5 + 0.5 pts
 > **Rol:** Cientifico de datos · Modelos supervisados · **Nivel asignado:** Medio
-> **Tech Lead de tu célula:** Andres Gonzalez Habib
+> **Tech Lead de tu célula:** Andrés González Habib
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 |---|---|
 | **Recibes de (inputs)** | `gold.features_escuela` de la **Célula 1** · MLflow desplegado por la **Célula 5** |
 | **Entregas a (outputs)** | **Célula 4** (modelos para inferencia) · **Célula 2** (tabla de predicciones) |
-| **Quién revisa tu código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/hector-marban-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

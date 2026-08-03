@@ -16,7 +16,7 @@ tags: [sprint, plan, celula-5, nivel-bajo]
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 5 — Cloud Infrastructure & DevOps · **Peso en rúbrica:** 1.0 pt
 > **Rol:** DevOps jr · Monitoreo y documentacion · **Nivel asignado:** Bajo
-> **Tech Lead de tu célula:** Luis Tellez Dominguez
+> **Tech Lead de tu célula:** Luis Téllez Domínguez
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 |---|---|
 | **Recibes de (inputs)** | Requisitos de todas las células · Contrato de API de la **Célula 4** |
 | **Entregas a (outputs)** | **TODAS las células** dependen del ambiente, CI y despliegue. Eres el habilitador. |
-| **Quién revisa tu código** | Luis Tellez Dominguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/edward-bustillos-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

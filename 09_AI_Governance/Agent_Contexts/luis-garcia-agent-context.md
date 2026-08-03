@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-LUIS-GARCIA
-title: "Agent Context — Luis Enrique Garcia Vazquez"
-owner: "Luis Enrique Garcia Vazquez"
+title: "Agent Context — Luis Enrique García Vázquez"
+owner: "Luis Enrique García Vázquez"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/1-luis-enrique-garcia-vazquez"]
 tags: [ai, agent-context, ownership, celula-1]
 ---
 
-# Agent Context — Luis Enrique Garcia Vazquez
+# Agent Context — Luis Enrique García Vázquez
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,7 +19,7 @@ tags: [ai, agent-context, ownership, celula-1]
 
 | | |
 |---|---|
-| **Nombre** | Luis Enrique Garcia Vazquez |
+| **Nombre** | Luis Enrique García Vázquez |
 | **Célula** | Celula 1 — Data Engineering & Quality |
 | **Nivel** | Bajo |
 | **Rol** | Ingeniero de datos jr · Extraccion de fuentes |

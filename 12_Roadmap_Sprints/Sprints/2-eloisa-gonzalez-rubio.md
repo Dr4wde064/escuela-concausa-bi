@@ -1,7 +1,7 @@
 ---
 id: SPRINT-ELOISA-GONZALEZ-RUBIO
-title: "Plan de Sprints — Eloisa Gonzalez Rubio"
-owner: "Eloisa Gonzalez Rubio"
+title: "Plan de Sprints — Eloisa González Rubio"
+owner: "Eloisa González Rubio"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-2, nivel-bajo]
 ---
 
 # FARO · Plan de trabajo individual
-## Eloisa Gonzalez Rubio
+## Eloisa González Rubio
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 2 — Analytics & Business Intelligence · **Peso en rúbrica:** 2.5 pts
 > **Rol:** Analista BI jr · Graficos, mapas y KPIs · **Nivel asignado:** Bajo
-> **Tech Lead de tu célula:** Manuel Alejandro Serrania Reinada
+> **Tech Lead de tu célula:** Manuel Alejandro Serranía Reinada
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 |---|---|
 | **Recibes de (inputs)** | Capa **Gold** y cubos de la **Célula 1** · Endpoints de la **Célula 4** · Predicciones de la **Célula 3** |
 | **Entregas a (outputs)** | Dashboard final para el pitch · Manual de usuario |
-| **Quién revisa tu código** | Manuel Alejandro Serrania Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/eloisa-rubio-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

@@ -1,7 +1,7 @@
 ---
 id: SPRINT-OSCAR-ANTONIO-QUIROZ-LAZ
-title: "Plan de Sprints — Oscar Antonio Quiroz Lazaro"
-owner: "Oscar Antonio Quiroz Lazaro"
+title: "Plan de Sprints — Oscar Antonio Quiroz Lázaro"
+owner: "Oscar Antonio Quiroz Lázaro"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,7 +11,7 @@ tags: [sprint, plan, celula-4, nivel-bajo]
 ---
 
 # FARO · Plan de trabajo individual
-## Oscar Antonio Quiroz Lazaro
+## Oscar Antonio Quiroz Lázaro
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 4 — Backend, API & Seguridad · **Peso en rúbrica:** 1.5 pts

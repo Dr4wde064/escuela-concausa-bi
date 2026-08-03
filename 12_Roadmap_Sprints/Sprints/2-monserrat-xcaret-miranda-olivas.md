@@ -16,7 +16,7 @@ tags: [sprint, plan, celula-2, nivel-medio]
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 2 — Analytics & Business Intelligence · **Peso en rúbrica:** 2.5 pts
 > **Rol:** Analista BI · Modelado semantico y cubos · **Nivel asignado:** Medio
-> **Tech Lead de tu célula:** Manuel Alejandro Serrania Reinada
+> **Tech Lead de tu célula:** Manuel Alejandro Serranía Reinada
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 |---|---|
 | **Recibes de (inputs)** | Capa **Gold** y cubos de la **Célula 1** · Endpoints de la **Célula 4** · Predicciones de la **Célula 3** |
 | **Entregas a (outputs)** | Dashboard final para el pitch · Manual de usuario |
-| **Quién revisa tu código** | Manuel Alejandro Serrania Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/monserrat-olivas-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

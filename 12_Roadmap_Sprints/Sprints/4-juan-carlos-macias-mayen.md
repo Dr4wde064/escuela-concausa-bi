@@ -1,7 +1,7 @@
 ---
 id: SPRINT-JUAN-CARLOS-MACIAS-MAYEN
-title: "Plan de Sprints — Juan Carlos Macias Mayen"
-owner: "Juan Carlos Macias Mayen"
+title: "Plan de Sprints — Juan Carlos Macías Mayen"
+owner: "Juan Carlos Macías Mayen"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,7 +11,7 @@ tags: [sprint, plan, celula-4, nivel-medio]
 ---
 
 # FARO · Plan de trabajo individual
-## Juan Carlos Macias Mayen
+## Juan Carlos Macías Mayen
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 4 — Backend, API & Seguridad · **Peso en rúbrica:** 1.5 pts

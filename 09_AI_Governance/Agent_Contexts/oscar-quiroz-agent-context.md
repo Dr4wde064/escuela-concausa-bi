@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-OSCAR-QUIROZ
-title: "Agent Context — Oscar Antonio Quiroz Lazaro"
-owner: "Oscar Antonio Quiroz Lazaro"
+title: "Agent Context — Oscar Antonio Quiroz Lázaro"
+owner: "Oscar Antonio Quiroz Lázaro"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/4-oscar-antonio-quiroz-lazaro"]
 tags: [ai, agent-context, ownership, celula-4]
 ---
 
-# Agent Context — Oscar Antonio Quiroz Lazaro
+# Agent Context — Oscar Antonio Quiroz Lázaro
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,7 +19,7 @@ tags: [ai, agent-context, ownership, celula-4]
 
 | | |
 |---|---|
-| **Nombre** | Oscar Antonio Quiroz Lazaro |
+| **Nombre** | Oscar Antonio Quiroz Lázaro |
 | **Célula** | Celula 4 — Backend, API & Seguridad |
 | **Nivel** | Bajo |
 | **Rol** | Desarrollador jr · Pruebas de API |

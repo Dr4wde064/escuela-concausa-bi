@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-ELOISA-GONZALEZ
-title: "Agent Context — Eloisa Gonzalez Rubio"
-owner: "Eloisa Gonzalez Rubio"
+title: "Agent Context — Eloisa González Rubio"
+owner: "Eloisa González Rubio"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/2-eloisa-gonzalez-rubio"]
 tags: [ai, agent-context, ownership, celula-2]
 ---
 
-# Agent Context — Eloisa Gonzalez Rubio
+# Agent Context — Eloisa González Rubio
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,12 +19,12 @@ tags: [ai, agent-context, ownership, celula-2]
 
 | | |
 |---|---|
-| **Nombre** | Eloisa Gonzalez Rubio |
+| **Nombre** | Eloisa González Rubio |
 | **Célula** | Celula 2 — Analytics & Business Intelligence |
 | **Nivel** | Bajo |
 | **Rol** | Analista BI jr · Graficos, mapas y KPIs |
-| **Tech Lead de la célula** | Manuel Alejandro Serrania Reinada |
-| **Quién revisa su código** | Manuel Alejandro Serrania Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Manuel Alejandro Serranía Reinada |
+| **Quién revisa su código** | Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-002 (Frontend BI interactivo) |
 
 ---

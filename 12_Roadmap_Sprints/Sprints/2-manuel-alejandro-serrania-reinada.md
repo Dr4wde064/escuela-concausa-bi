@@ -1,7 +1,7 @@
 ---
 id: SPRINT-MANUEL-ALEJANDRO-SERRANI
-title: "Plan de Sprints — Manuel Alejandro Serrania Reinada"
-owner: "Manuel Alejandro Serrania Reinada"
+title: "Plan de Sprints — Manuel Alejandro Serranía Reinada"
+owner: "Manuel Alejandro Serranía Reinada"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-2, nivel-alto]
 ---
 
 # FARO · Plan de trabajo individual
-## Manuel Alejandro Serrania Reinada
+## Manuel Alejandro Serranía Reinada
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 2 — Analytics & Business Intelligence · **Peso en rúbrica:** 2.5 pts
 > **Rol:** Tech Lead · Analytics & BI · **Nivel asignado:** Alto
-> **Tech Lead de tu célula:** Manuel Alejandro Serrania Reinada
+> **Tech Lead de tu célula:** Manuel Alejandro Serranía Reinada
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---

@@ -1,7 +1,7 @@
 ---
 id: SPRINT-LUIS-ENRIQUE-GARCIA-VAZQ
-title: "Plan de Sprints — Luis Enrique Garcia Vazquez"
-owner: "Luis Enrique Garcia Vazquez"
+title: "Plan de Sprints — Luis Enrique García Vázquez"
+owner: "Luis Enrique García Vázquez"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,7 +11,7 @@ tags: [sprint, plan, celula-1, nivel-bajo]
 ---
 
 # FARO · Plan de trabajo individual
-## Luis Enrique Garcia Vazquez
+## Luis Enrique García Vázquez
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 1 — Data Engineering & Quality · **Peso en rúbrica:** 2.5 pts

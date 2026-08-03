@@ -16,7 +16,7 @@ tags: [sprint, plan, celula-3, nivel-bajo]
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 3 — Machine Learning & AI Agent · **Peso en rúbrica:** 1.5 + 0.5 pts
 > **Rol:** Analista ML jr · Agente RAG y evaluacion · **Nivel asignado:** Bajo
-> **Tech Lead de tu célula:** Andres Gonzalez Habib
+> **Tech Lead de tu célula:** Andrés González Habib
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 |---|---|
 | **Recibes de (inputs)** | `gold.features_escuela` de la **Célula 1** · MLflow desplegado por la **Célula 5** |
 | **Entregas a (outputs)** | **Célula 4** (modelos para inferencia) · **Célula 2** (tabla de predicciones) |
-| **Quién revisa tu código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/carlos-tapia-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

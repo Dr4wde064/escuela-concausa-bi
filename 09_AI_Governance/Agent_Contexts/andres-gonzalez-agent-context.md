@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-ANDRES-GONZALEZ
-title: "Agent Context — Andres Gonzalez Habib"
-owner: "Andres Gonzalez Habib"
+title: "Agent Context — Andrés González Habib"
+owner: "Andrés González Habib"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/3-andres-gonzalez-habib"]
 tags: [ai, agent-context, ownership, celula-3]
 ---
 
-# Agent Context — Andres Gonzalez Habib
+# Agent Context — Andrés González Habib
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,11 +19,11 @@ tags: [ai, agent-context, ownership, celula-3]
 
 | | |
 |---|---|
-| **Nombre** | Andres Gonzalez Habib |
+| **Nombre** | Andrés González Habib |
 | **Célula** | Celula 3 — Machine Learning & AI Agent |
 | **Nivel** | Alto |
 | **Rol** | Tech Lead · Machine Learning & Agente IA |
-| **Tech Lead de la célula** | Andres Gonzalez Habib |
+| **Tech Lead de la célula** | Andrés González Habib |
 | **Quién revisa su código** | Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso |
 | **Requisito(s) que cubre** | REQ-003 (3 modelos de ML) y REQ-006 (agente conversacional) |
 

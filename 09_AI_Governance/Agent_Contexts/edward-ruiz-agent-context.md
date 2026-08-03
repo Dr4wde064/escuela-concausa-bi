@@ -23,8 +23,8 @@ tags: [ai, agent-context, ownership, celula-5]
 | **Célula** | Celula 5 — Cloud Infrastructure & DevOps |
 | **Nivel** | Bajo |
 | **Rol** | DevOps jr · Monitoreo y documentacion |
-| **Tech Lead de la célula** | Luis Tellez Dominguez |
-| **Quién revisa su código** | Luis Tellez Dominguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Luis Téllez Domínguez |
+| **Quién revisa su código** | Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-005 (despliegue GCP) y REQ-007 (CI/gobernanza) |
 
 ---

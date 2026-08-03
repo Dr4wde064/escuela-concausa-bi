@@ -1,7 +1,7 @@
 ---
 id: SPRINT-ESTEFANY-LUCERO-HERNANDE
-title: "Plan de Sprints — Estefany Lucero Hernandez Loredo"
-owner: "Estefany Lucero Hernandez Loredo"
+title: "Plan de Sprints — Estefany Lucero Hernández Loredo"
+owner: "Estefany Lucero Hernández Loredo"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-3, nivel-bajo]
 ---
 
 # FARO · Plan de trabajo individual
-## Estefany Lucero Hernandez Loredo
+## Estefany Lucero Hernández Loredo
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 3 — Machine Learning & AI Agent · **Peso en rúbrica:** 1.5 + 0.5 pts
 > **Rol:** Analista ML jr · Clustering y features · **Nivel asignado:** Bajo
-> **Tech Lead de tu célula:** Andres Gonzalez Habib
+> **Tech Lead de tu célula:** Andrés González Habib
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
@@ -33,7 +33,7 @@ Tienes historias **acotadas y bien definidas**, pensadas para que aprendas hacie
 |---|---|
 | **Recibes de (inputs)** | `gold.features_escuela` de la **Célula 1** · MLflow desplegado por la **Célula 5** |
 | **Entregas a (outputs)** | **Célula 4** (modelos para inferencia) · **Célula 2** (tabla de predicciones) |
-| **Quién revisa tu código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Formato de entrega** | Rama `feat/estefany-loredo-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra

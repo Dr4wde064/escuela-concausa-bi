@@ -23,8 +23,8 @@ tags: [ai, agent-context, ownership, celula-2]
 | **Célula** | Celula 2 — Analytics & Business Intelligence |
 | **Nivel** | Medio |
 | **Rol** | Analista BI · Modelado semantico y cubos |
-| **Tech Lead de la célula** | Manuel Alejandro Serrania Reinada |
-| **Quién revisa su código** | Manuel Alejandro Serrania Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Manuel Alejandro Serranía Reinada |
+| **Quién revisa su código** | Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-002 (Frontend BI interactivo) |
 
 ---

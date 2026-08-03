@@ -1,7 +1,7 @@
 ---
 id: SPRINT-LUIS-TELLEZ-DOMINGUEZ
-title: "Plan de Sprints — Luis Tellez Dominguez"
-owner: "Luis Tellez Dominguez"
+title: "Plan de Sprints — Luis Téllez Domínguez"
+owner: "Luis Téllez Domínguez"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-5, nivel-medio]
 ---
 
 # FARO · Plan de trabajo individual
-## Luis Tellez Dominguez
+## Luis Téllez Domínguez
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 5 — Cloud Infrastructure & DevOps · **Peso en rúbrica:** 1.0 pt
 > **Rol:** Tech Lead · Cloud & DevOps · **Nivel asignado:** Medio
-> **Tech Lead de tu célula:** Luis Tellez Dominguez
+> **Tech Lead de tu célula:** Luis Téllez Domínguez
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---

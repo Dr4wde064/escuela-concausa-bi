@@ -23,8 +23,8 @@ tags: [ai, agent-context, ownership, celula-3]
 | **Célula** | Celula 3 — Machine Learning & AI Agent |
 | **Nivel** | Bajo |
 | **Rol** | Analista ML jr · Agente RAG y evaluacion |
-| **Tech Lead de la célula** | Andres Gonzalez Habib |
-| **Quién revisa su código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Andrés González Habib |
+| **Quién revisa su código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-003 (3 modelos de ML) y REQ-006 (agente conversacional) |
 
 ---

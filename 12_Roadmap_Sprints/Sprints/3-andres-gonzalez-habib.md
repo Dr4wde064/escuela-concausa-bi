@@ -1,7 +1,7 @@
 ---
 id: SPRINT-ANDRES-GONZALEZ-HABIB
-title: "Plan de Sprints — Andres Gonzalez Habib"
-owner: "Andres Gonzalez Habib"
+title: "Plan de Sprints — Andrés González Habib"
+owner: "Andrés González Habib"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
@@ -11,12 +11,12 @@ tags: [sprint, plan, celula-3, nivel-alto]
 ---
 
 # FARO · Plan de trabajo individual
-## Andres Gonzalez Habib
+## Andrés González Habib
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 3 — Machine Learning & AI Agent · **Peso en rúbrica:** 1.5 + 0.5 pts
 > **Rol:** Tech Lead · Machine Learning & Agente IA · **Nivel asignado:** Alto
-> **Tech Lead de tu célula:** Andres Gonzalez Habib
+> **Tech Lead de tu célula:** Andrés González Habib
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---

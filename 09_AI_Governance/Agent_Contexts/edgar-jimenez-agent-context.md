@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-EDGAR-JIMENEZ
-title: "Agent Context — Edgar Ulises Jimenez Lopez"
-owner: "Edgar Ulises Jimenez Lopez"
+title: "Agent Context — Edgar Ulises Jiménez López"
+owner: "Edgar Ulises Jiménez López"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/5-edgar-ulises-jimenez-lopez"]
 tags: [ai, agent-context, ownership, celula-5]
 ---
 
-# Agent Context — Edgar Ulises Jimenez Lopez
+# Agent Context — Edgar Ulises Jiménez López
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,12 +19,12 @@ tags: [ai, agent-context, ownership, celula-5]
 
 | | |
 |---|---|
-| **Nombre** | Edgar Ulises Jimenez Lopez |
+| **Nombre** | Edgar Ulises Jiménez López |
 | **Célula** | Celula 5 — Cloud Infrastructure & DevOps |
 | **Nivel** | Bajo |
 | **Rol** | DevOps jr · Contenedores |
-| **Tech Lead de la célula** | Luis Tellez Dominguez |
-| **Quién revisa su código** | Luis Tellez Dominguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Luis Téllez Domínguez |
+| **Quién revisa su código** | Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-005 (despliegue GCP) y REQ-007 (CI/gobernanza) |
 
 ---

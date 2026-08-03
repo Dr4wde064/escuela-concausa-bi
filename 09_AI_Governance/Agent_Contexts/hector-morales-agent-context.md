@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-HECTOR-MORALES
-title: "Agent Context — Hector Rafael Morales Marban"
-owner: "Hector Rafael Morales Marban"
+title: "Agent Context — Héctor Rafael Morales Marbán"
+owner: "Héctor Rafael Morales Marbán"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/3-hector-rafael-morales-marban"]
 tags: [ai, agent-context, ownership, celula-3]
 ---
 
-# Agent Context — Hector Rafael Morales Marban
+# Agent Context — Héctor Rafael Morales Marbán
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,12 +19,12 @@ tags: [ai, agent-context, ownership, celula-3]
 
 | | |
 |---|---|
-| **Nombre** | Hector Rafael Morales Marban |
+| **Nombre** | Héctor Rafael Morales Marbán |
 | **Célula** | Celula 3 — Machine Learning & AI Agent |
 | **Nivel** | Medio |
 | **Rol** | Cientifico de datos · Modelos supervisados |
-| **Tech Lead de la célula** | Andres Gonzalez Habib |
-| **Quién revisa su código** | Andres Gonzalez Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Andrés González Habib |
+| **Quién revisa su código** | Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-003 (3 modelos de ML) y REQ-006 (agente conversacional) |
 
 ---

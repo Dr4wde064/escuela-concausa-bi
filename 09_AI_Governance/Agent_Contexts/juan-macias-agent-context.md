@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-JUAN-MACIAS
-title: "Agent Context — Juan Carlos Macias Mayen"
-owner: "Juan Carlos Macias Mayen"
+title: "Agent Context — Juan Carlos Macías Mayen"
+owner: "Juan Carlos Macías Mayen"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/4-juan-carlos-macias-mayen"]
 tags: [ai, agent-context, ownership, celula-4]
 ---
 
-# Agent Context — Juan Carlos Macias Mayen
+# Agent Context — Juan Carlos Macías Mayen
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,7 +19,7 @@ tags: [ai, agent-context, ownership, celula-4]
 
 | | |
 |---|---|
-| **Nombre** | Juan Carlos Macias Mayen |
+| **Nombre** | Juan Carlos Macías Mayen |
 | **Célula** | Celula 4 — Backend, API & Seguridad |
 | **Nivel** | Medio |
 | **Rol** | Desarrollador backend · Inferencia ML y contratos de API |

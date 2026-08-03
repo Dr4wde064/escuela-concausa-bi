@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-ALEJANDRO-VELAZQUEZ
-title: "Agent Context — Alejandro Velazquez Mendoza"
-owner: "Alejandro Velazquez Mendoza"
+title: "Agent Context — Alejandro Velázquez Mendoza"
+owner: "Alejandro Velázquez Mendoza"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/5-alejandro-velazquez-mendoza"]
 tags: [ai, agent-context, ownership, celula-5]
 ---
 
-# Agent Context — Alejandro Velazquez Mendoza
+# Agent Context — Alejandro Velázquez Mendoza
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,12 +19,12 @@ tags: [ai, agent-context, ownership, celula-5]
 
 | | |
 |---|---|
-| **Nombre** | Alejandro Velazquez Mendoza |
+| **Nombre** | Alejandro Velázquez Mendoza |
 | **Célula** | Celula 5 — Cloud Infrastructure & DevOps |
 | **Nivel** | Bajo |
 | **Rol** | DevOps jr · Ambientes y despliegue |
-| **Tech Lead de la célula** | Luis Tellez Dominguez |
-| **Quién revisa su código** | Luis Tellez Dominguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Tech Lead de la célula** | Luis Téllez Domínguez |
+| **Quién revisa su código** | Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
 | **Requisito(s) que cubre** | REQ-005 (despliegue GCP) y REQ-007 (CI/gobernanza) |
 
 ---

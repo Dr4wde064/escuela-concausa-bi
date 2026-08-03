@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-LUIS-TELLEZ
-title: "Agent Context — Luis Tellez Dominguez"
-owner: "Luis Tellez Dominguez"
+title: "Agent Context — Luis Téllez Domínguez"
+owner: "Luis Téllez Domínguez"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/5-luis-tellez-dominguez"]
 tags: [ai, agent-context, ownership, celula-5]
 ---
 
-# Agent Context — Luis Tellez Dominguez
+# Agent Context — Luis Téllez Domínguez
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,11 +19,11 @@ tags: [ai, agent-context, ownership, celula-5]
 
 | | |
 |---|---|
-| **Nombre** | Luis Tellez Dominguez |
+| **Nombre** | Luis Téllez Domínguez |
 | **Célula** | Celula 5 — Cloud Infrastructure & DevOps |
 | **Nivel** | Medio |
 | **Rol** | Tech Lead · Cloud & DevOps |
-| **Tech Lead de la célula** | Luis Tellez Dominguez |
+| **Tech Lead de la célula** | Luis Téllez Domínguez |
 | **Quién revisa su código** | Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso |
 | **Requisito(s) que cubre** | REQ-005 (despliegue GCP) y REQ-007 (CI/gobernanza) |
 

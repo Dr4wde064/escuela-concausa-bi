@@ -1,13 +1,13 @@
 ---
 id: AGENTCTX-MANUEL-SERRANIA
-title: "Agent Context — Manuel Alejandro Serrania Reinada"
-owner: "Manuel Alejandro Serrania Reinada"
+title: "Agent Context — Manuel Alejandro Serranía Reinada"
+owner: "Manuel Alejandro Serranía Reinada"
 status: approved
 traces_up: ["12_Roadmap_Sprints/Sprints/2-manuel-alejandro-serrania-reinada"]
 tags: [ai, agent-context, ownership, celula-2]
 ---
 
-# Agent Context — Manuel Alejandro Serrania Reinada
+# Agent Context — Manuel Alejandro Serranía Reinada
 
 > El agente IA de esta persona **debe leer este archivo al inicio de cada sesión**.
 > Define qué puede tocar. Si va a modificar un archivo 🔴, **debe detenerse y avisar**.
@@ -19,11 +19,11 @@ tags: [ai, agent-context, ownership, celula-2]
 
 | | |
 |---|---|
-| **Nombre** | Manuel Alejandro Serrania Reinada |
+| **Nombre** | Manuel Alejandro Serranía Reinada |
 | **Célula** | Celula 2 — Analytics & Business Intelligence |
 | **Nivel** | Alto |
 | **Rol** | Tech Lead · Analytics & BI |
-| **Tech Lead de la célula** | Manuel Alejandro Serrania Reinada |
+| **Tech Lead de la célula** | Manuel Alejandro Serranía Reinada |
 | **Quién revisa su código** | Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso |
 | **Requisito(s) que cubre** | REQ-002 (Frontend BI interactivo) |
 
