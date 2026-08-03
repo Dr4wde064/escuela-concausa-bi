@@ -1,0 +1,162 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "vault_lint.py",
+      "file_type": "code",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint",
+      "community": 0,
+      "norm_label": "vault_lint.py"
+    },
+    {
+      "label": "find_md()",
+      "file_type": "code",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint_find_md",
+      "community": 0,
+      "norm_label": "find_md()"
+    },
+    {
+      "label": "strip_code()",
+      "file_type": "code",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint_strip_code",
+      "community": 1,
+      "norm_label": "strip_code()"
+    },
+    {
+      "label": "stem()",
+      "file_type": "code",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint_stem",
+      "community": 0,
+      "norm_label": "stem()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint_main",
+      "community": 0,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Quita bloques y spans de c\u00f3digo para no leer links de ejemplo.",
+      "file_type": "rationale",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "meta_scripts_vault_lint_rationale_37",
+      "community": 1,
+      "norm_label": "quita bloques y spans de codigo para no leer links de ejemplo."
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint",
+      "target": "meta_scripts_vault_lint_find_md",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint",
+      "target": "meta_scripts_vault_lint_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint",
+      "target": "meta_scripts_vault_lint_stem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint",
+      "target": "meta_scripts_vault_lint_strip_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint_main",
+      "target": "meta_scripts_vault_lint_find_md",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint_main",
+      "target": "meta_scripts_vault_lint_strip_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint_rationale_37",
+      "target": "meta_scripts_vault_lint_strip_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "_Meta/scripts/vault_lint.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "meta_scripts_vault_lint_main",
+      "target": "meta_scripts_vault_lint_stem",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "a5c49227ec1c10fc782351d44f58dda47c4d0812"
+}

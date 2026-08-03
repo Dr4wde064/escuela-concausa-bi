@@ -1,0 +1,62 @@
+{
+  "communities": {
+    "0": [
+      "meta_scripts_vault_lint",
+      "meta_scripts_vault_lint_find_md",
+      "meta_scripts_vault_lint_main",
+      "meta_scripts_vault_lint_stem"
+    ],
+    "1": [
+      "meta_scripts_vault_lint_rationale_37",
+      "meta_scripts_vault_lint_strip_code"
+    ]
+  },
+  "cohesion": {
+    "0": 0.8333333333333334,
+    "1": 1.0
+  },
+  "gods": [
+    {
+      "id": "meta_scripts_vault_lint_main",
+      "label": "main()",
+      "degree": 4
+    },
+    {
+      "id": "meta_scripts_vault_lint_strip_code",
+      "label": "strip_code()",
+      "degree": 3
+    },
+    {
+      "id": "meta_scripts_vault_lint_find_md",
+      "label": "find_md()",
+      "degree": 2
+    },
+    {
+      "id": "meta_scripts_vault_lint_stem",
+      "label": "stem()",
+      "degree": 2
+    },
+    {
+      "id": "meta_scripts_vault_lint_rationale_37",
+      "label": "Quita bloques y spans de c\u00f3digo para no leer links de ejemplo.",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "main()",
+      "target": "strip_code()",
+      "source_files": [
+        "_Meta/scripts/vault_lint.py",
+        "_Meta/scripts/vault_lint.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 1 \u2192 community 0"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
