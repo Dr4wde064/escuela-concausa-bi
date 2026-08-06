@@ -12,7 +12,11 @@ tags: [moc, reports]
 
 | Documento | Contenido |
 |---|---|
-| [`TABLERO_CONTROL_PM.html`](TABLERO_CONTROL_PM.html) | **Tablero de Control del Proyecto (PM)** — dashboard HTML de seguimiento del avance. Owner: Edgar Edmundo Coronel Navarrete. |
+| [[13_Reports/PM_Dashboard_Spec]] | Contrato de métricas, fuentes, frescura y reglas del tablero PM |
+| [`TABLERO_CONTROL_PM.html`](TABLERO_CONTROL_PM.html) | Tablero PM v2 generado y autocontenido; no editar manualmente |
+| [`TABLERO_CONTROL_PM.template.html`](TABLERO_CONTROL_PM.template.html) | Plantilla fuente del tablero PM |
+| [`data/pm-dashboard.json`](data/pm-dashboard.json) | Snapshot generado y auditable de las fuentes canónicas |
+| [[13_Reports/data/_index]] | Catálogo de snapshots generados y su carácter no canónico |
 | [[13_Reports/Executive_Dashboard_template]] | Plantilla de reporte ejecutivo |
 | [[13_Reports/Audit_Report_template]] | Plantilla de auditoría |
 

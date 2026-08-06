@@ -20,3 +20,6 @@ tags: [moc, meta]
 | [[_Meta/Link_Hygiene]] | Evitar links rotos y huérfanos |
 | [[_Meta/Adoption_Guide]] | Cómo adoptar el vault en un proyecto nuevo |
 | `scripts/vault_lint.py` | Check automatizable de higiene (links, frontmatter, IDs) |
+| `scripts/generate_pm_dashboard.py` | Genera el snapshot y HTML PM desde fuentes canónicas |
+| `scripts/validate_pm_dashboard.py` | `TEST-002`: valida IDs, cobertura, estados y vistas del tablero |
+| `scripts/collect_github_activity.py` | Recopila PR/CI agregado en Actions; no modifica estados de US |

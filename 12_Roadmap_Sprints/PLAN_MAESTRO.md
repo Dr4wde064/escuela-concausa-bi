@@ -425,12 +425,12 @@ bloquean mutuamente.
 
 | ID | Riesgo | Mitigación |
 |---|---|---|
-| `RISK-01` | Sin URL pública viva al evaluar → techo 6.0 | Deploy en Semana 1, no al final |
-| `RISK-02` | Una fuente resulta inservible | Prueba de descarga real en Semana 1 |
-| `RISK-03` | Commits concentrados en pocas personas | Rama por persona, PR obligatorio, revisión del PO en cada standup |
-| `RISK-04` | Célula 1 se atrasa y bloquea a 3 células | Contrato de features cerrado en S3; mocks mientras tanto |
-| `RISK-05` | Sobre-alcance con 32 estados | **Recorte a 3-5 estados** para que el ciclo completo funcione |
-| `RISK-06` | El vault se degrada con 21 personas | `vault_lint.py` en CI + Vault Steward rotativo por sprint |
+| `RISK-001` | Sin URL pública viva al evaluar → techo 6.0 | Deploy en Semana 1, no al final |
+| `RISK-002` | Una fuente resulta inservible | Prueba de descarga real en Semana 1 |
+| `RISK-003` | Commits concentrados en pocas personas | Rama por persona, PR obligatorio, revisión del PO en cada standup |
+| `RISK-004` | Célula 1 se atrasa y bloquea a 3 células | Contrato de features cerrado en S3; mocks mientras tanto |
+| `RISK-005` | Sobre-alcance con 32 estados | **Recorte a 3-5 estados** para que el ciclo completo funcione |
+| `RISK-006` | El vault se degrada con 21 personas | `vault_lint.py` en CI + Vault Steward rotativo por sprint |
 
 > **Decisión recomendada de alcance:** arrancar con **3 estados** (por ejemplo Estado de México, Oaxaca y
 > Chiapas — contrastan urbano/rural y marginación). Es preferible un pipeline completo y prescriptivo

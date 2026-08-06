@@ -13,5 +13,6 @@ tags: [moc, risk, governance]
 | Documento | Contenido |
 |---|---|
 | [[10_Risk_Governance/Risk_Register]] | Riesgos `RISK-###` + mitigaciones |
+| [[10_Risk_Governance/Blocker_Register]] | Impedimentos actuales `BLOCK-###`, aging y escalamiento |
 | [[10_Risk_Governance/Decision_Log]] | Decisiones `DEC-###` (no arquitectónicas) |
 | [[10_Risk_Governance/Incident_Log]] | Incidentes `INC-###` |

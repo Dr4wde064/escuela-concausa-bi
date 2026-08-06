@@ -22,6 +22,11 @@ tags: [moc, qa, automation]
 | TEST | Valida (REQ/US) | Tipo | Estado |
 |---|---|---|---|
 | TEST-001 | REQ-001 | unit | draft |
+| TEST-002 | US-004 · REQ-007 | integración | implemented |
+
+`TEST-002` ejecuta `python3 _Meta/scripts/validate_pm_dashboard.py .` y verifica 87 US únicas,
+21 personas, ocho fuentes, rúbrica de 10 puntos, estados válidos, evidencia para Done y las nueve
+diez vistas requeridas, incluido el plan seleccionable por célula/persona. Es determinista y no usa red.
 
 ## Convenciones
 - Nombrar tests por comportamiento, no por implementación.
