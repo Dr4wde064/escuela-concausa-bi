@@ -15,6 +15,6 @@ tags: [reports, generated, dashboard, data]
 
 | Archivo | Propósito |
 |---|---|
-| [`pm-dashboard.json`](pm-dashboard.json) | Snapshot consolidado que se incrusta en el HTML |
+| [`pm-dashboard.json`](pm-dashboard.json) | Snapshot consolidado que se incrusta en el HTML; incluye directorio, US y conteos derivados de PR |
 | [`pm-dashboard-history.json`](pm-dashboard-history.json) | Serie temporal para burndown, burn-up, WIP y bloqueos |
-| `github-activity.json` | Snapshot efímero de PR/CI creado en Actions; no se versiona ni define Done |
+| `github-activity.json` | Snapshot efímero paginado de PR/CI creado en Actions; no se versiona ni define Done |

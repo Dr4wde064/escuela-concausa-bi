@@ -36,7 +36,6 @@ SPRINT_DATES = {
     "S5": ("2026-08-31", "2026-09-06"),
     "S6": ("2026-09-07", "2026-09-08"),
 }
-DEMO_DATE = date(2026, 9, 9)
 
 
 def read(path: Path) -> str:
@@ -80,6 +79,7 @@ def source_fingerprint(root: Path) -> str:
         root / "12_Roadmap_Sprints/PLAN_MAESTRO.md",
         root / "12_Roadmap_Sprints/Execution_Status.md",
         root / "12_Roadmap_Sprints/RACI.md",
+        root / "00_Start_Here/Developer_Onboarding.md",
         *sorted((root / "14_Data_Sources").glob("DS-*.md")),
     ]
     digest = hashlib.sha256()
@@ -99,6 +99,23 @@ def parse_frontmatter(text: str) -> dict[str, str]:
         if match:
             values[match.group(1)] = match.group(2).strip('"\'')
     return values
+
+
+def parse_delivery(root: Path) -> dict[str, str]:
+    """Lee la fecha de entrega machine-readable del Plan Maestro canónico."""
+    plan_path = root / "12_Roadmap_Sprints/PLAN_MAESTRO.md"
+    frontmatter = parse_frontmatter(read(plan_path))
+    delivery_date = frontmatter.get("delivery_date", "")
+    try:
+        date.fromisoformat(delivery_date)
+    except ValueError as error:
+        raise ValueError("delivery_date inválida o ausente en PLAN_MAESTRO.md") from error
+    return {
+        "date": delivery_date,
+        "label": frontmatter.get("delivery_label", "Entrega final"),
+        "timezone": frontmatter.get("delivery_timezone", "America/Mexico_City"),
+        "source": "12_Roadmap_Sprints/PLAN_MAESTRO.md",
+    }
 
 
 def parse_stories(root: Path) -> list[dict[str, Any]]:
@@ -159,6 +176,46 @@ def parse_people(root: Path) -> dict[str, dict[str, str]]:
                 "role": cells[3],
             }
     return people
+
+
+def parse_github_directory(root: Path) -> dict[str, dict[str, str]]:
+    """Extrae la identidad GitHub del directorio canónico de onboarding."""
+    text = read(root / "00_Start_Here/Developer_Onboarding.md")
+    directory: dict[str, dict[str, str]] = {}
+    for line in text.splitlines():
+        cells = table_cells(line) if line.startswith("|") else []
+        if (
+            len(cells) == 5
+            and cells[1] in {"Alto", "Medio", "Bajo"}
+            and (cells[2] == "PO" or cells[2].startswith("Célula "))
+        ):
+            directory[cells[0]] = {
+                "github_user": "" if cells[3] == "—" else cells[3],
+                "github_status": cells[4],
+            }
+    if len(directory) != 21:
+        raise ValueError(
+            f"Se esperaban 21 identidades GitHub y se encontraron {len(directory)}"
+        )
+    return directory
+
+
+def load_github_activity(root: Path) -> dict[str, Any]:
+    """Carga el snapshot efímero de GitHub; en local conserva estado no disponible."""
+    activity: dict[str, Any] = {
+        "available": False,
+        "prs": [],
+        "ci": "local",
+    }
+    github_path = root / "13_Reports/data/github-activity.json"
+    if github_path.exists():
+        try:
+            loaded = json.loads(read(github_path))
+            if isinstance(loaded, dict):
+                activity = loaded
+        except json.JSONDecodeError:
+            pass
+    return activity
 
 
 def parse_individual_plans(root: Path) -> dict[str, dict[str, Any]]:
@@ -368,7 +425,11 @@ def build_snapshot(root: Path) -> dict[str, Any]:
     stories = parse_stories(root)
     execution = parse_execution(root)
     people_meta = parse_people(root)
+    github_directory = parse_github_directory(root)
     individual_plans = parse_individual_plans(root)
+    git_activity = load_github_activity(root)
+    delivery = parse_delivery(root)
+    delivery_date = date.fromisoformat(delivery["date"])
     today = date.today()
     for story in stories:
         state = execution.get(story["id"], {})
@@ -401,7 +462,7 @@ def build_snapshot(root: Path) -> dict[str, Any]:
         "blocked": counts["blocked"],
         "wip": counts["in_progress"] + counts["in_review"] + counts["blocked"],
         "progress": round(progress * 100, 1),
-        "days_to_demo": max(0, (DEMO_DATE - today).days),
+        "days_to_demo": max(0, (delivery_date - today).days),
     }
 
     people: list[dict[str, Any]] = []
@@ -411,6 +472,14 @@ def build_snapshot(root: Path) -> dict[str, Any]:
     for owner, items in sorted(owners.items()):
         meta = people_meta.get(owner, {})
         plan = individual_plans.get(owner, {})
+        identity = github_directory.get(owner, {})
+        github_user = identity.get("github_user", "")
+        authored_prs = [
+            pr
+            for pr in git_activity.get("prs", [])
+            if github_user
+            and str(pr.get("author", "")).casefold() == github_user.casefold()
+        ]
         people.append(
             {
                 "name": owner,
@@ -424,6 +493,13 @@ def build_snapshot(root: Path) -> dict[str, Any]:
                 "reviewer": plan.get("reviewer", "No documentado"),
                 "delivery": plan.get("delivery", "No documentado"),
                 "plan_path": plan.get("path", ""),
+                "github_user": github_user,
+                "github_status": identity.get("github_status", "Pendiente de confirmar"),
+                "github_profile": f"https://github.com/{github_user}" if github_user else "",
+                "assigned_story_ids": sorted(item["id"] for item in items),
+                "pr_count": len(authored_prs) if git_activity.get("available") and github_user else None,
+                "pr_open": sum(pr.get("state") == "open" for pr in authored_prs),
+                "pr_merged": sum(pr.get("state") == "merged" for pr in authored_prs),
                 "stories": len(items),
                 "done": sum(item["status"] == "done" for item in items),
                 "wip": sum(item["status"] in {"in_progress", "in_review", "blocked"} for item in items),
@@ -482,21 +558,6 @@ def build_snapshot(root: Path) -> dict[str, Any]:
         else "modified"
     )
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    git_activity: dict[str, Any] = {
-        "available": False,
-        "prs": [],
-        "reviews": [],
-        "ci": "local",
-    }
-    github_path = root / "13_Reports/data/github-activity.json"
-    if github_path.exists():
-        try:
-            loaded_activity = json.loads(read(github_path))
-            if isinstance(loaded_activity, dict):
-                git_activity = loaded_activity
-        except json.JSONDecodeError:
-            pass
-
     snapshot = {
         "meta": {
             "generated_at": generated_at,
@@ -507,9 +568,10 @@ def build_snapshot(root: Path) -> dict[str, Any]:
             "source_fingerprint": source_fingerprint(root),
             "source": "Fuentes canónicas del vault",
             "offline": True,
-            "schema_version": "2.0",
+            "schema_version": "2.2",
         },
         "summary": summary,
+        "delivery": delivery,
         "stories": stories,
         "people": people,
         "cells": cells,

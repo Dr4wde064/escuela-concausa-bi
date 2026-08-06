@@ -1,7 +1,402 @@
 {
   "_Meta/scripts/vault_lint.py": {
-    "mtime": 1785644449.7328882,
-    "ast_hash": "d881a31d6fb4ed459b5f58cfff4962b4",
-    "semantic_hash": "d881a31d6fb4ed459b5f58cfff4962b4"
+    "mtime": 1785809278.2683706,
+    "ast_hash": "551f566f42649d3e53bbe6dcce2302af",
+    "semantic_hash": ""
+  },
+  "_Meta/scripts/collect_github_activity.py": {
+    "mtime": 1786032753.6854665,
+    "ast_hash": "17d0c2af13a6afce47b1319fe02bdefc",
+    "semantic_hash": ""
+  },
+  "_Meta/scripts/generate_pm_dashboard.py": {
+    "mtime": 1786033219.7968442,
+    "ast_hash": "acd8c1341e5ae0071ece0990860227bb",
+    "semantic_hash": ""
+  },
+  "_Meta/scripts/validate_pm_dashboard.py": {
+    "mtime": 1786033297.8284473,
+    "ast_hash": "1b3b359151d35f4e53223a8da713e782",
+    "semantic_hash": ""
+  },
+  ".github/PULL_REQUEST_TEMPLATE.md": {
+    "mtime": 1785644748.338347,
+    "ast_hash": "c01c4426c4782aa39d2bbe24ed2f370b",
+    "semantic_hash": ""
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1785789424.7020776,
+    "ast_hash": "ea166f017f63215366b9129446603d80",
+    "semantic_hash": ""
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1785992746.8808727,
+    "ast_hash": "19e4d85605029fcde8e063a42f26256d",
+    "semantic_hash": ""
+  },
+  ".github/workflows/pm-dashboard.yml": {
+    "mtime": 1786032866.6025798,
+    "ast_hash": "cde4b642cfe05e5cf29cccaa2a0e5892",
+    "semantic_hash": ""
+  },
+  ".github/workflows/update-project-graph.yml": {
+    "mtime": 1785797111.465802,
+    "ast_hash": "441c5c17a6d0fc470d080ebf2e03f405",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/Developer_Onboarding.md": {
+    "mtime": 1786032753.516932,
+    "ast_hash": "10db26d7a1fefb749c1ad3ec6faeeb2a",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/Glossary.md": {
+    "mtime": 1785644748.5954466,
+    "ast_hash": "a78ff81f800536534eae9ab901134348",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/How_To_Navigate.md": {
+    "mtime": 1785644748.6015255,
+    "ast_hash": "a764366b7ff290bac7570fa55a531ade",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/PROJECT_INDEX.md": {
+    "mtime": 1785789720.2255147,
+    "ast_hash": "07ccd604f09bd37fcb3f5b3dee1e4b71",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/Vault_Changelog.md": {
+    "mtime": 1785644748.7771294,
+    "ast_hash": "6d451a783e3b18a499a6cd3756a76726",
+    "semantic_hash": ""
+  },
+  "00_Start_Here/_index.md": {
+    "mtime": 1785644748.6045008,
+    "ast_hash": "4e102c62ce89774d8c5c527397486437",
+    "semantic_hash": ""
+  },
+  "01_Product/OKRs_NorthStar.md": {
+    "mtime": 1785723181.7937448,
+    "ast_hash": "34eb0fd066d33a823a9928e747ba0f18",
+    "semantic_hash": ""
+  },
+  "01_Product/PRD.md": {
+    "mtime": 1785733338.564463,
+    "ast_hash": "91fb5ccdb6fbbf7ab8a2111443fb3a52",
+    "semantic_hash": ""
+  },
+  "01_Product/PRD_General_Materia.md": {
+    "mtime": 1785732341.2178829,
+    "ast_hash": "49cc0b31911eb33224fb9f814c6c128b",
+    "semantic_hash": ""
+  },
+  "01_Product/Personas.md": {
+    "mtime": 1785644748.5511725,
+    "ast_hash": "4236518a099a6558a48cad68b21bc33d",
+    "semantic_hash": ""
+  },
+  "01_Product/_index.md": {
+    "mtime": 1785732699.3046215,
+    "ast_hash": "a318003730608b626278cfe4ca6174b2",
+    "semantic_hash": ""
+  },
+  "02_Requirements/Requirements_Detailed.md": {
+    "mtime": 1785734676.1995347,
+    "ast_hash": "cab5b6ece095bc6fa063f9a6d41cd625",
+    "semantic_hash": ""
+  },
+  "02_Requirements/Requirements_General.md": {
+    "mtime": 1785644748.6108916,
+    "ast_hash": "df723aa63779c1aa6880d26e24dd1794",
+    "semantic_hash": ""
+  },
+  "02_Requirements/Traceability_Matrix.md": {
+    "mtime": 1786032866.8378646,
+    "ast_hash": "1c3606130b751565fe17a65c47b1acd4",
+    "semantic_hash": ""
+  },
+  "02_Requirements/User_Stories.md": {
+    "mtime": 1785991359.609233,
+    "ast_hash": "9fde67909fb0f6e5fb0aaf1f81f90d07",
+    "semantic_hash": ""
+  },
+  "02_Requirements/_index.md": {
+    "mtime": 1785771166.7124956,
+    "ast_hash": "788eff821788fde6fda14bbea8ee8425",
+    "semantic_hash": ""
+  },
+  "03_Architecture/ADRs/ADR-001-example.md": {
+    "mtime": 1785644748.9295797,
+    "ast_hash": "b1ab91efb37dd18c15e1fc36aae5894e",
+    "semantic_hash": ""
+  },
+  "03_Architecture/ADRs/_index.md": {
+    "mtime": 1785644748.9325202,
+    "ast_hash": "3dec4ad87a29ab86dd9ded09f6c540ed",
+    "semantic_hash": ""
+  },
+  "03_Architecture/API_Specification.md": {
+    "mtime": 1785790118.4142954,
+    "ast_hash": "b3cde2f3e18327094d79d4c7dede2715",
+    "semantic_hash": ""
+  },
+  "03_Architecture/Data_Model.md": {
+    "mtime": 1785789289.82583,
+    "ast_hash": "fdc6630d6b613e5d689b359e7fcbf6e0",
+    "semantic_hash": ""
+  },
+  "03_Architecture/System_Design.md": {
+    "mtime": 1785644748.9238875,
+    "ast_hash": "aea8093932085735db93c8d5955aa50e",
+    "semantic_hash": ""
+  },
+  "03_Architecture/Technical_Guide.md": {
+    "mtime": 1785644748.920947,
+    "ast_hash": "a78f3518c23f14bb068fcfa65e0563b4",
+    "semantic_hash": ""
+  },
+  "03_Architecture/_index.md": {
+    "mtime": 1785790125.201498,
+    "ast_hash": "b4c2fd30a3415949b18dc68e61549b4d",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Branch_Protection.md": {
+    "mtime": 1785644748.5425482,
+    "ast_hash": "c18e19365bba88398d7771ff6c546fbf",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Branching_Strategy.md": {
+    "mtime": 1785644748.7478924,
+    "ast_hash": "039e79d76575685c4854f0d82de19ec8",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Coding_Standards.md": {
+    "mtime": 1785644748.8318026,
+    "ast_hash": "e044d0ee44750f4e1daddbf3ce77f0e5",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Definition_of_Done.md": {
+    "mtime": 1785644748.5396485,
+    "ast_hash": "c67c8c4cb525193d39265b117dd33f58",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Engineering_Workflow.md": {
+    "mtime": 1785644748.5336833,
+    "ast_hash": "12f47133ecb03073a205486b365a6f5c",
+    "semantic_hash": ""
+  },
+  "05_Engineering/Environment_Setup.md": {
+    "mtime": 1785644748.8286161,
+    "ast_hash": "b1de9e8611cf72e92f891a955cc3ff3d",
+    "semantic_hash": ""
+  },
+  "05_Engineering/PR_Checklist.md": {
+    "mtime": 1785644748.530657,
+    "ast_hash": "3954977196def0cb1a847e1a7ca140a8",
+    "semantic_hash": ""
+  },
+  "05_Engineering/_index.md": {
+    "mtime": 1785644748.5453463,
+    "ast_hash": "e9a9aaf47767310020b5522bfbe4f6d1",
+    "semantic_hash": ""
+  },
+  "07_Security/Compliance.md": {
+    "mtime": 1785644748.9035726,
+    "ast_hash": "f76cdf33e29939a3ab5a0e48cf09bf29",
+    "semantic_hash": ""
+  },
+  "07_Security/Secrets_Policy.md": {
+    "mtime": 1785644449.7377837,
+    "ast_hash": "efb25fc74704e5766c280d3d500dc7db",
+    "semantic_hash": ""
+  },
+  "07_Security/Security_Audit_Log.md": {
+    "mtime": 1785644748.9064782,
+    "ast_hash": "db5a57487ef3d73ee52d68eb1c658ea0",
+    "semantic_hash": ""
+  },
+  "07_Security/Security_Model.md": {
+    "mtime": 1785644748.8975823,
+    "ast_hash": "86bd9fc2157f9ab9b55f4c94de9882d2",
+    "semantic_hash": ""
+  },
+  "07_Security/Security_Review_Checklist.md": {
+    "mtime": 1785644748.9006186,
+    "ast_hash": "a656de3ba39d7dfc2c638f832e266966",
+    "semantic_hash": ""
+  },
+  "07_Security/Threat_Model.md": {
+    "mtime": 1785644748.9096775,
+    "ast_hash": "d9f6c7d28f2871872c482a502c68cc06",
+    "semantic_hash": ""
+  },
+  "07_Security/_index.md": {
+    "mtime": 1785644748.912349,
+    "ast_hash": "cf4af7243d726a34d7deb0207c06fb4d",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/CI_Quality_Gates.md": {
+    "mtime": 1785644748.885819,
+    "ast_hash": "28ee3bd5166bdb6847f5887017e4fbd2",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/Deployment_Guide.md": {
+    "mtime": 1785644748.882865,
+    "ast_hash": "cb037c2d90a889d667dbfc03ffc6b7f8",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/Environments.md": {
+    "mtime": 1785644748.8766344,
+    "ast_hash": "ac914cda58b4fd208a9f526b4e5d972f",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/Release_Checklist.md": {
+    "mtime": 1785644748.6077087,
+    "ast_hash": "a7f92bb34e1c31de7850cac9fc336257",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/Rollback_Runbook.md": {
+    "mtime": 1785644748.8797922,
+    "ast_hash": "5025f505829f760b12c22bd4a9b57393",
+    "semantic_hash": ""
+  },
+  "08_CICD_DevOps/_index.md": {
+    "mtime": 1785644748.8888228,
+    "ast_hash": "6419b1fcab46dccc55202546699f67bf",
+    "semantic_hash": ""
+  },
+  "09_AI_Governance/AI_Agent_Governance.md": {
+    "mtime": 1785644748.5809088,
+    "ast_hash": "701879e45635edb2445ae37026060087",
+    "semantic_hash": ""
+  },
+  "09_AI_Governance/AI_Collaboration_Guide.md": {
+    "mtime": 1785644748.5747778,
+    "ast_hash": "bf7146c823657bf0a4bba78dc86f1dbb",
+    "semantic_hash": ""
+  },
+  "09_AI_Governance/AI_Usage_Log.md": {
+    "mtime": 1785644748.870311,
+    "ast_hash": "add43645b38b5f0ddf29267ed1d54222",
+    "semantic_hash": ""
+  },
+  "09_AI_Governance/Prompt_Library.md": {
+    "mtime": 1785644748.5718002,
+    "ast_hash": "0152d938c85ca1aae206e1c61ce5c7d8",
+    "semantic_hash": ""
+  },
+  "09_AI_Governance/_index.md": {
+    "mtime": 1785644748.5838652,
+    "ast_hash": "991144affb9c81926ad7899445b8d561",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-01_Formato_911.md": {
+    "mtime": 1785734960.2948244,
+    "ast_hash": "8679943d291f234c6bcef2962b7278e2",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-02_Catalogo_CCT.md": {
+    "mtime": 1785734973.4989872,
+    "ast_hash": "66b419025e6e3ce459b62032780d2fc6",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-03_CEMABE.md": {
+    "mtime": 1785734991.5197043,
+    "ast_hash": "0212a98eba08de46661b1cf02671d250",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-04_SESNSP_Incidencia_Delictiva.md": {
+    "mtime": 1785735005.4498594,
+    "ast_hash": "7d3a16c00a245cb80a2fba73c07dadd9",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-05_SINAICA_Calidad_Aire.md": {
+    "mtime": 1785735024.7215226,
+    "ast_hash": "0df34d2346856464a647e53d835ca1e0",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-06_CONAGUA_SINA.md": {
+    "mtime": 1785735037.331401,
+    "ast_hash": "2849865a4e56ebd6652b162592e202f9",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-07_CONEVAL_Rezago_Social.md": {
+    "mtime": 1785735053.9900777,
+    "ast_hash": "88ec0d557c06853fdc4ad583c7791ab2",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/DS-08_CONAPO_Proyecciones.md": {
+    "mtime": 1785735066.585991,
+    "ast_hash": "ee8280217f556ac2d49ce6fc529a2b3e",
+    "semantic_hash": ""
+  },
+  "14_Data_Sources/_index.md": {
+    "mtime": 1785735084.3329759,
+    "ast_hash": "a5fa129ce40dc4940d33950a5c4a7a9f",
+    "semantic_hash": ""
+  },
+  "15_ML_Models/_index.md": {
+    "mtime": 1785644748.3291426,
+    "ast_hash": "aa8882dc43015e2dbc3938f4f5b22f5e",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1785789728.8699875,
+    "ast_hash": "460bd66de1f23a526f04437517c97ee2",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1785723799.61841,
+    "ast_hash": "694facf4e34295f0c0b15813d45341dc",
+    "semantic_hash": ""
+  },
+  "GEMINI.md": {
+    "mtime": 1785789711.631881,
+    "ast_hash": "fbff1e938bd568883da0c058483d56a2",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1785809278.2676528,
+    "ast_hash": "b52c8ef4673af2b31b7be5676098cbed",
+    "semantic_hash": ""
+  },
+  "_Meta/Adoption_Guide.md": {
+    "mtime": 1785644748.891786,
+    "ast_hash": "7599ca3d9b606816768f26526b1ce3c6",
+    "semantic_hash": ""
+  },
+  "_Meta/Definition_of_Filed.md": {
+    "mtime": 1785992346.2923136,
+    "ast_hash": "5633c057537b0bc955c4d2e3091ce804",
+    "semantic_hash": ""
+  },
+  "_Meta/Link_Hygiene.md": {
+    "mtime": 1785644748.6258938,
+    "ast_hash": "05e002830409663d5aa9be1e30d1346a",
+    "semantic_hash": ""
+  },
+  "_Meta/Naming_Conventions.md": {
+    "mtime": 1785992346.1335351,
+    "ast_hash": "d2afffb13fc0caa56ab8b977371706cd",
+    "semantic_hash": ""
+  },
+  "_Meta/Traceability_Model.md": {
+    "mtime": 1785644748.8946953,
+    "ast_hash": "cb1f469935cf8dc4fda422dcad502993",
+    "semantic_hash": ""
+  },
+  "_Meta/Vault_Rules.md": {
+    "mtime": 1785794547.8836725,
+    "ast_hash": "192a5179be42a6372e26381fed18d9f9",
+    "semantic_hash": ""
+  },
+  "_Meta/_index.md": {
+    "mtime": 1785992537.9049113,
+    "ast_hash": "b8ea11cd104956000236cd5d6a0f96f0",
+    "semantic_hash": ""
+  },
+  "requirements.txt": {
+    "mtime": 1785644748.3414664,
+    "ast_hash": "60c2e780d03cdc95ce55608cd1306db6",
+    "semantic_hash": ""
   }
 }

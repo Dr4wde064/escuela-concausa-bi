@@ -4,6 +4,7 @@ title: "Developer Onboarding"
 owner: "Edgar Edmundo Coronel Navarrete"
 status: approved
 source_of_truth: true
+last_reviewed: "2026-08-06"
 tags: [onboarding, engineering]
 ---
 
@@ -19,7 +20,7 @@ tags: [onboarding, engineering]
 ## 2. Setup
 ```bash
 git clone https://github.com/edgarcoroneln/escuela-concausa-bi
-cd FARO
+cd escuela-concausa-bi
 # instalar dependencias según el stack
 ```
 
@@ -29,15 +30,55 @@ cd FARO
 3. Lee [[05_Engineering/Engineering_Workflow]] y [[05_Engineering/Definition_of_Done]].
 4. Toma una `TASK-###` del sprint activo ([[12_Roadmap_Sprints/_index]]).
 
-## 4. Equipo (nombre canónico → rol → área)
+## 4. Directorio del equipo
 
-| Persona (nombre canónico) | Rol | Área / ownership |
-|---|---|---|
-| Edgar Edmundo Coronel Navarrete | PM / Owner | Vault, matriz, releases |
-| Edgar Edmundo Coronel Navarrete | Dev | <área> |
+Los nombres, niveles, células y roles provienen del
+[[12_Roadmap_Sprints/PLAN_MAESTRO|Plan Maestro]]. Esta tabla agrega únicamente la identidad de
+GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 
-> Usa **siempre** el nombre canónico de esta tabla (ver [[_Meta/Naming_Conventions]]).
+| Persona (nombre canónico) | Nivel canónico | Célula | GitHub User | Estado |
+|---|---|---|---|---|
+| Edgar Edmundo Coronel Navarrete | Medio | PO | `edgarcoroneln` | Confirmado |
+| Diana Aracely Alvarez Varela | Alto | Célula 1 | `DianaVarela96` | Confirmado |
+| Deni Garrido Fragoso | Medio | Célula 1 | `dgdeni` | Confirmado |
+| Luis Enrique García Vázquez | Bajo | Célula 1 | `LuisEGarciaV` | Confirmado |
+| Emilio Galnares Ruiz | Bajo | Célula 1 | — | **Pendiente de confirmar** |
+| Manuel Alejandro Serranía Reinada | Alto | Célula 2 | `mserraniaa-png` | Confirmado |
+| Marina García del Buey | Medio | Célula 2 | `marina-gdb` | Confirmado |
+| Monserrat Xcaret Miranda Olivas | Medio | Célula 2 | `monserratxmiranda` | Confirmado |
+| Eloisa González Rubio | Bajo | Célula 2 | `EloisaGonzalezRubio` | Confirmado |
+| Andrés González Habib | Alto | Célula 3 | `Agh28` | Confirmado |
+| Héctor Rafael Morales Marbán | Medio | Célula 3 | `hector677-mm` | Confirmado |
+| Estefany Lucero Hernández Loredo | Bajo | Célula 3 | `stephi-coder` | Confirmado |
+| Carlos Guillermo Mayorga Tapia | Bajo | Célula 3 | — | **Pendiente de confirmar** |
+| Karla Alejandra Monter Benitez | Alto | Célula 4 | `marlakonter` | Confirmado |
+| Christian Imanol Ruiz Hurtado | Medio | Célula 4 | `ImanolRuiz00` | Confirmado |
+| Juan Carlos Macías Mayen | Medio | Célula 4 | `juanmmayen98` | Usuario confirmado; nivel por conciliar |
+| Oscar Antonio Quiroz Lázaro | Bajo | Célula 4 | — | **Pendiente de confirmar** |
+| Luis Téllez Domínguez | Medio | Célula 5 | `LuisTellez03` | Confirmado |
+| Edgar Ulises Jiménez López | Bajo | Célula 5 | `EJ-by-Me` | Confirmado |
+| Alejandro Velázquez Mendoza | Bajo | Célula 5 | `avmxk01` | Confirmado |
+| Edward Ulysses Ruiz Bustillos | Bajo | Célula 5 | `Dr4wde064` | Confirmado |
+
+> Usa **siempre** el nombre canónico de esta tabla (ver [[_Meta/Naming_Conventions]]). La lista
+> recibida el 2026-08-06 marcó a Juan Carlos como nivel Bajo; el Plan Maestro y su Agent Context lo
+> registran como **Medio**, que se conserva hasta una decisión explícita.
+
+### Pendientes para la sesión del 2026-08-06
+
+- Confirmar los usuarios de GitHub de Emilio Galnares Ruiz, Carlos Guillermo Mayorga Tapia y
+  Oscar Antonio Quiroz Lázaro.
+- Abrir cada perfil antes de enviar la invitación para validar la escritura exacta y que la cuenta
+  pertenezca a la persona indicada.
+- Conciliar el nivel de Juan Carlos Macías Mayen; si cambia, actualizar el Plan Maestro, su Agent
+  Context y cualquier asignación afectada en el mismo PR.
+- Verificar que las 21 personas acepten la invitación al repositorio antes de asignarles issues o
+  solicitarles revisión.
+
+Los revisores por carpeta se mantienen en
+[`.github/CODEOWNERS`](../.github/CODEOWNERS) y cualquier cambio allí requiere revisión de la
+Célula 5.
 
 ## 5. Flujo de trabajo (resumen)
-Rama `feat/...` → commits → PR con template → CI verde + 1 review → merge.
+Rama `feat/...` → commits → PR con template → CI verde + **2 aprobaciones** → merge.
 Nunca push directo a la rama protegida. Toda sesión con IA → DevLog.

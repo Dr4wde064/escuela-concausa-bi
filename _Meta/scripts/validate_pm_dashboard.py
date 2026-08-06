@@ -25,8 +25,15 @@ def main(root_value: str = ".") -> int:
         print("❌ Ejecuta primero generate_pm_dashboard.py")
         return 1
     data = json.loads(data_path.read_text(encoding="utf-8"))
+    if data.get("meta", {}).get("schema_version") != "2.2":
+        fail("Se esperaba schema 2.2 con contador de entrega", failures)
     if not re.fullmatch(r"[0-9a-f]{12}", data.get("meta", {}).get("source_fingerprint", "")):
         fail("Fingerprint de fuentes ausente o inválido", failures)
+    delivery = data.get("delivery", {})
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", delivery.get("date", "")):
+        fail("Fecha canónica de entrega ausente o inválida", failures)
+    if delivery.get("source") != "12_Roadmap_Sprints/PLAN_MAESTRO.md":
+        fail("La entrega no traza al Plan Maestro", failures)
     stories = data.get("stories", [])
     ids = [story.get("id") for story in stories]
     if len(ids) != 87:
@@ -42,8 +49,36 @@ def main(root_value: str = ".") -> int:
             fail(f"{story['id']} bloqueada sin fecha", failures)
         if story.get("status") == "done" and story.get("evidence") in {"", "—"}:
             fail(f"{story['id']} done sin evidencia", failures)
-    if len(data.get("people", [])) != 21:
-        fail(f"Se esperaban 21 personas y hay {len(data.get('people', []))}", failures)
+    people = data.get("people", [])
+    if len(people) != 21:
+        fail(f"Se esperaban 21 personas y hay {len(people)}", failures)
+    github_users = [person.get("github_user", "").casefold() for person in people if person.get("github_user")]
+    if len(github_users) != len(set(github_users)):
+        fail("Hay usuarios de GitHub duplicados en el directorio", failures)
+    assigned_ids: list[str] = []
+    activity = data.get("git_activity", {})
+    prs_by_author: dict[str, int] = {}
+    if activity.get("available"):
+        for pr in activity.get("prs", []):
+            author = str(pr.get("author", "")).casefold()
+            prs_by_author[author] = prs_by_author.get(author, 0) + 1
+    for person in people:
+        if "github_user" not in person or "assigned_story_ids" not in person:
+            fail(f"Identidad o US asignadas ausentes para {person.get('name')}", failures)
+        if len(person.get("assigned_story_ids", [])) != person.get("stories"):
+            fail(f"Conteo de US inconsistente para {person.get('name')}", failures)
+        assigned_ids.extend(person.get("assigned_story_ids", []))
+        pr_count = person.get("pr_count")
+        if pr_count is not None and (not isinstance(pr_count, int) or pr_count < 0):
+            fail(f"Conteo de PR inválido para {person.get('name')}", failures)
+        github_user = person.get("github_user", "").casefold()
+        expected_prs = prs_by_author.get(github_user, 0) if github_user else None
+        if activity.get("available") and pr_count != expected_prs:
+            fail(f"Conteo de PR no coincide para {person.get('name')}", failures)
+        if not activity.get("available") and pr_count is not None:
+            fail(f"{person.get('name')} muestra PR sin snapshot de GitHub", failures)
+    if sorted(assigned_ids) != sorted(ids):
+        fail("Las US del equipo no cubren exactamente las 87 historias", failures)
     if len(data.get("sources", [])) != 8:
         fail(f"Se esperaban 8 fuentes y hay {len(data.get('sources', []))}", failures)
     if round(sum(item.get("points", 0) for item in data.get("rubric", [])), 2) != 10.0:
@@ -51,7 +86,13 @@ def main(root_value: str = ".") -> int:
     html = html_path.read_text(encoding="utf-8")
     if "__PM_DASHBOARD_DATA__" in html:
         fail("El HTML conserva el marcador sin reemplazar", failures)
-    for tab in ["summary", "flow", "cells", "plans", "dependencies", "rubric", "sources", "risks", "governance", "explorer"]:
+    for countdown_id in ["delivery-days", "delivery-label"]:
+        if f'id="{countdown_id}"' not in html:
+            fail(f"Falta elemento del contador: {countdown_id}", failures)
+    for countdown_marker in ["updateDeliveryCountdown", "D.delivery.timezone", "setInterval"]:
+        if countdown_marker not in html:
+            fail(f"El contador no es dinámico: falta {countdown_marker}", failures)
+    for tab in ["summary", "flow", "cells", "team", "plans", "dependencies", "rubric", "sources", "risks", "governance", "explorer"]:
         if f'id="panel-{tab}"' not in html:
             fail(f"Falta panel {tab}", failures)
     if failures:

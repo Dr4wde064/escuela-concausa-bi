@@ -3,10 +3,13 @@ id: PLAN-MAESTRO
 title: "Plan Maestro del Proyecto FARO"
 owner: "Edgar Edmundo Coronel Navarrete"
 status: approved
-version: "1.2"
+version: "1.3"
 source_of_truth: true
 traces_up: ["01_Product/PRD"]
-last_reviewed: "2026-08-03"
+last_reviewed: "2026-08-06"
+delivery_date: "2026-09-09"
+delivery_label: "Demo en vivo y entrega final"
+delivery_timezone: "America/Mexico_City"
 tags: [roadmap, plan, sprints]
 ---
 

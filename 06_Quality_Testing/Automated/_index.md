@@ -25,8 +25,10 @@ tags: [moc, qa, automation]
 | TEST-002 | US-004 · REQ-007 | integración | implemented |
 
 `TEST-002` ejecuta `python3 _Meta/scripts/validate_pm_dashboard.py .` y verifica 87 US únicas,
-21 personas, ocho fuentes, rúbrica de 10 puntos, estados válidos, evidencia para Done y las nueve
-diez vistas requeridas, incluido el plan seleccionable por célula/persona. Es determinista y no usa red.
+21 personas, usuarios GitHub no duplicados, cobertura exacta de US por integrante, conteos de PR
+válidos, ocho fuentes, rúbrica de 10 puntos, estados válidos, evidencia para Done y las once vistas
+requeridas, incluidas **Equipo** y el plan seleccionable por célula/persona. También exige la fecha
+canónica y los elementos visibles de la cuenta regresiva de entrega. Es determinista y no usa red.
 
 ## Convenciones
 - Nombrar tests por comportamiento, no por implementación.

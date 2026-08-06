@@ -2,39 +2,38 @@
 #  CODEOWNERS — Revisores automáticos
 #  DOBLE COMPUERTA: Tech Lead (técnico) + @edgarcoroneln (proceso)
 #
-#  PENDIENTE: sustituye @usuario-xxx por el usuario REAL de GitHub de cada
-#  Tech Lead. Si el usuario no existe o no es colaborador, GitHub ignora la
-#  línea SIN AVISAR y te quedas sin revisor.
+#  Usuarios de Tech Leads recibidos del PO el 2026-08-06. Antes del merge,
+#  Célula 5 debe comprobar que cada cuenta exista y tenga acceso al repo.
 # ============================================================================
 
 *                           @edgarcoroneln
 
 # Célula 1 · Data Engineering (Diana Alvarez)
-/src/ingesta/               @usuario-diana @edgarcoroneln
-/dbt/                       @usuario-diana @edgarcoroneln
-/dags/                      @usuario-diana @edgarcoroneln
-/great_expectations/        @usuario-diana @edgarcoroneln
-/14_Data_Sources/           @usuario-diana @edgarcoroneln
+/src/ingesta/               @DianaVarela96 @edgarcoroneln
+/dbt/                       @DianaVarela96 @edgarcoroneln
+/dags/                      @DianaVarela96 @edgarcoroneln
+/great_expectations/        @DianaVarela96 @edgarcoroneln
+/14_Data_Sources/           @DianaVarela96 @edgarcoroneln
 
 # Célula 2 · Analytics & BI (Manuel Serranía)
-/superset/                  @usuario-manuel @edgarcoroneln
-/04_UX_Design/              @usuario-manuel @edgarcoroneln
+/superset/                  @mserraniaa-png @edgarcoroneln
+/04_UX_Design/              @mserraniaa-png @edgarcoroneln
 
 # Célula 3 · ML & Agente (Andrés González Habib)
-/src/modelos/               @usuario-andres @edgarcoroneln
-/src/agente/                @usuario-andres @edgarcoroneln
-/15_ML_Models/              @usuario-andres @edgarcoroneln
+/src/modelos/               @Agh28 @edgarcoroneln
+/src/agente/                @Agh28 @edgarcoroneln
+/15_ML_Models/              @Agh28 @edgarcoroneln
 
 # Célula 4 · Backend & Seguridad (Karla Monter)
-/src/api/                   @usuario-karla @edgarcoroneln
-/07_Security/               @usuario-karla @edgarcoroneln
+/src/api/                   @marlakonter @edgarcoroneln
+/07_Security/               @marlakonter @edgarcoroneln
 
 # Célula 5 · Cloud & DevOps (Luis Téllez)
-/.github/                   @usuario-luis @edgarcoroneln
-/docker-compose.yml         @usuario-luis @edgarcoroneln
-/Dockerfile*                @usuario-luis @edgarcoroneln
-/08_CICD_DevOps/            @usuario-luis @edgarcoroneln
-/11_Operations/             @usuario-luis @edgarcoroneln
+/.github/                   @LuisTellez03 @edgarcoroneln
+/docker-compose.yml         @LuisTellez03 @edgarcoroneln
+/Dockerfile*                @LuisTellez03 @edgarcoroneln
+/08_CICD_DevOps/            @LuisTellez03 @edgarcoroneln
+/11_Operations/             @LuisTellez03 @edgarcoroneln
 
 # Gobernanza del vault (solo PM)
 /_Meta/                     @edgarcoroneln

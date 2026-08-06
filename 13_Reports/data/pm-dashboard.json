@@ -1,14 +1,14 @@
 {
   "meta": {
-    "generated_at": "2026-08-06T05:26:02+00:00",
-    "generated_date": "2026-08-05",
-    "commit": "cc66e2f",
+    "generated_at": "2026-08-06T17:01:56+00:00",
+    "generated_date": "2026-08-06",
+    "commit": "71f8116",
     "branch": "feat/edgar-tablero-control-v2",
     "working_tree": "modified",
-    "source_fingerprint": "2262d83d1f67",
+    "source_fingerprint": "d559498977b0",
     "source": "Fuentes canónicas del vault",
     "offline": true,
-    "schema_version": "2.0"
+    "schema_version": "2.2"
   },
   "summary": {
     "total": 87,
@@ -19,7 +19,13 @@
     "blocked": 0,
     "wip": 6,
     "progress": 4.5,
-    "days_to_demo": 35
+    "days_to_demo": 34
+  },
+  "delivery": {
+    "date": "2026-09-09",
+    "label": "Demo en vivo y entrega final",
+    "timezone": "America/Mexico_City",
+    "source": "12_Roadmap_Sprints/PLAN_MAESTRO.md"
   },
   "stories": [
     {
@@ -37,7 +43,7 @@
       "updated": "2026-08-05",
       "objective": "Repo faro-escuela-sensor desde cero. Reemplazar los 93 placeholders, crear Secrets_Policy.md (4 links rotos) y dejar vault_lint.py en verde.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 4
+      "age_days": 5
     },
     {
       "id": "US-002",
@@ -54,7 +60,7 @@
       "updated": "2026-08-05",
       "objective": "Traducir los 7 modulos de la rubrica a REQ-### con criterios AC-### verificables.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 4
+      "age_days": 5
     },
     {
       "id": "US-003",
@@ -71,7 +77,7 @@
       "updated": "2026-08-05",
       "objective": "Nombre canonico por persona + un 09_AI_Governance/Agent_Contexts/{nombre}.md para gobernar el uso de IA.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 3
+      "age_days": 4
     },
     {
       "id": "US-004",
@@ -88,7 +94,7 @@
       "updated": "2026-08-05",
       "objective": "Una fila por REQ, actualizada en cada standup. Es el tablero de control del proyecto.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 2
+      "age_days": 3
     },
     {
       "id": "US-005",
@@ -139,7 +145,7 @@
       "updated": "2026-08-05",
       "objective": "Contrato de las 3 capas: Bronze (raw + metadatos), Silver (tipado, CCT homologado) y Gold (esquema estrella). Incluye el parametro SCOPE_ENTIDADES y la politica de cobertura parcial. Documentar en 03_Architecture/Data_Model.md.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 3
+      "age_days": 4
     },
     {
       "id": "US-102",
@@ -955,7 +961,7 @@
       "updated": "2026-08-05",
       "objective": "Especificacion de TODOS los endpoints ANTES de construir, para que las Celulas 2 y 3 trabajen en paralelo con mocks. Va a 03_Architecture/API_Specification.md.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 2
+      "age_days": 3
     },
     {
       "id": "US-402",
@@ -1515,6 +1521,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/alejandro-mendoza-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-alejandro-velazquez-mendoza.md",
+      "github_user": "avmxk01",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/avmxk01",
+      "assigned_story_ids": [
+        "US-521a",
+        "US-522a",
+        "US-523a",
+        "US-524a",
+        "US-525a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1533,6 +1552,18 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/andres-habib-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-andres-gonzalez-habib.md",
+      "github_user": "Agh28",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/Agh28",
+      "assigned_story_ids": [
+        "US-301",
+        "US-302",
+        "US-303",
+        "US-304a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1551,6 +1582,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/carlos-tapia-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-carlos-guillermo-mayorga-tapia.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-304b",
+        "US-323",
+        "US-324"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1569,6 +1611,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/christian-hurtado-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-christian-imanol-ruiz-hurtado.md",
+      "github_user": "ImanolRuiz00",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/ImanolRuiz00",
+      "assigned_story_ids": [
+        "US-411",
+        "US-413",
+        "US-414"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1587,6 +1640,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/deni-fragoso-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-deni-garrido-fragoso.md",
+      "github_user": "dgdeni",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/dgdeni",
+      "assigned_story_ids": [
+        "US-111",
+        "US-112",
+        "US-113",
+        "US-114"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1605,6 +1670,20 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/diana-varela-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-diana-aracely-alvarez-varela.md",
+      "github_user": "DianaVarela96",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/DianaVarela96",
+      "assigned_story_ids": [
+        "US-101",
+        "US-102",
+        "US-103",
+        "US-104",
+        "US-105",
+        "US-106"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 6,
       "done": 0,
       "wip": 1,
@@ -1623,6 +1702,20 @@
       "reviewer": "Auto-revisión + validación del linter en CI",
       "delivery": "Rama feat/edgar-navarrete-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/0-edgar-edmundo-coronel-navarrete.md",
+      "github_user": "edgarcoroneln",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/edgarcoroneln",
+      "assigned_story_ids": [
+        "US-001",
+        "US-002",
+        "US-003",
+        "US-004",
+        "US-005",
+        "US-006"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 6,
       "done": 0,
       "wip": 4,
@@ -1641,6 +1734,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/edgar-lopez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-edgar-ulises-jimenez-lopez.md",
+      "github_user": "EJ-by-Me",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/EJ-by-Me",
+      "assigned_story_ids": [
+        "US-521b",
+        "US-522b",
+        "US-523b",
+        "US-524b",
+        "US-525b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1659,6 +1765,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/edward-bustillos-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-edward-ulysses-ruiz-bustillos.md",
+      "github_user": "Dr4wde064",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/Dr4wde064",
+      "assigned_story_ids": [
+        "US-521c",
+        "US-522c",
+        "US-523c",
+        "US-524c",
+        "US-525c"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1677,6 +1796,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/eloisa-rubio-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-eloisa-gonzalez-rubio.md",
+      "github_user": "EloisaGonzalezRubio",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/EloisaGonzalezRubio",
+      "assigned_story_ids": [
+        "US-221",
+        "US-222",
+        "US-223",
+        "US-224"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1695,6 +1826,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/emilio-ruiz-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-emilio-galnares-ruiz.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-121a",
+        "US-122a",
+        "US-123a",
+        "US-124a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1713,6 +1856,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/estefany-loredo-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-estefany-lucero-hernandez-loredo.md",
+      "github_user": "stephi-coder",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/stephi-coder",
+      "assigned_story_ids": [
+        "US-321",
+        "US-322",
+        "US-325"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1731,6 +1885,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/hector-marban-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-hector-rafael-morales-marban.md",
+      "github_user": "hector677-mm",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/hector677-mm",
+      "assigned_story_ids": [
+        "US-311",
+        "US-312",
+        "US-313"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1749,6 +1914,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/juan-mayen-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-juan-carlos-macias-mayen.md",
+      "github_user": "juanmmayen98",
+      "github_status": "Usuario confirmado; nivel por conciliar",
+      "github_profile": "https://github.com/juanmmayen98",
+      "assigned_story_ids": [
+        "US-412",
+        "US-415",
+        "US-416"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1767,6 +1943,18 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/karla-benitez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-karla-alejandra-monter-benitez.md",
+      "github_user": "marlakonter",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/marlakonter",
+      "assigned_story_ids": [
+        "US-401",
+        "US-402",
+        "US-403",
+        "US-404"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 1,
@@ -1785,6 +1973,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/luis-vazquez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-luis-enrique-garcia-vazquez.md",
+      "github_user": "LuisEGarciaV",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/LuisEGarciaV",
+      "assigned_story_ids": [
+        "US-121b",
+        "US-122b",
+        "US-123b",
+        "US-124b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1803,6 +2003,19 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/luis-dominguez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-luis-tellez-dominguez.md",
+      "github_user": "LuisTellez03",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/LuisTellez03",
+      "assigned_story_ids": [
+        "US-501",
+        "US-502",
+        "US-503",
+        "US-504",
+        "US-505"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1821,6 +2034,19 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/manuel-reinada-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-manuel-alejandro-serrania-reinada.md",
+      "github_user": "mserraniaa-png",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/mserraniaa-png",
+      "assigned_story_ids": [
+        "US-201",
+        "US-202",
+        "US-203",
+        "US-204",
+        "US-205"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1839,6 +2065,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/marina-buey-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-marina-garcia-del-buey.md",
+      "github_user": "marina-gdb",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/marina-gdb",
+      "assigned_story_ids": [
+        "US-211a",
+        "US-212",
+        "US-214a",
+        "US-215a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1857,6 +2095,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/monserrat-olivas-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-monserrat-xcaret-miranda-olivas.md",
+      "github_user": "monserratxmiranda",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/monserratxmiranda",
+      "assigned_story_ids": [
+        "US-211b",
+        "US-213",
+        "US-214b",
+        "US-215b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1875,6 +2125,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/oscar-lazaro-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-oscar-antonio-quiroz-lazaro.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-421",
+        "US-422",
+        "US-423"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -2350,12 +2611,19 @@
   "git_activity": {
     "available": false,
     "prs": [],
-    "reviews": [],
     "ci": "local"
   },
   "history": [
     {
       "date": "2026-08-05",
+      "remaining": 87,
+      "done": 0,
+      "scope": 87,
+      "wip": 6,
+      "blocked": 0
+    },
+    {
+      "date": "2026-08-06",
       "remaining": 87,
       "done": 0,
       "scope": 87,

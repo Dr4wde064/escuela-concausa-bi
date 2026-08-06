@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>FARO · Tablero de Control PM v2</title>
+  <title>FARO · Tablero de Control PM v2.2</title>
   <style>
     :root{--navy:#082f49;--navy2:#0c4a6e;--teal:#0f766e;--cyan:#0891b2;--ink:#172033;--muted:#64748b;--line:#dbe4ee;--bg:#f4f7fb;--card:#fff;--ok:#15803d;--warn:#b45309;--bad:#b91c1c;--blue:#1d4ed8;--shadow:0 8px 28px rgba(15,23,42,.07)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input{font:inherit}
-    a{color:var(--blue)}.shell{max-width:1500px;margin:auto;padding:0 24px}.top{background:linear-gradient(125deg,var(--navy),var(--navy2));color:#fff;padding:24px 0 22px}.topline{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.brand h1{margin:0;font-size:27px;letter-spacing:-.4px}.brand h1 span{color:#67e8f9}.brand p{margin:4px 0 0;color:#bae6fd}.stamp{text-align:right;font-size:12px;color:#bae6fd}.stamp b{display:block;color:#fff;font-size:14px}.kpis{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;margin-top:20px}.kpi{padding:12px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:rgba(255,255,255,.08)}.kpi strong{font:700 23px ui-monospace,SFMono-Regular,Menlo,monospace;display:block}.kpi span{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:#bae6fd}
+    a{color:var(--blue)}.shell{max-width:1500px;margin:auto;padding:0 24px}.top{background:linear-gradient(125deg,var(--navy),var(--navy2));color:#fff;padding:24px 0 22px}.topline{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.brand h1{margin:0;font-size:27px;letter-spacing:-.4px}.brand h1 span{color:#67e8f9}.brand p{margin:4px 0 0;color:#bae6fd}.headmeta{display:flex;align-items:flex-start;gap:24px}.countdown{text-align:right;min-width:145px}.countdown strong{display:block;font:700 34px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff}.countdown span{display:block;margin-top:5px;color:#bae6fd;font-size:10px;text-transform:uppercase;letter-spacing:.6px}.stamp{text-align:right;font-size:12px;color:#bae6fd}.stamp b{display:block;color:#fff;font-size:14px}.kpis{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;margin-top:20px}.kpi{padding:12px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:rgba(255,255,255,.08)}.kpi strong{font:700 23px ui-monospace,SFMono-Regular,Menlo,monospace;display:block}.kpi span{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:#bae6fd}
     .tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 12px rgba(15,23,42,.04)}.tabrow{display:flex;overflow:auto;gap:2px}.tab{border:0;background:transparent;padding:13px 14px;color:var(--muted);white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent}.tab:hover,.tab:focus-visible{color:var(--navy);background:#f8fafc}.tab.active{color:var(--navy);font-weight:700;border-color:var(--cyan)}
     main{padding:24px 0 60px}.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.span12{grid-column:span 12}.span8{grid-column:span 8}.span7{grid-column:span 7}.span6{grid-column:span 6}.span5{grid-column:span 5}.span4{grid-column:span 4}.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:var(--shadow);min-width:0}.card h2{font-size:16px;color:var(--navy);margin:0 0 3px}.card h3{font-size:13px;margin:0 0 8px}.desc{font-size:12px;color:var(--muted);margin-bottom:15px}.note{padding:11px 13px;background:#ecfeff;border-left:4px solid var(--cyan);border-radius:5px;color:#164e63}.alert{padding:12px;border-radius:9px;margin:8px 0;border-left:4px solid}.alert.bad{background:#fef2f2;border-color:var(--bad)}.alert.warn{background:#fffbeb;border-color:var(--warn)}.alert.ok{background:#f0fdf4;border-color:var(--ok)}
     .alert b{display:block;margin-bottom:2px}.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.2px}.pill.planned{background:#eef2f7;color:#475569}.pill.in_progress{background:#dbeafe;color:#1d4ed8}.pill.in_review{background:#fef3c7;color:#92400e}.pill.blocked{background:#fee2e2;color:#991b1b}.pill.done,.pill.ok{background:#dcfce7;color:#166534}.pill.warn{background:#fef3c7;color:#92400e}.pill.bad{background:#fee2e2;color:#991b1b}
     table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:#f8fafc}th,td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:hover{background:#f8fafc}.scroll{overflow:auto;max-height:570px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.num{text-align:right;font-variant-numeric:tabular-nums}.bar{height:8px;background:#e2e8f0;border-radius:8px;overflow:hidden}.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan))}.metric{display:flex;justify-content:space-between;align-items:end;margin:10px 0 5px}.metric strong{font-size:20px}.small{font-size:11px;color:var(--muted)}
-    .flowcards{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.flowstate{padding:12px;border:1px solid var(--line);border-radius:10px}.flowstate strong{display:block;font:700 22px ui-monospace,monospace}.flowstate span{color:var(--muted);font-size:11px}.chart{width:100%;min-height:230px}.legend{display:flex;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:11px}.legend i{width:10px;height:10px;display:inline-block;border-radius:2px;margin-right:4px}.cellgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cell{border:1px solid var(--line);border-radius:11px;padding:14px;background:#fff}.cell h3{color:var(--navy);font-size:14px}.cell ul{padding-left:18px;margin:8px 0;color:var(--muted);font-size:11px}.chain{display:flex;align-items:stretch;gap:8px;overflow:auto}.node{min-width:160px;padding:13px;border:1px solid var(--line);border-radius:10px;background:#f8fafc}.arrow{align-self:center;color:var(--cyan);font-size:22px}.gate{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}.heat{display:grid;grid-template-columns:32px repeat(5,1fr);gap:3px}.heat div{min-height:43px;border-radius:5px;display:grid;place-items:center;font-size:11px}.heat .axis{background:transparent;color:var(--muted)}.risk1{background:#dcfce7}.risk2{background:#fef9c3}.risk3{background:#fed7aa}.risk4{background:#fecaca}.risk5{background:#ef4444;color:#fff}.source-status{font-weight:700}.source-status.pending{color:var(--bad)}.source-status.partial{color:var(--warn)}.source-status.ok{color:var(--ok)}
+    .flowcards{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.flowstate{padding:12px;border:1px solid var(--line);border-radius:10px}.flowstate strong{display:block;font:700 22px ui-monospace,monospace}.flowstate span{color:var(--muted);font-size:11px}.chart{width:100%;min-height:230px}.legend{display:flex;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:11px}.legend i{width:10px;height:10px;display:inline-block;border-radius:2px;margin-right:4px}.cellgrid,.teamgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cell{border:1px solid var(--line);border-radius:11px;padding:14px;background:#fff}.cell h3{color:var(--navy);font-size:14px}.cell ul{padding-left:18px;margin:8px 0;color:var(--muted);font-size:11px}.teamcard{--cell-color:#475569;border:1px solid var(--line);border-top:5px solid var(--cell-color);border-radius:11px;padding:14px;background:#fff}.teamcard h3{color:var(--navy);font-size:14px}.teamcard ul{padding-left:18px;margin:8px 0 0;color:var(--muted);font-size:11px}.cell0{--cell-color:#475569}.cell1{--cell-color:#0284c7}.cell2{--cell-color:#7c3aed}.cell3{--cell-color:#059669}.cell4{--cell-color:#ea580c}.cell5{--cell-color:#db2777}.celltag{display:inline-flex;align-items:center;gap:6px;font-size:11px}.celltag:before{content:"";width:10px;height:10px;border-radius:3px;background:var(--cell-color)}.team-row td:first-child{border-left:5px solid var(--cell-color)}.uslist{display:flex;flex-wrap:wrap;gap:4px;max-width:420px}.uslist span{padding:2px 5px;border-radius:4px;background:#eef2f7;color:#334155;font:10px ui-monospace,monospace}.chain{display:flex;align-items:stretch;gap:8px;overflow:auto}.node{min-width:160px;padding:13px;border:1px solid var(--line);border-radius:10px;background:#f8fafc}.arrow{align-self:center;color:var(--cyan);font-size:22px}.gate{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}.heat{display:grid;grid-template-columns:32px repeat(5,1fr);gap:3px}.heat div{min-height:43px;border-radius:5px;display:grid;place-items:center;font-size:11px}.heat .axis{background:transparent;color:var(--muted)}.risk1{background:#dcfce7}.risk2{background:#fef9c3}.risk3{background:#fed7aa}.risk4{background:#fecaca}.risk5{background:#ef4444;color:#fff}.source-status{font-weight:700}.source-status.pending{color:var(--bad)}.source-status.partial{color:var(--warn)}.source-status.ok{color:var(--ok)}
     .filters{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:13px}.filters.planfilters{grid-template-columns:1fr 1fr}.filters label{font-size:10px;text-transform:uppercase;color:var(--muted);font-weight:700}.filters select,.filters input{width:100%;padding:8px;border:1px solid var(--line);border-radius:7px;background:#fff;margin-top:4px}.profile{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.profilehero{padding:16px;border-radius:11px;background:linear-gradient(135deg,#ecfeff,#eff6ff);border:1px solid #bae6fd}.profilehero h3{font-size:18px;color:var(--navy);margin:0}.profilehero p{margin:7px 0}.depgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.depbox{padding:12px;border:1px solid var(--line);border-radius:9px;background:#f8fafc}.depbox b{display:block;color:var(--navy);font-size:11px;text-transform:uppercase;margin-bottom:4px}.fresh{display:inline-flex;gap:6px;align-items:center}.dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}.dot.stale{background:var(--bad)}.footer{color:var(--muted);font-size:11px;text-align:center;margin-top:24px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:1050px){.kpis{grid-template-columns:repeat(3,1fr)}.span8,.span7,.span6,.span5,.span4{grid-column:span 12}.cellgrid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:650px){.shell{padding:0 14px}.topline{display:block}.stamp{text-align:left;margin-top:12px}.kpis{grid-template-columns:repeat(2,1fr)}.grid{display:block}.card{margin-bottom:14px}.cellgrid,.filters,.filters.planfilters,.flowcards,.profile,.depgrid{grid-template-columns:1fr}.tab{padding:11px}.brand h1{font-size:22px}}
+    @media(max-width:1050px){.kpis{grid-template-columns:repeat(3,1fr)}.span8,.span7,.span6,.span5,.span4{grid-column:span 12}.cellgrid,.teamgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){.shell{padding:0 14px}.topline{display:block}.headmeta{margin-top:14px;justify-content:space-between}.countdown,.stamp{text-align:left}.kpis{grid-template-columns:repeat(2,1fr)}.grid{display:block}.card{margin-bottom:14px}.cellgrid,.teamgrid,.filters,.filters.planfilters,.flowcards,.profile,.depgrid{grid-template-columns:1fr}.tab{padding:11px}.brand h1{font-size:22px}}
     @media print{.tabs,.no-print{display:none}.panel{display:block!important;break-before:page}.panel:first-child{break-before:auto}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
   </style>
 </head>
@@ -24,8 +24,8 @@
   <header class="top">
     <div class="shell">
       <div class="topline">
-        <div class="brand"><h1>FARO <span>· Control PM v2</span></h1><p>Escuela como Sensor Social · ejecución auditable de 21 integrantes</p></div>
-        <div class="stamp"><b id="freshness">Cargando snapshot…</b><span id="provenance"></span></div>
+        <div class="brand"><h1>FARO <span>· Control PM v2.2</span></h1><p>Escuela como Sensor Social · ejecución auditable de 21 integrantes</p></div>
+        <div class="headmeta"><div class="countdown" role="status" aria-live="polite"><strong id="delivery-days">—</strong><span id="delivery-label">Días a la entrega</span></div><div class="stamp"><b id="freshness">Cargando snapshot…</b><span id="provenance"></span></div></div>
       </div>
       <div class="kpis" aria-label="Indicadores principales">
         <div class="kpi"><strong id="k-progress">—</strong><span>Avance ponderado</span></div>
@@ -33,12 +33,12 @@
         <div class="kpi"><strong id="k-wip">—</strong><span>Trabajo en curso</span></div>
         <div class="kpi"><strong id="k-blocked">—</strong><span>Bloqueadas</span></div>
         <div class="kpi"><strong id="k-ready">—</strong><span>Readiness demo</span></div>
-        <div class="kpi"><strong id="k-days">—</strong><span>Días a la demo</span></div>
+        <div class="kpi"><strong id="k-days">—</strong><span>Días a la entrega</span></div>
       </div>
     </div>
   </header>
   <nav class="tabs" aria-label="Secciones del tablero"><div class="shell tabrow">
-    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
+    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="team">Equipo</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
   </div></nav>
   <main class="shell">
     <section class="panel active" id="panel-summary">
@@ -59,6 +59,10 @@
       </div>
     </section>
     <section class="panel" id="panel-cells"><article class="card"><h2>Integración de las células</h2><div class="desc">Composición, carga, trabajo en curso y progreso derivado del estado de sus historias.</div><div class="cellgrid" id="cell-grid"></div></article><article class="card" style="margin-top:16px"><h2>RACI por entregable</h2><div class="scroll"><table><thead><tr><th>Entregable</th><th>R</th><th>A</th><th>C</th><th>I</th><th>Gate</th></tr></thead><tbody id="raci-table"></tbody></table></div></article></section>
+    <section class="panel" id="panel-team">
+      <article class="card"><h2>Equipo por célula</h2><div class="desc">Vista estática por color. La composición proviene del Plan Maestro; las identidades GitHub, del Developer Onboarding.</div><div class="teamgrid" id="team-cards"></div></article>
+      <article class="card" style="margin-top:16px"><h2>Directorio, asignación y actividad</h2><div class="desc">Las US se derivan del catálogo canónico. “PR enviados” cuenta PR cuyo autor coincide con el GitHub User; sin snapshot de Actions se muestra “sin datos”, no cero.</div><div class="scroll"><table><thead><tr><th>Integrante</th><th>Nivel / rol</th><th>Célula</th><th>GitHub</th><th>US asignadas</th><th>PR enviados</th></tr></thead><tbody id="team-table"></tbody></table></div></article>
+    </section>
     <section class="panel" id="panel-plans">
       <article class="card"><h2>Plan de trabajo por célula e integrante</h2><div class="desc">Selecciona primero la célula y después una persona. Misión, dependencias y objetivos provienen de su plan individual; el avance proviene del registro operativo.</div><div class="filters planfilters"><label>Célula<select id="plan-cell"></select></label><label>Integrante<select id="plan-person"></select></label></div><div id="plan-profile"></div></article>
       <article class="card" style="margin-top:16px"><h2>Actividades y avance</h2><div class="desc" id="plan-count">—</div><div class="scroll"><table><thead><tr><th>Sprint</th><th>US</th><th>Actividad / objetivo</th><th>Entregable</th><th>Estado</th><th>Avance</th><th>Dependencia/bloqueo</th><th>Evidencia</th></tr></thead><tbody id="plan-activities"></tbody></table></div></article>
@@ -72,20 +76,20 @@
     <section class="panel" id="panel-risks"><div class="grid"><article class="card span5"><h2>Heat map 5×5</h2><div class="desc">Probabilidad × impacto; el número indica riesgos en la celda.</div><div class="heat" id="risk-heat"></div></article><article class="card span7"><h2>Registro priorizado</h2><div class="desc">Respuesta, disparador y dueño proceden del Risk Register.</div><div class="scroll"><table><thead><tr><th>ID</th><th>Riesgo</th><th>P×I</th><th>Respuesta</th><th>Dueño</th><th>Estado</th></tr></thead><tbody id="risk-table"></tbody></table></div></article></div></section>
     <section class="panel" id="panel-governance"><div class="grid"><article class="card span6"><h2>Salud del vault</h2><div class="gate"><span>Fuentes canónicas separadas de proyecciones</span><span class="pill ok">sí</span></div><div class="gate"><span>87 US únicas y enlazadas</span><span class="pill ok" id="gov-us">—</span></div><div class="gate"><span>Estado Done exige evidencia</span><span class="pill ok">validado</span></div><div class="gate"><span>Snapshot autocontenido/offline</span><span class="pill ok">sí</span></div><div class="gate"><span>Vault lint</span><span class="pill in_review">ver CI</span></div></article><article class="card span6"><h2>Git, PR y participación saludable</h2><div id="git-health"></div><div class="note">La actividad detecta cobertura, revisiones pendientes y cuellos de botella. No se usa como ranking individual ni cierra historias automáticamente.</div></article><article class="card span12"><h2>Procedencia</h2><div id="meta-table"></div></article></div></section>
     <section class="panel" id="panel-explorer"><article class="card"><h2>Explorador de historias</h2><div class="desc">Filtra sin modificar el estado canónico.</div><div class="filters"><label>Buscar<input id="f-search" type="search" placeholder="US, título o persona"></label><label>Sprint<select id="f-sprint"></select></label><label>Célula<select id="f-cell"></select></label><label>REQ<select id="f-req"></select></label><label>Estado<select id="f-status"></select></label></div><div class="small" id="explorer-count"></div><div class="scroll"><table><thead><tr><th>US</th><th>Historia</th><th>Responsable</th><th>Célula</th><th>Sprint</th><th>REQ</th><th>Estado</th><th>Edad</th><th>Evidencia</th></tr></thead><tbody id="story-table"></tbody></table></div></article></section>
-    <div class="footer">FARO · Tablero PM v2 · <span id="footer-meta"></span></div>
+    <div class="footer">FARO · Tablero PM v2.2 · <span id="footer-meta"></span></div>
   </main>
   <script>
   window.PM_DATA = {
   "meta": {
-    "generated_at": "2026-08-06T05:26:02+00:00",
-    "generated_date": "2026-08-05",
-    "commit": "cc66e2f",
+    "generated_at": "2026-08-06T17:01:56+00:00",
+    "generated_date": "2026-08-06",
+    "commit": "71f8116",
     "branch": "feat/edgar-tablero-control-v2",
     "working_tree": "modified",
-    "source_fingerprint": "2262d83d1f67",
+    "source_fingerprint": "d559498977b0",
     "source": "Fuentes canónicas del vault",
     "offline": true,
-    "schema_version": "2.0"
+    "schema_version": "2.2"
   },
   "summary": {
     "total": 87,
@@ -96,7 +100,13 @@
     "blocked": 0,
     "wip": 6,
     "progress": 4.5,
-    "days_to_demo": 35
+    "days_to_demo": 34
+  },
+  "delivery": {
+    "date": "2026-09-09",
+    "label": "Demo en vivo y entrega final",
+    "timezone": "America/Mexico_City",
+    "source": "12_Roadmap_Sprints/PLAN_MAESTRO.md"
   },
   "stories": [
     {
@@ -114,7 +124,7 @@
       "updated": "2026-08-05",
       "objective": "Repo faro-escuela-sensor desde cero. Reemplazar los 93 placeholders, crear Secrets_Policy.md (4 links rotos) y dejar vault_lint.py en verde.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 4
+      "age_days": 5
     },
     {
       "id": "US-002",
@@ -131,7 +141,7 @@
       "updated": "2026-08-05",
       "objective": "Traducir los 7 modulos de la rubrica a REQ-### con criterios AC-### verificables.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 4
+      "age_days": 5
     },
     {
       "id": "US-003",
@@ -148,7 +158,7 @@
       "updated": "2026-08-05",
       "objective": "Nombre canonico por persona + un 09_AI_Governance/Agent_Contexts/{nombre}.md para gobernar el uso de IA.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 3
+      "age_days": 4
     },
     {
       "id": "US-004",
@@ -165,7 +175,7 @@
       "updated": "2026-08-05",
       "objective": "Una fila por REQ, actualizada en cada standup. Es el tablero de control del proyecto.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 2
+      "age_days": 3
     },
     {
       "id": "US-005",
@@ -216,7 +226,7 @@
       "updated": "2026-08-05",
       "objective": "Contrato de las 3 capas: Bronze (raw + metadatos), Silver (tipado, CCT homologado) y Gold (esquema estrella). Incluye el parametro SCOPE_ENTIDADES y la politica de cobertura parcial. Documentar en 03_Architecture/Data_Model.md.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 3
+      "age_days": 4
     },
     {
       "id": "US-102",
@@ -1032,7 +1042,7 @@
       "updated": "2026-08-05",
       "objective": "Especificacion de TODOS los endpoints ANTES de construir, para que las Celulas 2 y 3 trabajen en paralelo con mocks. Va a 03_Architecture/API_Specification.md.",
       "deliverable": "Código en su carpeta + documento en el vault con frontmatter + fila en la matriz",
-      "age_days": 2
+      "age_days": 3
     },
     {
       "id": "US-402",
@@ -1592,6 +1602,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/alejandro-mendoza-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-alejandro-velazquez-mendoza.md",
+      "github_user": "avmxk01",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/avmxk01",
+      "assigned_story_ids": [
+        "US-521a",
+        "US-522a",
+        "US-523a",
+        "US-524a",
+        "US-525a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1610,6 +1633,18 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/andres-habib-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-andres-gonzalez-habib.md",
+      "github_user": "Agh28",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/Agh28",
+      "assigned_story_ids": [
+        "US-301",
+        "US-302",
+        "US-303",
+        "US-304a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1628,6 +1663,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/carlos-tapia-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-carlos-guillermo-mayorga-tapia.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-304b",
+        "US-323",
+        "US-324"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1646,6 +1692,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/christian-hurtado-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-christian-imanol-ruiz-hurtado.md",
+      "github_user": "ImanolRuiz00",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/ImanolRuiz00",
+      "assigned_story_ids": [
+        "US-411",
+        "US-413",
+        "US-414"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1664,6 +1721,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/deni-fragoso-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-deni-garrido-fragoso.md",
+      "github_user": "dgdeni",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/dgdeni",
+      "assigned_story_ids": [
+        "US-111",
+        "US-112",
+        "US-113",
+        "US-114"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1682,6 +1751,20 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/diana-varela-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-diana-aracely-alvarez-varela.md",
+      "github_user": "DianaVarela96",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/DianaVarela96",
+      "assigned_story_ids": [
+        "US-101",
+        "US-102",
+        "US-103",
+        "US-104",
+        "US-105",
+        "US-106"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 6,
       "done": 0,
       "wip": 1,
@@ -1700,6 +1783,20 @@
       "reviewer": "Auto-revisión + validación del linter en CI",
       "delivery": "Rama feat/edgar-navarrete-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/0-edgar-edmundo-coronel-navarrete.md",
+      "github_user": "edgarcoroneln",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/edgarcoroneln",
+      "assigned_story_ids": [
+        "US-001",
+        "US-002",
+        "US-003",
+        "US-004",
+        "US-005",
+        "US-006"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 6,
       "done": 0,
       "wip": 4,
@@ -1718,6 +1815,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/edgar-lopez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-edgar-ulises-jimenez-lopez.md",
+      "github_user": "EJ-by-Me",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/EJ-by-Me",
+      "assigned_story_ids": [
+        "US-521b",
+        "US-522b",
+        "US-523b",
+        "US-524b",
+        "US-525b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1736,6 +1846,19 @@
       "reviewer": "Luis Téllez Domínguez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/edward-bustillos-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-edward-ulysses-ruiz-bustillos.md",
+      "github_user": "Dr4wde064",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/Dr4wde064",
+      "assigned_story_ids": [
+        "US-521c",
+        "US-522c",
+        "US-523c",
+        "US-524c",
+        "US-525c"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1754,6 +1877,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/eloisa-rubio-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-eloisa-gonzalez-rubio.md",
+      "github_user": "EloisaGonzalezRubio",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/EloisaGonzalezRubio",
+      "assigned_story_ids": [
+        "US-221",
+        "US-222",
+        "US-223",
+        "US-224"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1772,6 +1907,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/emilio-ruiz-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-emilio-galnares-ruiz.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-121a",
+        "US-122a",
+        "US-123a",
+        "US-124a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1790,6 +1937,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/estefany-loredo-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-estefany-lucero-hernandez-loredo.md",
+      "github_user": "stephi-coder",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/stephi-coder",
+      "assigned_story_ids": [
+        "US-321",
+        "US-322",
+        "US-325"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1808,6 +1966,17 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/hector-marban-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-hector-rafael-morales-marban.md",
+      "github_user": "hector677-mm",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/hector677-mm",
+      "assigned_story_ids": [
+        "US-311",
+        "US-312",
+        "US-313"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1826,6 +1995,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/juan-mayen-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-juan-carlos-macias-mayen.md",
+      "github_user": "juanmmayen98",
+      "github_status": "Usuario confirmado; nivel por conciliar",
+      "github_profile": "https://github.com/juanmmayen98",
+      "assigned_story_ids": [
+        "US-412",
+        "US-415",
+        "US-416"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -1844,6 +2024,18 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/karla-benitez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-karla-alejandra-monter-benitez.md",
+      "github_user": "marlakonter",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/marlakonter",
+      "assigned_story_ids": [
+        "US-401",
+        "US-402",
+        "US-403",
+        "US-404"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 1,
@@ -1862,6 +2054,18 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/luis-vazquez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-luis-enrique-garcia-vazquez.md",
+      "github_user": "LuisEGarciaV",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/LuisEGarciaV",
+      "assigned_story_ids": [
+        "US-121b",
+        "US-122b",
+        "US-123b",
+        "US-124b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1880,6 +2084,19 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/luis-dominguez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/5-luis-tellez-dominguez.md",
+      "github_user": "LuisTellez03",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/LuisTellez03",
+      "assigned_story_ids": [
+        "US-501",
+        "US-502",
+        "US-503",
+        "US-504",
+        "US-505"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1898,6 +2115,19 @@
       "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/manuel-reinada-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-manuel-alejandro-serrania-reinada.md",
+      "github_user": "mserraniaa-png",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/mserraniaa-png",
+      "assigned_story_ids": [
+        "US-201",
+        "US-202",
+        "US-203",
+        "US-204",
+        "US-205"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 5,
       "done": 0,
       "wip": 0,
@@ -1916,6 +2146,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/marina-buey-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-marina-garcia-del-buey.md",
+      "github_user": "marina-gdb",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/marina-gdb",
+      "assigned_story_ids": [
+        "US-211a",
+        "US-212",
+        "US-214a",
+        "US-215a"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1934,6 +2176,18 @@
       "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/monserrat-olivas-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/2-monserrat-xcaret-miranda-olivas.md",
+      "github_user": "monserratxmiranda",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/monserratxmiranda",
+      "assigned_story_ids": [
+        "US-211b",
+        "US-213",
+        "US-214b",
+        "US-215b"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 4,
       "done": 0,
       "wip": 0,
@@ -1952,6 +2206,17 @@
       "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/oscar-lazaro-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-oscar-antonio-quiroz-lazaro.md",
+      "github_user": "",
+      "github_status": "Pendiente de confirmar",
+      "github_profile": "",
+      "assigned_story_ids": [
+        "US-421",
+        "US-422",
+        "US-423"
+      ],
+      "pr_count": null,
+      "pr_open": 0,
+      "pr_merged": 0,
       "stories": 3,
       "done": 0,
       "wip": 0,
@@ -2427,12 +2692,19 @@
   "git_activity": {
     "available": false,
     "prs": [],
-    "reviews": [],
     "ci": "local"
   },
   "history": [
     {
       "date": "2026-08-05",
+      "remaining": 87,
+      "done": 0,
+      "scope": 87,
+      "wip": 6,
+      "blocked": 0
+    },
+    {
+      "date": "2026-08-06",
       "remaining": 87,
       "done": 0,
       "scope": 87,
@@ -2446,7 +2718,9 @@
     const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const pct=v=>`${Number(v||0).toFixed(1)}%`; const pill=s=>`<span class="pill ${esc(s)}">${esc(s.replace('_',' '))}</span>`;
     qa('.tab').forEach(b=>b.addEventListener('click',()=>{qa('.tab,.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');q(`#panel-${b.dataset.tab}`).classList.add('active');}));
-    q('#k-progress').textContent=pct(D.summary.progress); q('#k-done').textContent=`${D.summary.done}/${D.summary.total}`;q('#k-wip').textContent=D.summary.wip;q('#k-blocked').textContent=D.summary.blocked;q('#k-ready').textContent=`${D.readiness.score}%`;q('#k-days').textContent=D.summary.days_to_demo;
+    q('#k-progress').textContent=pct(D.summary.progress); q('#k-done').textContent=`${D.summary.done}/${D.summary.total}`;q('#k-wip').textContent=D.summary.wip;q('#k-blocked').textContent=D.summary.blocked;q('#k-ready').textContent=`${D.readiness.score}%`;
+    function updateDeliveryCountdown(){const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:D.delivery.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(p=>p.type!=='literal').map(p=>[p.type,p.value])),target=D.delivery.date.split('-').map(Number),days=Math.max(0,Math.round((Date.UTC(target[0],target[1]-1,target[2])-Date.UTC(Number(parts.year),Number(parts.month)-1,Number(parts.day)))/864e5)),label=new Intl.DateTimeFormat('es-MX',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(`${D.delivery.date}T00:00:00Z`));q('#delivery-days').textContent=days;q('#k-days').textContent=days;q('#delivery-label').textContent=`días a la entrega · ${label}`}
+    updateDeliveryCountdown();setInterval(updateDeliveryCountdown,60000);
     const ageHours=(Date.now()-new Date(D.meta.generated_at))/36e5, stale=ageHours>24;
     q('#freshness').innerHTML=`<span class="fresh"><i class="dot ${stale?'stale':''}"></i>${stale?'Snapshot vencido':'Snapshot vigente'}</span>`;q('#provenance').textContent=`${D.meta.generated_at} · base ${D.meta.branch}@${D.meta.commit} · fuente ${D.meta.source_fingerprint}`;
     q('#footer-meta').textContent=`schema ${D.meta.schema_version} · generado ${D.meta.generated_at}`;
@@ -2454,13 +2728,17 @@
     const c=D.readiness.confidence;q('#confidence').innerHTML=`<div class="metric"><strong>${c}%</strong><span class="pill ${c>=80?'ok':c>=60?'warn':'bad'}">${c>=80?'alta':c>=60?'media':'baja'}</span></div><div class="bar"><i style="width:${c}%"></i></div><p class="small">Basada en gates demostrables; no es una opinión manual.</p>`;
     const states=[['planned','Planeadas'],['in_progress','En progreso'],['in_review','En revisión'],['blocked','Bloqueadas'],['done','Done']];
     q('#portfolio').innerHTML=states.map(([s,l])=>`<div class="metric"><span>${l}</span><b>${D.summary[s]}</b></div><div class="bar"><i style="width:${D.summary[s]/D.summary.total*100}%"></i></div>`).join('');
-    q('#decisions').innerHTML=`<div class="alert warn"><b>Validar CODEOWNERS reales</b><span class="small">Requiere usuarios GitHub y revisión C5.</span></div><div class="alert warn"><b>Aprobar contratos en revisión</b><span class="small">Data Model, API Spec y trazabilidad no deben quedar indefinidamente en revisión.</span></div><div class="alert warn"><b>Resolver alcance documentado</b><span class="small">El PRD fija 4 entidades; el Plan Maestro aún contiene una recomendación histórica de 3 estados.</span></div>`;
+    q('#decisions').innerHTML=`<div class="alert warn"><b>Validar acceso de Tech Leads</b><span class="small">CODEOWNERS ya contiene usuarios reales; falta revisión C5 y confirmar acceso al repositorio.</span></div><div class="alert warn"><b>Aprobar contratos en revisión</b><span class="small">Data Model, API Spec y trazabilidad no deben quedar indefinidamente en revisión.</span></div><div class="alert warn"><b>Resolver alcance documentado</b><span class="small">El PRD fija 4 entidades; el Plan Maestro aún contiene una recomendación histórica de 3 estados.</span></div>`;
     q('#flow-states').innerHTML=states.map(([s,l])=>`<div class="flowstate"><strong>${D.summary[s]}</strong><span>${l}</span></div>`).join('');
     function lineChart(points,series){const W=620,H=220,p=28,max=Math.max(1,...series.flatMap(x=>points.map(v=>Number(v[x.key]||0))));const xs=i=>p+(W-2*p)*(points.length===1?.5:i/(points.length-1));const ys=v=>H-p-(H-2*p)*v/max;const lines=series.map(s=>`<polyline fill="none" stroke="${s.color}" stroke-width="3" points="${points.map((v,i)=>`${xs(i)},${ys(v[s.key])}`).join(' ')}"/>`).join('');const dots=series.map(s=>points.map((v,i)=>`<circle cx="${xs(i)}" cy="${ys(v[s.key])}" r="4" fill="${s.color}"><title>${s.label}: ${v[s.key]} · ${v.date}</title></circle>`).join('')).join('');return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${series.map(s=>s.label).join(' y ')}" style="width:100%;height:220px"><line x1="${p}" y1="${H-p}" x2="${W-p}" y2="${H-p}" stroke="#cbd5e1"/>${lines}${dots}</svg><div class="legend">${series.map(s=>`<span><i style="background:${s.color}"></i>${s.label}</span>`).join('')}</div>`}
     const h=D.history.length?D.history:[{date:D.meta.generated_date,remaining:D.summary.total-D.summary.done,done:D.summary.done,scope:D.summary.total}];q('#burndown').innerHTML=lineChart(h,[{key:'remaining',label:'Restantes',color:'#b91c1c'}]);q('#burnup').innerHTML=lineChart(h,[{key:'done',label:'Done',color:'#15803d'},{key:'scope',label:'Alcance',color:'#0891b2'}]);
     q('#wip-table').innerHTML=D.people.filter(p=>p.wip||p.blocked).sort((a,b)=>b.wip-a.wip).map(p=>`<tr><td>${esc(p.name)}</td><td class="num">${p.wip}${p.wip>2?' ⚠':''}</td><td class="num">${p.blocked}</td><td>${pct(p.progress)}</td></tr>`).join('')||'<tr><td colspan="4">Sin trabajo en curso registrado.</td></tr>';
     const vel=D.sprints.map(s=>({id:s.id,done:D.stories.filter(x=>x.sprint===s.id&&x.status==='done').length,total:D.stories.filter(x=>x.sprint===s.id).length}));q('#velocity').innerHTML=vel.map(v=>`<div class="metric"><span>${v.id}</span><b>${v.done}/${v.total}</b></div><div class="bar"><i style="width:${v.total?v.done/v.total*100:0}%"></i></div>`).join('')+'<p class="small">Proyección deshabilitada hasta contar con dos sprints cerrados.</p>';
     q('#cell-grid').innerHTML=D.cells.map(c=>`<div class="cell"><h3>${esc(c.name)}</h3><div class="metric"><span>${c.members.length} personas · ${c.stories} US</span><b>${pct(c.progress)}</b></div><div class="bar"><i style="width:${c.progress}%"></i></div><p class="small">WIP ${c.wip} · bloqueadas ${c.blocked} · Done ${c.done}</p><ul>${c.members.map(m=>`<li>${esc(m)}</li>`).join('')}</ul></div>`).join('');
+    const cellNumber=value=>{const match=String(value||'').match(/Célula (\d+)/);return match?Number(match[1]):0};
+    const teamPeople=[...D.people].sort((a,b)=>cellNumber(a.cell_group)-cellNumber(b.cell_group)||a.name.localeCompare(b.name));
+    q('#team-cards').innerHTML=[...D.cells].sort((a,b)=>cellNumber(a.name)-cellNumber(b.name)).map(c=>{const n=cellNumber(c.name),members=teamPeople.filter(p=>p.cell_group===c.name);return `<div class="teamcard cell${n}"><h3><span class="celltag cell${n}">${esc(c.name)}</span></h3><div class="metric"><span>${members.length} integrantes</span><b>${c.stories} US</b></div><ul>${members.map(p=>`<li><b>${esc(p.name)}</b><br><span>${esc(p.role)}</span></li>`).join('')}</ul></div>`}).join('');
+    q('#team-table').innerHTML=teamPeople.map(p=>{const n=cellNumber(p.cell_group),github=p.github_user?`<a href="${esc(p.github_profile)}" target="_blank" rel="noopener">@${esc(p.github_user)}</a>`:'<span class="pill warn">pendiente</span>',prs=p.pr_count===null?'<span class="pill planned">sin datos</span>':`<b>${p.pr_count}</b><div class="small">${p.pr_open} abiertos · ${p.pr_merged} merged</div>`;return `<tr class="team-row cell${n}"><td><b>${esc(p.name)}</b></td><td>${esc(p.level)}<div class="small">${esc(p.role)}</div></td><td><span class="celltag cell${n}">${esc(p.cell)}</span></td><td>${github}</td><td><div class="uslist">${p.assigned_story_ids.map(id=>`<span>${esc(id)}</span>`).join('')}</div><div class="small">${p.stories} historias</div></td><td class="num">${prs}</td></tr>`}).join('');
     q('#raci-table').innerHTML=D.raci.map(r=>`<tr><td>${esc(r.deliverable)}</td><td>${esc(r.r)}</td><td>${esc(r.a)}</td><td>${esc(r.c)}</td><td>${esc(r.i)}</td><td class="mono">${esc(r.gate)}</td></tr>`).join('');
     q('#blockers').innerHTML=D.blockers.length?D.blockers.map(b=>`<div class="alert bad"><b>${esc(b.id)} · ${esc(b.story)}</b><div>${esc(b.description)}</div><div class="small">${esc(b.provider)} → ${esc(b.consumer)} · desde ${esc(b.since)} · alternativa: ${esc(b.alternative)}</div></div>`).join(''):'<div class="note">No hay bloqueos registrados. Confirmar en el próximo standup; ausencia de registro no prueba ausencia de bloqueo.</div>';
     q('#rubric-table').innerHTML=D.rubric.map(r=>`<tr><td class="mono">${r.req}</td><td>${esc(r.name)}</td><td class="num">${r.points}</td><td class="num">${r.stories}</td><td class="num">${r.done}</td><td><div class="bar"><i style="width:${r.progress}%"></i></div><span class="small">${pct(r.progress)}</span></td></tr>`).join('');
@@ -2468,7 +2746,7 @@
     q('#source-table').innerHTML=D.sources.map(s=>`<tr><td class="mono">${s.id}</td><td>${esc(s.name)}</td><td>${esc(s.owner)}</td><td>${esc(s.frequency)}</td><td>${esc(s.coverage)}</td><td><span class="source-status ${s.proof}">${s.proof}</span><div class="small">${s.checks_done}/${s.checks_total} checks</div></td></tr>`).join('');
     const counts={};D.risks.forEach(r=>counts[`${r.probability}-${r.impact}`]=(counts[`${r.probability}-${r.impact}`]||0)+1);let heat='<div class="axis"></div>'+[1,2,3,4,5].map(i=>`<div class="axis">I${i}</div>`).join('');for(let p=5;p>=1;p--){heat+=`<div class="axis">P${p}</div>`;for(let i=1;i<=5;i++){const sc=p*i,cl=sc>=20?5:sc>=12?4:sc>=7?3:sc>=3?2:1;heat+=`<div class="risk${cl}" title="Probabilidad ${p}, impacto ${i}">${counts[`${p}-${i}`]||''}</div>`}}q('#risk-heat').innerHTML=heat;
     q('#risk-table').innerHTML=[...D.risks].sort((a,b)=>b.score-a.score).map(r=>`<tr><td class="mono">${r.id}</td><td>${esc(r.description)}<div class="small">Trigger: ${esc(r.trigger)}</div></td><td class="num"><b>${r.score}</b></td><td>${esc(r.response)}</td><td>${esc(r.owner)}</td><td>${esc(r.status)}</td></tr>`).join('');
-    q('#gov-us').textContent=D.stories.length===87?'87/87':'revisar';q('#git-health').innerHTML=D.git_activity.available?`<div class="alert ok"><b>GitHub conectado</b><span class="small">${D.git_activity.prs.length} PR en snapshot.</span></div>`:`<div class="alert warn"><b>Modo local</b><span class="small">PR, reviews y CI se agregan como artefacto del workflow; el HTML local no usa tokens.</span></div>`;q('#meta-table').innerHTML=`<table><tr><th>Generado</th><td>${esc(D.meta.generated_at)}</td></tr><tr><th>Git base</th><td>${esc(D.meta.branch)} @ ${esc(D.meta.commit)} · ${esc(D.meta.working_tree)}</td></tr><tr><th>Fingerprint fuentes</th><td class="mono">${esc(D.meta.source_fingerprint)}</td></tr><tr><th>Fuente</th><td>${esc(D.meta.source)}</td></tr><tr><th>Modo offline</th><td>${D.meta.offline?'Sí':'No'}</td></tr><tr><th>Contrato</th><td>RPT-PM-SPEC · schema ${esc(D.meta.schema_version)}</td></tr></table>`;
+    q('#gov-us').textContent=D.stories.length===87?'87/87':'revisar';q('#git-health').innerHTML=D.git_activity.available?`<div class="alert ok"><b>GitHub conectado</b><span class="small">${D.git_activity.prs.length} PR en snapshot.</span></div>`:`<div class="alert warn"><b>Modo local</b><span class="small">PR y CI se agregan como artefacto del workflow; el HTML local no usa tokens.</span></div>`;q('#meta-table').innerHTML=`<table><tr><th>Generado</th><td>${esc(D.meta.generated_at)}</td></tr><tr><th>Git base</th><td>${esc(D.meta.branch)} @ ${esc(D.meta.commit)} · ${esc(D.meta.working_tree)}</td></tr><tr><th>Fingerprint fuentes</th><td class="mono">${esc(D.meta.source_fingerprint)}</td></tr><tr><th>Fuente</th><td>${esc(D.meta.source)}</td></tr><tr><th>Modo offline</th><td>${D.meta.offline?'Sí':'No'}</td></tr><tr><th>Contrato</th><td>RPT-PM-SPEC · schema ${esc(D.meta.schema_version)}</td></tr></table>`;
     const fill=(id,vals)=>{q(id).innerHTML='<option value="">Todos</option>'+[...new Set(vals)].sort().map(v=>`<option>${esc(v)}</option>`).join('')};
     const planCell=q('#plan-cell'),planPerson=q('#plan-person');planCell.innerHTML=D.cells.map(c=>`<option value="${esc(c.name)}">${esc(c.name)}</option>`).join('');
     const stateProgress={planned:0,in_progress:35,in_review:65,blocked:35,done:100};

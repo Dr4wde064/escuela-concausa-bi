@@ -13,10 +13,11 @@ import re
 import sys
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 
-def api(url: str, token: str) -> object:
+def api(url: str, token: str) -> tuple[object, str]:
     request = urllib.request.Request(
         url,
         headers={
@@ -27,7 +28,29 @@ def api(url: str, token: str) -> object:
         },
     )
     with urllib.request.urlopen(request, timeout=30) as response:
-        return json.load(response)
+        return json.load(response), response.headers.get("Link", "")
+
+
+def next_page(link_header: str) -> str:
+    for item in link_header.split(","):
+        match = re.match(r'\s*<([^>]+)>;\s*rel="([^"]+)"', item)
+        if match and match.group(2) == "next":
+            return match.group(1)
+    return ""
+
+
+def api_list(url: str, token: str, max_pages: int = 20) -> list[object]:
+    """Recorre la paginación REST para no truncar el conteo por persona."""
+    items: list[object] = []
+    page = 0
+    while url and page < max_pages:
+        payload, links = api(url, token)
+        if not isinstance(payload, list):
+            break
+        items.extend(payload)
+        url = next_page(links)
+        page += 1
+    return items
 
 
 def main() -> int:
@@ -38,13 +61,16 @@ def main() -> int:
         return 0
     base = f"https://api.github.com/repos/{repository}"
     try:
-        pulls = api(f"{base}/pulls?state=all&per_page=100&sort=updated&direction=desc", token)
-        runs = api(f"{base}/actions/runs?per_page=20", token)
+        pulls = api_list(
+            f"{base}/pulls?state=all&per_page=100&sort=updated&direction=desc",
+            token,
+        )
+        runs, _ = api(f"{base}/actions/runs?per_page=20", token)
     except (urllib.error.URLError, TimeoutError) as error:
         print(f"No se pudo consultar GitHub: {error}", file=sys.stderr)
         return 1
     pr_items = []
-    for pull in pulls if isinstance(pulls, list) else []:
+    for pull in pulls:
         text = f"{pull.get('title', '')} {pull.get('body', '')}"
         pr_items.append(
             {
@@ -61,6 +87,8 @@ def main() -> int:
     output = {
         "available": True,
         "repository": repository,
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "scope": "Todos los PR del repositorio, hasta 2,000 por ejecución",
         "prs": pr_items,
         "ci": [
             {
