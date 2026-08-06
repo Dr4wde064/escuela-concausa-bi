@@ -24,6 +24,7 @@ tags: [meta, naming, ids]
 | `BUG-###` | Defecto | [[06_Quality_Testing/Bug_Register]] |
 | `SEC-###` | Hallazgo de seguridad | [[07_Security/Security_Audit_Log]] |
 | `RISK-###` | Riesgo | [[10_Risk_Governance/Risk_Register]] |
+| `BLOCK-###` | Bloqueo activo | [[10_Risk_Governance/Blocker_Register]] |
 | `INC-###` | Incidente | [[10_Risk_Governance/Incident_Log]] |
 | `DEC-###` | Decisión (no arquitectónica) | [[10_Risk_Governance/Decision_Log]] |
 

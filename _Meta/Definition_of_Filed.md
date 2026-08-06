@@ -30,6 +30,7 @@ tags: [meta, intake, process]
 | Bug | `06_Quality_Testing` | [[06_Quality_Testing/Bug_Register]] |
 | Hallazgo de seguridad | `07_Security` | [[07_Security/Security_Audit_Log]] |
 | Riesgo | `10_Risk_Governance` | [[10_Risk_Governance/Risk_Register]] |
+| Bloqueo operativo | `10_Risk_Governance` | [[10_Risk_Governance/Blocker_Register]] |
 | Decisión técnica mayor | `03_Architecture/ADRs` | nuevo ADR |
 | Decisión de proceso | `10_Risk_Governance` | [[10_Risk_Governance/Decision_Log]] |
 | Incidente en prod | `10_Risk_Governance` + `11_Operations` | [[10_Risk_Governance/Incident_Log]] + post-mortem |

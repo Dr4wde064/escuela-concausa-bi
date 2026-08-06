@@ -24,6 +24,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Vault lint
         run: python _Meta/scripts/vault_lint.py .
+      - name: Validar tablero PM
+        run: python _Meta/scripts/validate_pm_dashboard.py .
       - name: Ruff
         run: ruff check . --output-format=github || true
       - name: Pytest

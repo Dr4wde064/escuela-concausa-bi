@@ -1,0 +1,109 @@
+---
+id: RPT-PM-SPEC
+title: "Especificación del tablero de control PM — FARO"
+owner: "Edgar Edmundo Coronel Navarrete"
+status: in_review
+version: "2.0"
+source_of_truth: true
+traces_up: ["US-004", "REQ-007", "12_Roadmap_Sprints/PLAN_MAESTRO"]
+traces_down: ["13_Reports/TABLERO_CONTROL_PM.html", "TEST-002"]
+last_reviewed: "2026-08-05"
+tags: [reports, dashboard, pm, metrics, specification]
+---
+
+# Especificación del tablero de control PM — FARO
+
+> Contrato de métricas, fuentes y frescura del tablero. El HTML es una **proyección generada**, nunca
+> una fuente de verdad. → [[13_Reports/_index]] · [[12_Roadmap_Sprints/Execution_Status]]
+
+## Objetivo y audiencia
+
+Dar al PO, Tech Leads y profesor una lectura auditable de avance, flujo, dependencias, rúbrica y
+preparación de la demo, sin duplicar información del vault ni convertir actividad en desempeño.
+
+## Arquitectura
+
+```text
+Fuentes canónicas Markdown + Git local/GitHub
+                 ↓
+_Meta/scripts/generate_pm_dashboard.py
+                 ↓
+13_Reports/data/pm-dashboard.json (snapshot auditable)
+                 ↓
+13_Reports/TABLERO_CONTROL_PM.html (autocontenido y offline)
+```
+
+El generador inserta el snapshot dentro del HTML para que funcione con `file://`. El JSON se conserva
+para auditoría y consumo futuro. Ninguno se edita manualmente.
+
+## Fuentes canónicas
+
+| Dominio | Fuente | Campos consumidos |
+|---|---|---|
+| Requisitos y puntos | [[02_Requirements/User_Stories]] · [[02_Requirements/Traceability_Matrix]] | REQ, rúbrica, cobertura |
+| Catálogo de trabajo | [[02_Requirements/User_Stories]] | US, título, responsable, célula, sprint |
+| Ejecución | [[12_Roadmap_Sprints/Execution_Status]] | estado, fechas, bloqueo, evidencia |
+| Plan individual | [[12_Roadmap_Sprints/Sprints/_index]] | misión, objetivos, inputs, outputs, revisor y entregables |
+| Responsabilidad | [[12_Roadmap_Sprints/RACI]] | R/A/C/I y gate |
+| Dependencias | [[12_Roadmap_Sprints/PLAN_MAESTRO]] · [[10_Risk_Governance/Blocker_Register]] | cadena, bloqueo, aging |
+| Riesgos | [[10_Risk_Governance/Risk_Register]] | probabilidad, impacto, respuesta, trigger |
+| Fuentes de datos | [[14_Data_Sources/_index]] y notas `DS-*.md` | owner, frecuencia, prueba, cobertura |
+| Calidad y gobierno | [[05_Engineering/Definition_of_Done]] · [[_DevLog/_index]] | gates, evidencia |
+| Actividad Git | snapshot de Git/GitHub | PR, revisión, CI; nunca determina `done` por sí sola |
+
+## Pestañas
+
+| Vista | Pregunta que responde | Componentes |
+|---|---|---|
+| Resumen | ¿Llegamos y qué requiere decisión? | confianza, avance, alertas, decisiones y frescura |
+| Sprint y flujo | ¿Terminamos o acumulamos trabajo? | burndown, burn-up, CFD, WIP, aging, velocidad |
+| Células | ¿Cómo está integrado y cargado cada equipo? | composición, roles, estado, entregables y revisión |
+| Plan por célula/persona | ¿Qué debe hacer cada integrante y de quién depende? | selector, misión, actividades, avance, inputs, outputs y revisor |
+| Dependencias | ¿Quién espera a quién? | cadena crítica, contratos, bloqueos y alternativa mock |
+| Rúbrica y demo | ¿Qué puntos tienen evidencia? | 10 puntos, gates y readiness |
+| Fuentes | ¿Son utilizables las ocho fuentes? | prueba, cobertura, frecuencia, dueño y frescura |
+| Riesgos | ¿Qué amenaza la entrega? | heat map 5×5, respuesta, trigger, dueño |
+| Gobernanza | ¿El trabajo es auditable? | vault, CI, pruebas, DevLogs y ciclo de PR |
+| Explorador | ¿Qué ocurre con una US específica? | filtros por sprint, célula, persona, REQ y estado |
+
+## Definiciones de métricas
+
+| Métrica | Fórmula | Interpretación |
+|---|---|---|
+| Avance | `(0·planned + .35·in_progress + .65·in_review + .35·blocked + 1·done) / US` | Tendencia; no sustituye Done |
+| Burndown | US no `done` por fecha de snapshot | Línea real contra ideal del sprint |
+| Burn-up | US `done` contra alcance total | Hace visible el cambio de alcance |
+| WIP | `in_progress + in_review + blocked` | Límite recomendado: máximo 2 por persona |
+| Aging | días desde inicio o bloqueo | alerta amarilla ≥2; roja ≥4 |
+| Velocidad | US `done` por sprint | Solo comparable después de cerrar ≥2 sprints |
+| Confianza | gates críticos con evidencia, penalizados por aging/bloqueos | Alta ≥80, media 60–79, baja <60 |
+| Readiness | gates demostrables / gates totales | Cada gate enlaza evidencia; sin enlace = pendiente |
+| Participación saludable | personas con PR/review/DevLog en ventana | No se publica ranking de commits |
+
+## Reglas RAG
+
+- **Verde:** en plan, evidencia vigente y sin bloqueo vencido.
+- **Ámbar:** desviación o evidencia incompleta recuperable dentro del sprint.
+- **Rojo:** gate crítico vencido, bloqueo ≥48 h o evidencia ausente que compromete la demo.
+- Todo indicador muestra `generado_en`, commit y fuente; snapshot >24 h se marca vencido.
+
+## Readiness de demo
+
+| Gate | Evidencia exigida | Peso |
+|---|---|---|
+| URL pública y healthcheck | URL + ejecución fechada | 15 |
+| ≥5 fuentes, incluida una continua | prueba de descarga/ingesta | 15 |
+| Bronze/Silver/Gold y calidad | corrida + reporte GE | 15 |
+| Tres modelos | métricas + registro MLflow | 15 |
+| API y auth | tests de endpoints + dos roles | 10 |
+| Diez dashboards | checklist funcional | 10 |
+| Agente | set de evaluación | 10 |
+| Demo y contingencia | dry-run + plan B | 10 |
+
+## Restricciones
+
+- Sin tokens, `.env`, datos reales ni llamadas autenticadas desde el navegador.
+- Funcional offline; sin fuentes o librerías remotas obligatorias.
+- Accesible con teclado, contraste AA, `aria-label` y tablas legibles.
+- GitHub aporta actividad y tiempos, no autoridad sobre el estado de una US.
+- Cambios a `.github/**` requieren revisión explícita de la Célula 5.

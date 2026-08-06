@@ -24,6 +24,7 @@ Toda sesión con IA **debe** generar una entrada de DevLog **antes del push** (p
 | [[_DevLog/2026-08-02-edgar-edmundo-coronel-navarrete\|2026-08-02]] | Frontmatter PRD-GENERAL, redacción PRD FARO e índice 01_Product | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | PRD-GENERAL, PRD, MOC-01 |
 | [[_DevLog/2026-08-03-handoff-planeacion\|2026-08-03]] | **Handoff** de la sesión de planeación (PRD, 7 REQ, 8 fuentes, 87 US, 21 Agent Contexts, Data_Model, AGENTS.md) | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | PRD, REQ-001…007, US-CATALOG, DS-01…08, DOC-DATAMODEL |
 | [[_DevLog/2026-08-03-handoff-cierre-planeacion\|2026-08-03]] | **Handoff de CIERRE** de planeación (matriz de trazabilidad + API_Spec + gobernanza + Graphify); siguiente = Bloque E de GitHub | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | DOC-TRACE-MATRIX, DOC-APISPEC, PLAN-MAESTRO |
+| [[_DevLog/2026-08-05-edgar-tablero-control-pm-v2\|2026-08-05]] | Tablero PM v2 generado desde fuentes canónicas, automatización, TEST-002 y validación visual | Edgar Edmundo Coronel Navarrete | Codex / GPT-5 | US-004, REQ-007, RPT-PM-SPEC, TEST-002 |
 
 ## Campos del frontmatter
 | Campo | Obligatorio |

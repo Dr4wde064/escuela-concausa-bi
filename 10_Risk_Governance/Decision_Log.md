@@ -14,4 +14,4 @@ tags: [governance, decisions]
 
 | DEC | Fecha | Decisión | Contexto | Dueño |
 |---|---|---|---|---|
-| DEC-001 | 2026-08-01 | | | |
+| DEC-001 | 2026-08-05 | El tablero PM es una proyección generada, no una fuente de verdad | Evitar duplicar US, responsables, riesgos y estados dentro del HTML | Edgar Edmundo Coronel Navarrete |
