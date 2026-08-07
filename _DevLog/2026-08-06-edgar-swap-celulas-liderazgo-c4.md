@@ -35,6 +35,11 @@ tags: [devlog, equipo, celulas, liderazgo, dashboard, governance]
   snapshot: **Plan general** (avance esperado vs. real por sprint, carga célula×sprint y cadena de
   dependencias entre células) y **Foco por sprint** (matriz células×sprint del trabajo urgente/relevante:
   🔴 bloqueada · ⏳ en riesgo por antigüedad · ⭐ historia del Tech Lead).
+- **Ampliación (misma sesión):** se agregó la pestaña **Dependencias por US** (selección por célula →
+  US/responsable, con entregable requerido, "recibe de/entrega a", revisor, cadena de valor entre
+  células y bloqueos asociados; mismo modo de uso que "Plan por persona"). Se confirmaron los usuarios
+  de GitHub de **Emilio Galnares Ruiz** (`Starcrossedboy`) y **Carlos Guillermo Mayorga Tapia**
+  (`cmayorgat44`) en el onboarding (queda pendiente solo Oscar).
 
 ## 🤖 Sesión de IA
 

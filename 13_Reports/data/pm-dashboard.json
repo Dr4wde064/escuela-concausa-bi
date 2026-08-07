@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-08-07T04:11:27+00:00",
+    "generated_at": "2026-08-07T04:30:29+00:00",
     "generated_date": "2026-08-06",
-    "commit": "aa1f82a",
+    "commit": "8c5dc29",
     "branch": "feat/edgar-tablero-control-v2",
     "working_tree": "modified",
-    "source_fingerprint": "34c33445f6b8",
+    "source_fingerprint": "f8b8d9a9cc5e",
     "source": "Fuentes canónicas del vault",
     "offline": true,
     "schema_version": "2.2"
@@ -1582,9 +1582,9 @@
       "reviewer": "Andrés González Habib (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/carlos-tapia-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/3-carlos-guillermo-mayorga-tapia.md",
-      "github_user": "",
-      "github_status": "Pendiente de confirmar",
-      "github_profile": "",
+      "github_user": "cmayorgat44",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/cmayorgat44",
       "assigned_story_ids": [
         "US-304b",
         "US-323",
@@ -1826,9 +1826,9 @@
       "reviewer": "Diana Aracely Alvarez Varela (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/emilio-ruiz-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/1-emilio-galnares-ruiz.md",
-      "github_user": "",
-      "github_status": "Pendiente de confirmar",
-      "github_profile": "",
+      "github_user": "Starcrossedboy",
+      "github_status": "Confirmado",
+      "github_profile": "https://github.com/Starcrossedboy",
       "assigned_story_ids": [
         "US-121a",
         "US-122a",

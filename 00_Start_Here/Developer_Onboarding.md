@@ -42,7 +42,7 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 | Diana Aracely Alvarez Varela | Alto | Célula 1 | `DianaVarela96` | Confirmado |
 | Deni Garrido Fragoso | Medio | Célula 1 | `dgdeni` | Confirmado |
 | Luis Enrique García Vázquez | Bajo | Célula 1 | `LuisEGarciaV` | Confirmado |
-| Emilio Galnares Ruiz | Bajo | Célula 1 | — | **Pendiente de confirmar** |
+| Emilio Galnares Ruiz | Bajo | Célula 1 | `Starcrossedboy` | Confirmado |
 | Manuel Alejandro Serranía Reinada | Alto | Célula 2 | `mserraniaa-png` | Confirmado |
 | Marina García del Buey | Medio | Célula 2 | `marina-gdb` | Confirmado |
 | Monserrat Xcaret Miranda Olivas | Medio | Célula 2 | `monserratxmiranda` | Confirmado |
@@ -50,7 +50,7 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 | Andrés González Habib | Alto | Célula 3 | `Agh28` | Confirmado |
 | Héctor Rafael Morales Marbán | Medio | Célula 3 | `hector677-mm` | Confirmado |
 | Estefany Lucero Hernández Loredo | Bajo | Célula 3 | `stephi-coder` | Confirmado |
-| Carlos Guillermo Mayorga Tapia | Bajo | Célula 3 | — | **Pendiente de confirmar** |
+| Carlos Guillermo Mayorga Tapia | Bajo | Célula 3 | `cmayorgat44` | Confirmado |
 | Karla Alejandra Monter Benitez | Medio | Célula 4 | `marlakonter` | Confirmado |
 | Christian Imanol Ruiz Hurtado | Alto | Célula 4 | `ImanolRuiz00` | Confirmado |
 | Juan Carlos Macías Mayen | Medio | Célula 4 | `juanmmayen98` | Usuario confirmado; nivel por conciliar |
@@ -66,8 +66,8 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 
 ### Pendientes para la sesión del 2026-08-06
 
-- Confirmar los usuarios de GitHub de Emilio Galnares Ruiz, Carlos Guillermo Mayorga Tapia y
-  Oscar Antonio Quiroz Lázaro.
+- Confirmar el usuario de GitHub de Oscar Antonio Quiroz Lázaro (único pendiente; Emilio Galnares
+  Ruiz y Carlos Guillermo Mayorga Tapia quedaron confirmados el 2026-08-06).
 - Abrir cada perfil antes de enviar la invitación para validar la escritura exacta y que la cuenta
   pertenezca a la persona indicada.
 - Conciliar el nivel de Juan Carlos Macías Mayen; si cambia, actualizar el Plan Maestro, su Agent
