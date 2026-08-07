@@ -24,9 +24,9 @@
 /src/agente/                @Agh28 @edgarcoroneln
 /15_ML_Models/              @Agh28 @edgarcoroneln
 
-# Célula 4 · Backend & Seguridad (Karla Monter)
-/src/api/                   @marlakonter @edgarcoroneln
-/07_Security/               @marlakonter @edgarcoroneln
+# Célula 4 · Backend & Seguridad (Christian Ruiz — Tech Lead tras el swap 2026-08-07)
+/src/api/                   @ImanolRuiz00 @edgarcoroneln
+/07_Security/               @ImanolRuiz00 @edgarcoroneln
 
 # Célula 5 · Cloud & DevOps (Luis Téllez)
 /.github/                   @LuisTellez03 @edgarcoroneln
@@ -34,6 +34,13 @@
 /Dockerfile*                @LuisTellez03 @edgarcoroneln
 /08_CICD_DevOps/            @LuisTellez03 @edgarcoroneln
 /11_Operations/             @LuisTellez03 @edgarcoroneln
+
+# Requirements por célula (uno por stack; evita colisiones en la raíz)
+/requirements/celula-1.txt  @DianaVarela96 @edgarcoroneln
+/requirements/celula-2.txt  @mserraniaa-png @edgarcoroneln
+/requirements/celula-3.txt  @Agh28 @edgarcoroneln
+/requirements/celula-4.txt  @ImanolRuiz00 @edgarcoroneln
+/requirements/celula-5.txt  @LuisTellez03 @edgarcoroneln
 
 # Gobernanza del vault (solo PM)
 /_Meta/                     @edgarcoroneln

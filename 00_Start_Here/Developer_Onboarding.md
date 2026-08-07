@@ -54,7 +54,7 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 | Karla Alejandra Monter Benitez | Medio | Célula 4 | `marlakonter` | Confirmado |
 | Christian Imanol Ruiz Hurtado | Alto | Célula 4 | `ImanolRuiz00` | Confirmado |
 | Juan Carlos Macías Mayen | Medio | Célula 4 | `juanmmayen98` | Usuario confirmado; nivel por conciliar |
-| Oscar Antonio Quiroz Lázaro | Bajo | Célula 2 | — | **Pendiente de confirmar** |
+| Oscar Antonio Quiroz Lázaro | Bajo | Célula 2 | `oscarqlazaro-lab` | Confirmado |
 | Luis Téllez Domínguez | Medio | Célula 5 | `LuisTellez03` | Confirmado |
 | Edgar Ulises Jiménez López | Bajo | Célula 5 | `EJ-by-Me` | Confirmado |
 | Alejandro Velázquez Mendoza | Bajo | Célula 5 | `avmxk01` | Confirmado |
@@ -66,8 +66,8 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 
 ### Pendientes para la sesión del 2026-08-06
 
-- Confirmar el usuario de GitHub de Oscar Antonio Quiroz Lázaro (único pendiente; Emilio Galnares
-  Ruiz y Carlos Guillermo Mayorga Tapia quedaron confirmados el 2026-08-06).
+- **Usuarios de GitHub: 21/21 confirmados.** Oscar Antonio Quiroz Lázaro (`oscarqlazaro-lab`) quedó
+  confirmado el 2026-08-07; ya no hay usuarios pendientes en el directorio.
 - Abrir cada perfil antes de enviar la invitación para validar la escritura exacta y que la cuenta
   pertenezca a la persona indicada.
 - Conciliar el nivel de Juan Carlos Macías Mayen; si cambia, actualizar el Plan Maestro, su Agent

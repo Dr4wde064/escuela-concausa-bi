@@ -100,15 +100,15 @@ Todos trabajamos con el mismo ambiente para evitar el clásico "en mi máquina s
 ### 4.1 Requisitos previos
 - **Python 3.11** (`python3 --version`)
 - **Docker Desktop** corriendo
-- **Git** configurado con tu nombre y correo institucional
+- **Git** configurado con tu nombre real y el correo **verificado en tu cuenta de GitHub** (no necesariamente el institucional); es lo que atribuye tus commits a tu perfil y los cuenta como evidencia de participación. Si prefieres no exponerlo, usa tu `@users.noreply.github.com` (Settings → Emails).
 - **VS Code** (o tu editor) con la extensión de Python
 
 ### 4.2 Clonar y crear tu ambiente virtual
 
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/edgarcoroneln/faro-escuela-sensor.git
-cd faro-escuela-sensor
+git clone https://github.com/edgarcoroneln/escuela-concausa-bi.git
+cd escuela-concausa-bi
 
 # 2. Crea tu ambiente virtual (NO se sube al repo, está en .gitignore)
 python3 -m venv .venv
@@ -128,7 +128,7 @@ pip install -r requirements.txt
 pip install docker-compose python-dotenv google-cloud-storage
 
 # 7. Congela lo que instalaste (si agregaste algo nuevo)
-pip freeze > requirements-celula.txt
+pip freeze > requirements/celula-5.txt
 ```
 
 ### 4.3 Variables de entorno
@@ -275,6 +275,7 @@ Marca todo antes de pedir revisión. Si algo queda sin marcar, la historia **no 
 - [ ] Escribí mi entrada de DevLog si usé IA
 - [ ] Actualicé el `README.md` si mi cambio afecta cómo se instala o se usa el proyecto
 - [ ] Mis commits siguen Conventional Commits e incluyen el ID de la historia
+- [ ] Verifiqué la autoría: `git log -1 --format='%an <%ae>'` coincide con mi cuenta de GitHub
 - [ ] Abrí el PR con la plantilla completa y lo asigné a mi Tech Lead
 - [ ] Los checks de CI están verdes
 - [ ] NO subí datos reales, `.env`, llaves ni archivos pesados

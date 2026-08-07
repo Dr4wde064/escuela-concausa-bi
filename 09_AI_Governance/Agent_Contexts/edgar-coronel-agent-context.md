@@ -69,7 +69,7 @@ tags: [ai, agent-context, ownership, celula-0]
 
 | ID | Sprint | Objetivo |
 |---|---|---|
-| US-001 | S1 | Repo `faro-escuela-sensor` desde cero. Reemplazar los 93 placeholders, crear `Secrets_Policy.md` (4 links rotos) y dejar `vault_lint.py` en verde. |
+| US-001 | S1 | Repo `escuela-concausa-bi` desde cero. Reemplazar los 93 placeholders, crear `Secrets_Policy.md` (4 links rotos) y dejar `vault_lint.py` en verde. |
 | US-002 | S1 | Traducir los 7 modulos de la rubrica a `REQ-###` con criterios `AC-###` verificables. |
 | US-003 | S1 | Nombre canonico por persona + un `09_AI_Governance/Agent_Contexts/{nombre}.md` para gobernar el uso de IA. |
 | US-004 | S2 | Una fila por REQ, actualizada en cada standup. Es el tablero de control del proyecto. |

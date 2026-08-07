@@ -27,6 +27,7 @@ Toda sesión con IA **debe** generar una entrada de DevLog **antes del push** (p
 | [[_DevLog/2026-08-05-edgar-tablero-control-pm-v2\|2026-08-05]] | Tablero PM v2 generado desde fuentes canónicas, automatización, TEST-002 y validación visual | Edgar Edmundo Coronel Navarrete | Codex / GPT-5 | US-004, REQ-007, RPT-PM-SPEC, TEST-002 |
 | [[_DevLog/2026-08-06-edgar-directorio-github-codeowners\|2026-08-06]] | Directorio GitHub, Tech Leads en CODEOWNERS y pestaña Equipo trazable con US y PR por integrante | Edgar Edmundo Coronel Navarrete | Codex / GPT-5 | DOC-ONBOARD, US-003, US-004, REQ-007, RPT-PM-SPEC, TEST-002, DEC-002 |
 | [[_DevLog/2026-08-06-edgar-swap-celulas-liderazgo-c4\|2026-08-06]] | Re-aplicado swap Eloisa/Oscar, liderazgo C4 (Christian↔Karla) y pestañas Plan general + Foco por sprint | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | US-003, US-004, US-CATALOG, PLAN-MAESTRO, DOC-ONBOARD, REQ-007, RPT-PM-SPEC, TEST-002 |
+| [[_DevLog/2026-08-07-edgar-remediacion-sprint1\|2026-08-07]] | Paquete único de correcciones: issue #4 (lint .venv, URL, requirements, correo), catálogo DB, GitHub de Oscar y pestaña Calendario | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | US-003, US-004, REQ-007, DOC-ONBOARD, DOC-ENVSETUP, PRD, US-CATALOG, RPT-PM-SPEC, TEST-002 |
 
 ## Campos del frontmatter
 | Campo | Obligatorio |
