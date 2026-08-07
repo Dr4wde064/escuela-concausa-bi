@@ -28,7 +28,7 @@ tags: [roadmap, raci, governance, dashboard]
 | Fuentes, Bronze, Silver y Gold | Célula 1 | Diana Aracely Alvarez Varela | Células 2, 3 y 4 | PO · Célula 5 | 2026-08-23 |
 | Dashboards y experiencia BI | Célula 2 | Manuel Alejandro Serranía Reinada | Células 1, 3 y 4 | PO | 2026-08-30 |
 | Modelos ML y agente | Célula 3 | Andrés González Habib | Células 1 y 4 | PO · Célula 2 | 2026-09-06 |
-| API, autenticación y seguridad | Célula 4 | Karla Alejandra Monter Benitez | Células 1 y 3 | PO · Célula 2 | 2026-08-30 |
+| API, autenticación y seguridad | Célula 4 | Christian Imanol Ruiz Hurtado | Células 1 y 3 | PO · Célula 2 | 2026-08-30 |
 | Contenedores, CI/CD y GCP | Célula 5 | Luis Téllez Domínguez | Todos los Tech Leads | PO · Equipo | 2026-09-08 |
 | Demo, pitch y plan de contingencia | PO | Edgar Edmundo Coronel Navarrete | Tech Leads | Equipo | 2026-09-08 |
 

@@ -46,7 +46,7 @@ tags: [ai, agent-context, ownership, celula-1]
 |---|---|---|
 | `gold.features_escuela` (contrato de features) | Andrés González Habib (C3) | avisar antes de cambiar columnas (US-104) |
 | Cubos de Gold para BI | Manuel Serranía (C2) | avisar cambios de grano/métricas |
-| Endpoints de datos sobre Gold | Karla Monter (C4) | avisar cambios de esquema |
+| Endpoints de datos sobre Gold | Christian Ruiz (C4) | avisar cambios de esquema |
 | Esquema Postgres / Cloud SQL | Luis Téllez (C5) | coordinar cambios de esquema (infra) |
 | `02_Requirements/Traceability_Matrix.md` | PM — Edgar Coronel | actualiza su fila; el PM consolida |
 | `_index.md` de las carpetas que toca | PM / dueño de carpeta | registrar cada artefacto nuevo |
@@ -57,12 +57,12 @@ tags: [ai, agent-context, ownership, celula-1]
 
 | Ruta / área | Dueño | A quién pedir |
 |---|---|---|
-| `src/api/**` | C4 — Karla Monter | pedir a Backend |
+| `src/api/**` | C4 — Christian Ruiz | pedir a Backend |
 | `src/modelos/**` | C3 — Andrés González Habib | pedir a ML |
 | `superset/**` | C2 — Manuel Serranía | pedir a BI |
 | `.github/**` (CI/CD) | C5 — Luis Téllez | pedir a DevOps |
 | `_Meta/**` | PM — Edgar Coronel | pedir al PO |
-| `07_Security/**` | C4 — Karla Monter | pedir a Seguridad |
+| `07_Security/**` | C4 — Christian Ruiz | pedir a Seguridad |
 
 > **Regla 7 del vault:** todo cambio de **esquema, seguridad o CI/CD** requiere **revisión
 > humana explícita** antes de mergear.

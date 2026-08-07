@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - '00_Start_Here/Developer_Onboarding.md'
       - '02_Requirements/**'
       - '05_Engineering/Definition_of_Done.md'
       - '10_Risk_Governance/**'
@@ -18,6 +19,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '00_Start_Here/Developer_Onboarding.md'
       - '02_Requirements/**'
       - '10_Risk_Governance/**'
       - '12_Roadmap_Sprints/**'

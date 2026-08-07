@@ -45,7 +45,7 @@ tags: [ai, agent-context, ownership, celula-5]
 | Archivo / artefacto | Dueño | Protocolo |
 |---|---|---|
 | Esquema Postgres / Cloud SQL | Diana Alvarez (C1) | coordinar migraciones |
-| Secretos y variables (`07_Security`) | Karla Monter (C4) | gestor de secretos, nunca en el repo |
+| Secretos y variables (`07_Security`) | Christian Ruiz (C4) | gestor de secretos, nunca en el repo |
 | Imágenes de cada servicio | dueño del código de cada célula | acordar Dockerfile por servicio |
 | `02_Requirements/Traceability_Matrix.md` | PM — Edgar Coronel | actualiza su fila; el PM consolida |
 | `_index.md` de las carpetas que toca | PM / dueño de carpeta | registrar cada artefacto nuevo |
@@ -56,7 +56,7 @@ tags: [ai, agent-context, ownership, celula-5]
 
 | Ruta / área | Dueño | A quién pedir |
 |---|---|---|
-| `src/api/**` | C4 — Karla Monter | pedir a Backend |
+| `src/api/**` | C4 — Christian Ruiz | pedir a Backend |
 | `src/modelos/**` | C3 — Andrés González Habib | pedir a ML |
 | `src/ingesta/**`, `dbt/**` | C1 — Diana Alvarez | pedir a Data Eng |
 | `superset/**` | C2 — Manuel Serranía | pedir a BI |

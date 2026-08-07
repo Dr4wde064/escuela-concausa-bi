@@ -25,6 +25,8 @@ Toda sesión con IA **debe** generar una entrada de DevLog **antes del push** (p
 | [[_DevLog/2026-08-03-handoff-planeacion\|2026-08-03]] | **Handoff** de la sesión de planeación (PRD, 7 REQ, 8 fuentes, 87 US, 21 Agent Contexts, Data_Model, AGENTS.md) | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | PRD, REQ-001…007, US-CATALOG, DS-01…08, DOC-DATAMODEL |
 | [[_DevLog/2026-08-03-handoff-cierre-planeacion\|2026-08-03]] | **Handoff de CIERRE** de planeación (matriz de trazabilidad + API_Spec + gobernanza + Graphify); siguiente = Bloque E de GitHub | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | DOC-TRACE-MATRIX, DOC-APISPEC, PLAN-MAESTRO |
 | [[_DevLog/2026-08-05-edgar-tablero-control-pm-v2\|2026-08-05]] | Tablero PM v2 generado desde fuentes canónicas, automatización, TEST-002 y validación visual | Edgar Edmundo Coronel Navarrete | Codex / GPT-5 | US-004, REQ-007, RPT-PM-SPEC, TEST-002 |
+| [[_DevLog/2026-08-06-edgar-directorio-github-codeowners\|2026-08-06]] | Directorio GitHub, Tech Leads en CODEOWNERS y pestaña Equipo trazable con US y PR por integrante | Edgar Edmundo Coronel Navarrete | Codex / GPT-5 | DOC-ONBOARD, US-003, US-004, REQ-007, RPT-PM-SPEC, TEST-002, DEC-002 |
+| [[_DevLog/2026-08-06-edgar-swap-celulas-liderazgo-c4\|2026-08-06]] | Re-aplicado swap Eloisa/Oscar, liderazgo C4 (Christian↔Karla) y pestañas Plan general + Foco por sprint | Edgar Edmundo Coronel Navarrete | Claude Code / opus-4-8 | US-003, US-004, US-CATALOG, PLAN-MAESTRO, DOC-ONBOARD, REQ-007, RPT-PM-SPEC, TEST-002 |
 
 ## Campos del frontmatter
 | Campo | Obligatorio |

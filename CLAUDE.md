@@ -162,7 +162,7 @@ nulo silencioso.** Cada cubo expone bandera de cobertura y se calcula `indice_co
 | 1 | Data Engineering & Quality | Diana Alvarez | 2.5 pts |
 | 2 | Analytics & BI | Manuel Serranía | 2.5 pts |
 | 3 | ML & Agente IA | Andrés González Habib | 2.0 pts |
-| 4 | Backend, API & Seguridad | Karla Monter | 1.5 pts |
+| 4 | Backend, API & Seguridad | Christian Ruiz | 1.5 pts |
 | 5 | Cloud & DevOps | Luis Téllez | 1.0 pt |
 | PO | Dirección de proyecto | Edgar Coronel | 0.5 pts |
 

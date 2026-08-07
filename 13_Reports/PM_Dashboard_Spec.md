@@ -3,11 +3,11 @@ id: RPT-PM-SPEC
 title: "Especificación del tablero de control PM — FARO"
 owner: "Edgar Edmundo Coronel Navarrete"
 status: in_review
-version: "2.0"
+version: "2.2"
 source_of_truth: true
-traces_up: ["US-004", "REQ-007", "12_Roadmap_Sprints/PLAN_MAESTRO"]
+traces_up: ["US-004", "REQ-007", "12_Roadmap_Sprints/PLAN_MAESTRO", "00_Start_Here/Developer_Onboarding"]
 traces_down: ["13_Reports/TABLERO_CONTROL_PM.html", "TEST-002"]
-last_reviewed: "2026-08-05"
+last_reviewed: "2026-08-06"
 tags: [reports, dashboard, pm, metrics, specification]
 ---
 
@@ -44,12 +44,14 @@ para auditoría y consumo futuro. Ninguno se edita manualmente.
 | Catálogo de trabajo | [[02_Requirements/User_Stories]] | US, título, responsable, célula, sprint |
 | Ejecución | [[12_Roadmap_Sprints/Execution_Status]] | estado, fechas, bloqueo, evidencia |
 | Plan individual | [[12_Roadmap_Sprints/Sprints/_index]] | misión, objetivos, inputs, outputs, revisor y entregables |
+| Directorio GitHub | [[00_Start_Here/Developer_Onboarding]] | usuario GitHub confirmado o pendiente por integrante |
 | Responsabilidad | [[12_Roadmap_Sprints/RACI]] | R/A/C/I y gate |
 | Dependencias | [[12_Roadmap_Sprints/PLAN_MAESTRO]] · [[10_Risk_Governance/Blocker_Register]] | cadena, bloqueo, aging |
+| Entrega final | [[12_Roadmap_Sprints/PLAN_MAESTRO]] | `delivery_date`, etiqueta y zona horaria del contador |
 | Riesgos | [[10_Risk_Governance/Risk_Register]] | probabilidad, impacto, respuesta, trigger |
 | Fuentes de datos | [[14_Data_Sources/_index]] y notas `DS-*.md` | owner, frecuencia, prueba, cobertura |
 | Calidad y gobierno | [[05_Engineering/Definition_of_Done]] · [[_DevLog/_index]] | gates, evidencia |
-| Actividad Git | snapshot de Git/GitHub | PR, revisión, CI; nunca determina `done` por sí sola |
+| Actividad Git | snapshot efímero generado por `_Meta/scripts/collect_github_activity.py` | PR autorados y CI; nunca determina `done` por sí sola |
 
 ## Pestañas
 
@@ -58,6 +60,7 @@ para auditoría y consumo futuro. Ninguno se edita manualmente.
 | Resumen | ¿Llegamos y qué requiere decisión? | confianza, avance, alertas, decisiones y frescura |
 | Sprint y flujo | ¿Terminamos o acumulamos trabajo? | burndown, burn-up, CFD, WIP, aging, velocidad |
 | Células | ¿Cómo está integrado y cargado cada equipo? | composición, roles, estado, entregables y revisión |
+| Equipo | ¿Quién integra cada célula y qué tiene asignado? | color por célula, directorio GitHub, US asignadas y PR enviados |
 | Plan por célula/persona | ¿Qué debe hacer cada integrante y de quién depende? | selector, misión, actividades, avance, inputs, outputs y revisor |
 | Dependencias | ¿Quién espera a quién? | cadena crítica, contratos, bloqueos y alternativa mock |
 | Rúbrica y demo | ¿Qué puntos tienen evidencia? | 10 puntos, gates y readiness |
@@ -71,6 +74,7 @@ para auditoría y consumo futuro. Ninguno se edita manualmente.
 | Métrica | Fórmula | Interpretación |
 |---|---|---|
 | Avance | `(0·planned + .35·in_progress + .65·in_review + .35·blocked + 1·done) / US` | Tendencia; no sustituye Done |
+| Cuenta regresiva | diferencia de días calendario entre hoy en `delivery_timezone` y `delivery_date` | Visible permanentemente; se recalcula en el navegador y nunca queda congelada por el snapshot |
 | Burndown | US no `done` por fecha de snapshot | Línea real contra ideal del sprint |
 | Burn-up | US `done` contra alcance total | Hace visible el cambio de alcance |
 | WIP | `in_progress + in_review + blocked` | Límite recomendado: máximo 2 por persona |
@@ -78,7 +82,7 @@ para auditoría y consumo futuro. Ninguno se edita manualmente.
 | Velocidad | US `done` por sprint | Solo comparable después de cerrar ≥2 sprints |
 | Confianza | gates críticos con evidencia, penalizados por aging/bloqueos | Alta ≥80, media 60–79, baja <60 |
 | Readiness | gates demostrables / gates totales | Cada gate enlaza evidencia; sin enlace = pendiente |
-| Participación saludable | personas con PR/review/DevLog en ventana | No se publica ranking de commits |
+| PR enviados por integrante | cantidad de PR cuyo `author.login` coincide, sin distinguir mayúsculas, con su GitHub User | Se muestra `sin datos` si no existe snapshot; no determina desempeño ni `done` |
 
 ## Reglas RAG
 
@@ -106,4 +110,6 @@ para auditoría y consumo futuro. Ninguno se edita manualmente.
 - Funcional offline; sin fuentes o librerías remotas obligatorias.
 - Accesible con teclado, contraste AA, `aria-label` y tablas legibles.
 - GitHub aporta actividad y tiempos, no autoridad sobre el estado de una US.
+- El conteo por persona requiere que el usuario del directorio coincida con el autor del PR; cuentas
+  pendientes o un snapshot local ausente nunca se interpretan como cero actividad.
 - Cambios a `.github/**` requieren revisión explícita de la Célula 5.
