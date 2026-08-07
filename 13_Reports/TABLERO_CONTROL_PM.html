@@ -38,7 +38,7 @@
     </div>
   </header>
   <nav class="tabs" aria-label="Secciones del tablero"><div class="shell tabrow">
-    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="team">Equipo</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
+    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="roadmap">Plan general</button><button class="tab" data-tab="focus">Foco por sprint</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="team">Equipo</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
   </div></nav>
   <main class="shell">
     <section class="panel active" id="panel-summary">
@@ -57,6 +57,16 @@
         <article class="card span6"><h2>WIP y aging por persona</h2><div class="desc">Alerta cuando una persona abre más de dos frentes simultáneos.</div><div class="scroll"><table><thead><tr><th>Persona</th><th>WIP</th><th>Bloq.</th><th>Avance</th></tr></thead><tbody id="wip-table"></tbody></table></div></article>
         <article class="card span6"><h2>Velocidad</h2><div class="desc">Done por sprint; no se proyecta velocidad estable hasta cerrar dos sprints.</div><div id="velocity"></div></article>
       </div>
+    </section>
+    <section class="panel" id="panel-roadmap">
+      <div class="grid">
+        <article class="card span12"><h2>Avance esperado vs. real</h2><div class="desc">Curva de plan (historias programadas acumuladas por su sprint) frente a lo realmente Done. El plan sale del sprint asignado a cada historia; lo real, del registro operativo.</div><div class="chart" id="pr-chart"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Sprint</th><th>Fechas</th><th class="num">Entran</th><th class="num">Plan acum.</th><th class="num">Done acum.</th><th>Brecha</th></tr></thead><tbody id="pr-table"></tbody></table></div></article>
+        <article class="card span7"><h2>Carga por célula y sprint</h2><div class="desc">Cuántas historias entran a cada célula en cada sprint. Revela los picos de trabajo y las ventanas de dependencia entre equipos a lo largo del tiempo.</div><div class="scroll"><table id="load-matrix"></table></div></article>
+        <article class="card span5"><h2>Cadena de dependencias entre células</h2><div class="desc">El flujo de valor y su avance actual. Contratos y mocks desacoplan; un bloqueo real se registra con BLOCK-###.</div><div id="dep-chain"></div><div class="note" style="margin-top:10px">Orden de habilitación: DevOps prepara el terreno, Data entrega Gold, ML consume features, Backend expone la API y BI construye la demo.</div></article>
+      </div>
+    </section>
+    <section class="panel" id="panel-focus">
+      <article class="card"><h2>Foco por célula y sprint</h2><div class="desc">Trabajo urgente o más relevante de cada célula en cada sprint, derivado del estado: 🔴 bloqueada · ⏳ en riesgo por antigüedad (≥ 7 días activa) · ⭐ historia del Tech Lead de la célula. Vista completa; sin foco = “—”.</div><div id="focus-summary"></div><div class="scroll" style="margin-top:12px"><table id="focus-matrix"></table></div></article>
     </section>
     <section class="panel" id="panel-cells"><article class="card"><h2>Integración de las células</h2><div class="desc">Composición, carga, trabajo en curso y progreso derivado del estado de sus historias.</div><div class="cellgrid" id="cell-grid"></div></article><article class="card" style="margin-top:16px"><h2>RACI por entregable</h2><div class="scroll"><table><thead><tr><th>Entregable</th><th>R</th><th>A</th><th>C</th><th>I</th><th>Gate</th></tr></thead><tbody id="raci-table"></tbody></table></div></article></section>
     <section class="panel" id="panel-team">
@@ -81,12 +91,12 @@
   <script>
   window.PM_DATA = {
   "meta": {
-    "generated_at": "2026-08-06T17:01:56+00:00",
+    "generated_at": "2026-08-07T04:11:27+00:00",
     "generated_date": "2026-08-06",
-    "commit": "71f8116",
+    "commit": "aa1f82a",
     "branch": "feat/edgar-tablero-control-v2",
     "working_tree": "modified",
-    "source_fingerprint": "d559498977b0",
+    "source_fingerprint": "34c33445f6b8",
     "source": "Fuentes canónicas del vault",
     "offline": true,
     "schema_version": "2.2"
@@ -741,7 +751,7 @@
     {
       "id": "US-221",
       "title": "Construir los gráficos base de KPIs",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S3",
       "req": "REQ-002",
@@ -758,7 +768,7 @@
     {
       "id": "US-222",
       "title": "Construir DB-07 Calidad y cobertura de datos",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S4",
       "req": "REQ-002",
@@ -775,7 +785,7 @@
     {
       "id": "US-223",
       "title": "Construir DB-10 Monitor del pipeline",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-002",
@@ -792,7 +802,7 @@
     {
       "id": "US-224",
       "title": "Documentar el manual de usuario de los dashboards",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-002",
@@ -1030,7 +1040,7 @@
     {
       "id": "US-401",
       "title": "Definir y publicar el contrato de la API (OpenAPI)",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S1",
       "req": "REQ-004",
@@ -1047,7 +1057,7 @@
     {
       "id": "US-402",
       "title": "Implementar OAuth2 + JWT con refresh/access tokens",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S4",
       "req": "REQ-004",
@@ -1064,7 +1074,7 @@
     {
       "id": "US-403",
       "title": "Implementar RBAC con los 2 roles del PRD",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S4",
       "req": "REQ-004",
@@ -1081,7 +1091,7 @@
     {
       "id": "US-404",
       "title": "Hardening de la API",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1098,7 +1108,7 @@
     {
       "id": "US-411",
       "title": "Implementar los endpoints de datos sobre Gold",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S3",
       "req": "REQ-004",
@@ -1132,7 +1142,7 @@
     {
       "id": "US-413",
       "title": "Endpoints administrativos protegidos",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1149,7 +1159,7 @@
     {
       "id": "US-414",
       "title": "Documentar la API en OpenAPI y publicar la colección",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1200,7 +1210,7 @@
     {
       "id": "US-421",
       "title": "Implementar el esqueleto de FastAPI y healthcheck",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S3",
       "req": "REQ-004",
@@ -1217,7 +1227,7 @@
     {
       "id": "US-422",
       "title": "Escribir pruebas unitarias y de integración de la API",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S4",
       "req": "REQ-004",
@@ -1234,7 +1244,7 @@
     {
       "id": "US-423",
       "title": "Pruebas de seguridad de la autenticación",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1682,32 +1692,33 @@
     },
     {
       "name": "Christian Imanol Ruiz Hurtado",
-      "level": "Medio",
+      "level": "Alto",
       "cell": "Célula 4",
       "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Desarrollador backend · Endpoints y RBAC",
-      "mission": "Tienes historias de complejidad intermedia con autonomía. Implementas piezas completas apoyándote en el diseño de tu Tech Lead, y apoyas a los perfiles jr de tu célula cuando se atoran.",
+      "role": "Tech Lead · Backend, API & Seguridad",
+      "mission": "Tienes asignadas las historias de mayor complejidad técnica y de diseño. Además de ejecutar, eres responsable de desbloquear a tu célula y de revisar sus PRs. Tu criterio técnico marca el estándar del equipo.",
       "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
       "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/christian-hurtado-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-christian-imanol-ruiz-hurtado.md",
       "github_user": "ImanolRuiz00",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/ImanolRuiz00",
       "assigned_story_ids": [
-        "US-411",
-        "US-413",
-        "US-414"
+        "US-401",
+        "US-402",
+        "US-403",
+        "US-404"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 3,
+      "stories": 4,
       "done": 0,
-      "wip": 0,
+      "wip": 1,
       "blocked": 0,
-      "progress": 0.0
+      "progress": 16.2
     },
     {
       "name": "Deni Garrido Fragoso",
@@ -1868,28 +1879,27 @@
     {
       "name": "Eloisa González Rubio",
       "level": "Bajo",
-      "cell": "Célula 2",
-      "cell_group": "Célula 2 · Analytics & Business Intelligence",
-      "role": "Analista BI jr · Gráficos, mapas y KPIs",
+      "cell": "Célula 4",
+      "cell_group": "Célula 4 · Backend, API & Seguridad",
+      "role": "Desarrolladora jr · Pruebas de API",
       "mission": "Tienes historias acotadas y bien definidas, pensadas para que aprendas haciendo. Cada una tiene un resultado claro y verificable. Pedir ayuda temprano no es debilidad: es el comportamiento correcto. Si a las 2 horas sigues atorado, escribe en el canal de tu célula.",
-      "inputs": "Capa Gold y cubos de la Célula 1 · Endpoints de la Célula 4 · Predicciones de la Célula 3",
-      "outputs": "Dashboard final para el pitch · Manual de usuario",
-      "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
+      "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
+      "reviewer": "Christian Imanol Ruiz Hurtado (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/eloisa-rubio-... → PR con plantilla completa → 2 aprobaciones → merge a main",
-      "plan_path": "12_Roadmap_Sprints/Sprints/2-eloisa-gonzalez-rubio.md",
+      "plan_path": "12_Roadmap_Sprints/Sprints/4-eloisa-gonzalez-rubio.md",
       "github_user": "EloisaGonzalezRubio",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/EloisaGonzalezRubio",
       "assigned_story_ids": [
-        "US-221",
-        "US-222",
-        "US-223",
-        "US-224"
+        "US-421",
+        "US-422",
+        "US-423"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 4,
+      "stories": 3,
       "done": 0,
       "wip": 0,
       "blocked": 0,
@@ -2014,33 +2024,32 @@
     },
     {
       "name": "Karla Alejandra Monter Benitez",
-      "level": "Alto",
+      "level": "Medio",
       "cell": "Célula 4",
       "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Tech Lead · Backend, API & Seguridad",
-      "mission": "Tienes asignadas las historias de mayor complejidad técnica y de diseño. Además de ejecutar, eres responsable de desbloquear a tu célula y de revisar sus PRs. Tu criterio técnico marca el estándar del equipo.",
+      "role": "Desarrolladora backend · Endpoints y RBAC",
+      "mission": "Tienes historias de complejidad intermedia con autonomía. Implementas piezas completas apoyándote en el diseño de tu Tech Lead, y apoyas a los perfiles jr de tu célula cuando se atoran.",
       "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
       "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
+      "reviewer": "Christian Imanol Ruiz Hurtado (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/karla-benitez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-karla-alejandra-monter-benitez.md",
       "github_user": "marlakonter",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/marlakonter",
       "assigned_story_ids": [
-        "US-401",
-        "US-402",
-        "US-403",
-        "US-404"
+        "US-411",
+        "US-413",
+        "US-414"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 4,
+      "stories": 3,
       "done": 0,
-      "wip": 1,
+      "wip": 0,
       "blocked": 0,
-      "progress": 16.2
+      "progress": 0.0
     },
     {
       "name": "Luis Enrique García Vázquez",
@@ -2197,27 +2206,28 @@
     {
       "name": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
-      "cell": "Célula 4",
-      "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Desarrollador jr · Pruebas de API",
+      "cell": "Célula 2",
+      "cell_group": "Célula 2 · Analytics & Business Intelligence",
+      "role": "Analista BI jr · Gráficos, mapas y KPIs",
       "mission": "Tienes historias acotadas y bien definidas, pensadas para que aprendas haciendo. Cada una tiene un resultado claro y verificable. Pedir ayuda temprano no es debilidad: es el comportamiento correcto. Si a las 2 horas sigues atorado, escribe en el canal de tu célula.",
-      "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
-      "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "inputs": "Capa Gold y cubos de la Célula 1 · Endpoints de la Célula 4 · Predicciones de la Célula 3",
+      "outputs": "Dashboard final para el pitch · Manual de usuario",
+      "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/oscar-lazaro-... → PR con plantilla completa → 2 aprobaciones → merge a main",
-      "plan_path": "12_Roadmap_Sprints/Sprints/4-oscar-antonio-quiroz-lazaro.md",
+      "plan_path": "12_Roadmap_Sprints/Sprints/2-oscar-antonio-quiroz-lazaro.md",
       "github_user": "",
       "github_status": "Pendiente de confirmar",
       "github_profile": "",
       "assigned_story_ids": [
-        "US-421",
-        "US-422",
-        "US-423"
+        "US-221",
+        "US-222",
+        "US-223",
+        "US-224"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 3,
+      "stories": 4,
       "done": 0,
       "wip": 0,
       "blocked": 0,
@@ -2253,10 +2263,10 @@
     {
       "name": "Célula 2 · Analytics & Business Intelligence",
       "members": [
-        "Eloisa González Rubio",
         "Manuel Alejandro Serranía Reinada",
         "Marina García del Buey",
-        "Monserrat Xcaret Miranda Olivas"
+        "Monserrat Xcaret Miranda Olivas",
+        "Oscar Antonio Quiroz Lázaro"
       ],
       "stories": 17,
       "done": 0,
@@ -2282,9 +2292,9 @@
       "name": "Célula 4 · Backend, API & Seguridad",
       "members": [
         "Christian Imanol Ruiz Hurtado",
+        "Eloisa González Rubio",
         "Juan Carlos Macías Mayen",
-        "Karla Alejandra Monter Benitez",
-        "Oscar Antonio Quiroz Lázaro"
+        "Karla Alejandra Monter Benitez"
       ],
       "stories": 13,
       "done": 0,
@@ -2581,7 +2591,7 @@
     {
       "deliverable": "API, autenticación y seguridad",
       "r": "Célula 4",
-      "a": "Karla Alejandra Monter Benitez",
+      "a": "Christian Imanol Ruiz Hurtado",
       "c": "Células 1 y 3",
       "i": "PO · Célula 2",
       "gate": "2026-08-30"
@@ -2754,6 +2764,31 @@
     function refreshPlanPeople(){const people=D.people.filter(p=>p.cell_group===planCell.value).sort((a,b)=>a.name.localeCompare(b.name));planPerson.innerHTML=people.map(p=>`<option value="${esc(p.name)}">${esc(p.name)} · ${esc(p.role)}</option>`).join('');renderPlan()}planCell.addEventListener('change',refreshPlanPeople);planPerson.addEventListener('change',renderPlan);refreshPlanPeople();
     fill('#f-sprint',D.stories.map(s=>s.sprint));fill('#f-cell',D.stories.map(s=>s.cell));fill('#f-req',D.stories.map(s=>s.req));fill('#f-status',D.stories.map(s=>s.status));
     function renderStories(){const search=q('#f-search').value.toLowerCase(), filters={sprint:q('#f-sprint').value,cell:q('#f-cell').value,req:q('#f-req').value,status:q('#f-status').value};const rows=D.stories.filter(s=>(!search||`${s.id} ${s.title} ${s.owner}`.toLowerCase().includes(search))&&Object.entries(filters).every(([k,v])=>!v||s[k]===v));q('#explorer-count').textContent=`${rows.length} de ${D.stories.length} historias`;q('#story-table').innerHTML=rows.map(s=>`<tr><td class="mono">${s.id}</td><td>${esc(s.title)}</td><td>${esc(s.owner)}</td><td>${esc(s.cell)}</td><td>${s.sprint}</td><td>${s.req}</td><td>${pill(s.status)}</td><td class="num">${s.age_days} d</td><td>${esc(s.evidence)}</td></tr>`).join('')};qa('.filters input,.filters select').forEach(x=>x.addEventListener('input',renderStories));renderStories();
+    // ---- Plan general (roadmap): avance esperado vs real + carga + dependencias ----
+    (function(){
+      const total=D.summary.total, sids=D.sprints.map(s=>s.id);
+      const planReal=D.sprints.map((s,i)=>{const upto=sids.slice(0,i+1);const planned=D.stories.filter(x=>upto.includes(x.sprint)).length;const done=D.stories.filter(x=>upto.includes(x.sprint)&&x.status==='done').length;return {date:s.id,plan:+(planned/total*100).toFixed(1),real:+(done/total*100).toFixed(1)};});
+      q('#pr-chart').innerHTML=lineChart(planReal,[{key:'plan',label:'Plan esperado',color:'#0891b2'},{key:'real',label:'Real (Done)',color:'#15803d'}]);
+      q('#pr-table').innerHTML=D.sprints.map((s,i)=>{const pr=planReal[i];const inSprint=D.stories.filter(x=>x.sprint===s.id).length;const gap=+(pr.real-pr.plan).toFixed(1);const g=gap>=0?'ok':(pr.plan-pr.real)>15?'bad':'warn';return `<tr><td><b>${s.id}</b></td><td class="small">${esc(s.start)} → ${esc(s.end)}</td><td class="num">${inSprint}</td><td class="num">${pr.plan}%</td><td class="num">${pr.real}%</td><td><span class="pill ${g}">${gap>=0?'+':''}${gap} pts</span></td></tr>`}).join('');
+      const cellsSorted=[...new Set(D.stories.map(x=>x.cell))].sort((a,b)=>cellNumber(a)-cellNumber(b));
+      const maxc=Math.max(1,...cellsSorted.flatMap(c=>D.sprints.map(s=>D.stories.filter(x=>x.cell===c&&x.sprint===s.id).length)));
+      const lhead=`<thead><tr><th>Célula</th>${D.sprints.map(s=>`<th class="num">${s.id}</th>`).join('')}<th class="num">Σ</th></tr></thead>`;
+      const lbody=cellsSorted.map(c=>{const n=cellNumber(c);let tot=0;const tds=D.sprints.map(s=>{const k=D.stories.filter(x=>x.cell===c&&x.sprint===s.id).length;tot+=k;const a=k?(0.12+0.8*k/maxc):0;return `<td class="num" style="background:rgba(8,145,178,${a.toFixed(2)})">${k||''}</td>`}).join('');return `<tr><td><span class="celltag cell${n}">${esc(c.split(' · ')[0])}</span></td>${tds}<td class="num"><b>${tot}</b></td></tr>`}).join('');
+      q('#load-matrix').innerHTML=lhead+'<tbody>'+lbody+'</tbody>';
+      const order=['Célula 5','Célula 1','Célula 3','Célula 4','Célula 2'],byNum={};D.cells.forEach(c=>byNum['Célula '+cellNumber(c.name)]=c);
+      q('#dep-chain').innerHTML='<div class="chain">'+order.map((cn,i)=>{const c=byNum[cn]||{progress:0,stories:0},n=cellNumber(cn);return `<div class="node"><span class="celltag cell${n}"><b>${cn}</b></span><div class="metric" style="margin:6px 0 2px"><span class="small">${c.stories||0} US</span><b>${pct(c.progress||0)}</b></div><div class="bar"><i style="width:${c.progress||0}%"></i></div></div>`+(i<order.length-1?'<div class="arrow">→</div>':'')}).join('')+'</div>';
+    })();
+    // ---- Foco por sprint (focus): urgente/relevante por célula x sprint ----
+    (function(){
+      const leadNames=new Set(D.people.filter(p=>/Tech Lead/.test(p.role)).map(p=>p.name));
+      const kind=st=>st.status==='blocked'?'blocked':((st.status==='in_progress'||st.status==='in_review')&&st.age_days>=7)?'risk':leadNames.has(st.owner)?'lead':null;
+      const icon={blocked:'🔴',risk:'⏳',lead:'⭐'},bg={blocked:'#fee2e2',risk:'#fef3c7',lead:'#e0f2fe'};
+      const cellsSorted=[...new Set(D.stories.map(x=>x.cell))].sort((a,b)=>cellNumber(a)-cellNumber(b)),tally={blocked:0,risk:0,lead:0};
+      const fhead=`<thead><tr><th>Célula</th>${D.sprints.map(s=>`<th>${s.id}</th>`).join('')}</tr></thead>`;
+      const fbody=cellsSorted.map(c=>{const n=cellNumber(c);const tds=D.sprints.map(s=>{const items=D.stories.filter(x=>x.cell===c&&x.sprint===s.id).map(x=>({st:x,k:kind(x)})).filter(o=>o.k);items.forEach(o=>tally[o.k]++);if(!items.length)return '<td class="small" style="color:#cbd5e1">—</td>';return '<td><div class="uslist" style="max-width:none">'+items.map(o=>`<span title="${esc(o.st.title)} — ${esc(o.st.owner)} (${esc(o.st.status)})" style="background:${bg[o.k]}">${icon[o.k]} ${esc(o.st.id)}</span>`).join('')+'</div></td>'}).join('');return `<tr><td><span class="celltag cell${n}">${esc(c.split(' · ')[0])}</span></td>${tds}</tr>`}).join('');
+      q('#focus-matrix').innerHTML=fhead+'<tbody>'+fbody+'</tbody>';
+      q('#focus-summary').innerHTML=`<div class="flowcards" style="grid-template-columns:repeat(3,1fr)"><div class="flowstate"><strong>${tally.blocked}</strong><span>🔴 Bloqueadas</span></div><div class="flowstate"><strong>${tally.risk}</strong><span>⏳ En riesgo (≥7 d)</span></div><div class="flowstate"><strong>${tally.lead}</strong><span>⭐ Historias del Tech Lead</span></div></div>`;
+    })();
   })();
   </script>
 </body>

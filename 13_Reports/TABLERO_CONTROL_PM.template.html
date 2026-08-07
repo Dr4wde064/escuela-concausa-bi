@@ -38,7 +38,7 @@
     </div>
   </header>
   <nav class="tabs" aria-label="Secciones del tablero"><div class="shell tabrow">
-    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="team">Equipo</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
+    <button class="tab active" data-tab="summary">Resumen</button><button class="tab" data-tab="flow">Sprint y flujo</button><button class="tab" data-tab="roadmap">Plan general</button><button class="tab" data-tab="focus">Foco por sprint</button><button class="tab" data-tab="cells">Células</button><button class="tab" data-tab="team">Equipo</button><button class="tab" data-tab="plans">Plan por persona</button><button class="tab" data-tab="dependencies">Dependencias</button><button class="tab" data-tab="rubric">Rúbrica y demo</button><button class="tab" data-tab="sources">Fuentes</button><button class="tab" data-tab="risks">Riesgos</button><button class="tab" data-tab="governance">Gobernanza</button><button class="tab" data-tab="explorer">Explorador</button>
   </div></nav>
   <main class="shell">
     <section class="panel active" id="panel-summary">
@@ -57,6 +57,16 @@
         <article class="card span6"><h2>WIP y aging por persona</h2><div class="desc">Alerta cuando una persona abre más de dos frentes simultáneos.</div><div class="scroll"><table><thead><tr><th>Persona</th><th>WIP</th><th>Bloq.</th><th>Avance</th></tr></thead><tbody id="wip-table"></tbody></table></div></article>
         <article class="card span6"><h2>Velocidad</h2><div class="desc">Done por sprint; no se proyecta velocidad estable hasta cerrar dos sprints.</div><div id="velocity"></div></article>
       </div>
+    </section>
+    <section class="panel" id="panel-roadmap">
+      <div class="grid">
+        <article class="card span12"><h2>Avance esperado vs. real</h2><div class="desc">Curva de plan (historias programadas acumuladas por su sprint) frente a lo realmente Done. El plan sale del sprint asignado a cada historia; lo real, del registro operativo.</div><div class="chart" id="pr-chart"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Sprint</th><th>Fechas</th><th class="num">Entran</th><th class="num">Plan acum.</th><th class="num">Done acum.</th><th>Brecha</th></tr></thead><tbody id="pr-table"></tbody></table></div></article>
+        <article class="card span7"><h2>Carga por célula y sprint</h2><div class="desc">Cuántas historias entran a cada célula en cada sprint. Revela los picos de trabajo y las ventanas de dependencia entre equipos a lo largo del tiempo.</div><div class="scroll"><table id="load-matrix"></table></div></article>
+        <article class="card span5"><h2>Cadena de dependencias entre células</h2><div class="desc">El flujo de valor y su avance actual. Contratos y mocks desacoplan; un bloqueo real se registra con BLOCK-###.</div><div id="dep-chain"></div><div class="note" style="margin-top:10px">Orden de habilitación: DevOps prepara el terreno, Data entrega Gold, ML consume features, Backend expone la API y BI construye la demo.</div></article>
+      </div>
+    </section>
+    <section class="panel" id="panel-focus">
+      <article class="card"><h2>Foco por célula y sprint</h2><div class="desc">Trabajo urgente o más relevante de cada célula en cada sprint, derivado del estado: 🔴 bloqueada · ⏳ en riesgo por antigüedad (≥ 7 días activa) · ⭐ historia del Tech Lead de la célula. Vista completa; sin foco = “—”.</div><div id="focus-summary"></div><div class="scroll" style="margin-top:12px"><table id="focus-matrix"></table></div></article>
     </section>
     <section class="panel" id="panel-cells"><article class="card"><h2>Integración de las células</h2><div class="desc">Composición, carga, trabajo en curso y progreso derivado del estado de sus historias.</div><div class="cellgrid" id="cell-grid"></div></article><article class="card" style="margin-top:16px"><h2>RACI por entregable</h2><div class="scroll"><table><thead><tr><th>Entregable</th><th>R</th><th>A</th><th>C</th><th>I</th><th>Gate</th></tr></thead><tbody id="raci-table"></tbody></table></div></article></section>
     <section class="panel" id="panel-team">
@@ -121,6 +131,31 @@
     function refreshPlanPeople(){const people=D.people.filter(p=>p.cell_group===planCell.value).sort((a,b)=>a.name.localeCompare(b.name));planPerson.innerHTML=people.map(p=>`<option value="${esc(p.name)}">${esc(p.name)} · ${esc(p.role)}</option>`).join('');renderPlan()}planCell.addEventListener('change',refreshPlanPeople);planPerson.addEventListener('change',renderPlan);refreshPlanPeople();
     fill('#f-sprint',D.stories.map(s=>s.sprint));fill('#f-cell',D.stories.map(s=>s.cell));fill('#f-req',D.stories.map(s=>s.req));fill('#f-status',D.stories.map(s=>s.status));
     function renderStories(){const search=q('#f-search').value.toLowerCase(), filters={sprint:q('#f-sprint').value,cell:q('#f-cell').value,req:q('#f-req').value,status:q('#f-status').value};const rows=D.stories.filter(s=>(!search||`${s.id} ${s.title} ${s.owner}`.toLowerCase().includes(search))&&Object.entries(filters).every(([k,v])=>!v||s[k]===v));q('#explorer-count').textContent=`${rows.length} de ${D.stories.length} historias`;q('#story-table').innerHTML=rows.map(s=>`<tr><td class="mono">${s.id}</td><td>${esc(s.title)}</td><td>${esc(s.owner)}</td><td>${esc(s.cell)}</td><td>${s.sprint}</td><td>${s.req}</td><td>${pill(s.status)}</td><td class="num">${s.age_days} d</td><td>${esc(s.evidence)}</td></tr>`).join('')};qa('.filters input,.filters select').forEach(x=>x.addEventListener('input',renderStories));renderStories();
+    // ---- Plan general (roadmap): avance esperado vs real + carga + dependencias ----
+    (function(){
+      const total=D.summary.total, sids=D.sprints.map(s=>s.id);
+      const planReal=D.sprints.map((s,i)=>{const upto=sids.slice(0,i+1);const planned=D.stories.filter(x=>upto.includes(x.sprint)).length;const done=D.stories.filter(x=>upto.includes(x.sprint)&&x.status==='done').length;return {date:s.id,plan:+(planned/total*100).toFixed(1),real:+(done/total*100).toFixed(1)};});
+      q('#pr-chart').innerHTML=lineChart(planReal,[{key:'plan',label:'Plan esperado',color:'#0891b2'},{key:'real',label:'Real (Done)',color:'#15803d'}]);
+      q('#pr-table').innerHTML=D.sprints.map((s,i)=>{const pr=planReal[i];const inSprint=D.stories.filter(x=>x.sprint===s.id).length;const gap=+(pr.real-pr.plan).toFixed(1);const g=gap>=0?'ok':(pr.plan-pr.real)>15?'bad':'warn';return `<tr><td><b>${s.id}</b></td><td class="small">${esc(s.start)} → ${esc(s.end)}</td><td class="num">${inSprint}</td><td class="num">${pr.plan}%</td><td class="num">${pr.real}%</td><td><span class="pill ${g}">${gap>=0?'+':''}${gap} pts</span></td></tr>`}).join('');
+      const cellsSorted=[...new Set(D.stories.map(x=>x.cell))].sort((a,b)=>cellNumber(a)-cellNumber(b));
+      const maxc=Math.max(1,...cellsSorted.flatMap(c=>D.sprints.map(s=>D.stories.filter(x=>x.cell===c&&x.sprint===s.id).length)));
+      const lhead=`<thead><tr><th>Célula</th>${D.sprints.map(s=>`<th class="num">${s.id}</th>`).join('')}<th class="num">Σ</th></tr></thead>`;
+      const lbody=cellsSorted.map(c=>{const n=cellNumber(c);let tot=0;const tds=D.sprints.map(s=>{const k=D.stories.filter(x=>x.cell===c&&x.sprint===s.id).length;tot+=k;const a=k?(0.12+0.8*k/maxc):0;return `<td class="num" style="background:rgba(8,145,178,${a.toFixed(2)})">${k||''}</td>`}).join('');return `<tr><td><span class="celltag cell${n}">${esc(c.split(' · ')[0])}</span></td>${tds}<td class="num"><b>${tot}</b></td></tr>`}).join('');
+      q('#load-matrix').innerHTML=lhead+'<tbody>'+lbody+'</tbody>';
+      const order=['Célula 5','Célula 1','Célula 3','Célula 4','Célula 2'],byNum={};D.cells.forEach(c=>byNum['Célula '+cellNumber(c.name)]=c);
+      q('#dep-chain').innerHTML='<div class="chain">'+order.map((cn,i)=>{const c=byNum[cn]||{progress:0,stories:0},n=cellNumber(cn);return `<div class="node"><span class="celltag cell${n}"><b>${cn}</b></span><div class="metric" style="margin:6px 0 2px"><span class="small">${c.stories||0} US</span><b>${pct(c.progress||0)}</b></div><div class="bar"><i style="width:${c.progress||0}%"></i></div></div>`+(i<order.length-1?'<div class="arrow">→</div>':'')}).join('')+'</div>';
+    })();
+    // ---- Foco por sprint (focus): urgente/relevante por célula x sprint ----
+    (function(){
+      const leadNames=new Set(D.people.filter(p=>/Tech Lead/.test(p.role)).map(p=>p.name));
+      const kind=st=>st.status==='blocked'?'blocked':((st.status==='in_progress'||st.status==='in_review')&&st.age_days>=7)?'risk':leadNames.has(st.owner)?'lead':null;
+      const icon={blocked:'🔴',risk:'⏳',lead:'⭐'},bg={blocked:'#fee2e2',risk:'#fef3c7',lead:'#e0f2fe'};
+      const cellsSorted=[...new Set(D.stories.map(x=>x.cell))].sort((a,b)=>cellNumber(a)-cellNumber(b)),tally={blocked:0,risk:0,lead:0};
+      const fhead=`<thead><tr><th>Célula</th>${D.sprints.map(s=>`<th>${s.id}</th>`).join('')}</tr></thead>`;
+      const fbody=cellsSorted.map(c=>{const n=cellNumber(c);const tds=D.sprints.map(s=>{const items=D.stories.filter(x=>x.cell===c&&x.sprint===s.id).map(x=>({st:x,k:kind(x)})).filter(o=>o.k);items.forEach(o=>tally[o.k]++);if(!items.length)return '<td class="small" style="color:#cbd5e1">—</td>';return '<td><div class="uslist" style="max-width:none">'+items.map(o=>`<span title="${esc(o.st.title)} — ${esc(o.st.owner)} (${esc(o.st.status)})" style="background:${bg[o.k]}">${icon[o.k]} ${esc(o.st.id)}</span>`).join('')+'</div></td>'}).join('');return `<tr><td><span class="celltag cell${n}">${esc(c.split(' · ')[0])}</span></td>${tds}</tr>`}).join('');
+      q('#focus-matrix').innerHTML=fhead+'<tbody>'+fbody+'</tbody>';
+      q('#focus-summary').innerHTML=`<div class="flowcards" style="grid-template-columns:repeat(3,1fr)"><div class="flowstate"><strong>${tally.blocked}</strong><span>🔴 Bloqueadas</span></div><div class="flowstate"><strong>${tally.risk}</strong><span>⏳ En riesgo (≥7 d)</span></div><div class="flowstate"><strong>${tally.lead}</strong><span>⭐ Historias del Tech Lead</span></div></div>`;
+    })();
   })();
   </script>
 </body>

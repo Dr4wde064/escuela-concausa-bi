@@ -43,7 +43,7 @@ tags: [ai, agent-context, ownership, celula-2]
 |---|---|---|
 | Cubos de Gold | Diana Alvarez (C1) | consumir el contrato; pedir cambios de grano |
 | Tabla de predicciones | Andrés González Habib (C3) | acordar formato de salida |
-| Contrato de datos de la API | Karla Monter (C4) | alinear campos que consumen los dashboards |
+| Contrato de datos de la API | Christian Ruiz (C4) | alinear campos que consumen los dashboards |
 | `02_Requirements/Traceability_Matrix.md` | PM — Edgar Coronel | actualiza su fila; el PM consolida |
 | `_index.md` de las carpetas que toca | PM / dueño de carpeta | registrar cada artefacto nuevo |
 
@@ -54,11 +54,11 @@ tags: [ai, agent-context, ownership, celula-2]
 | Ruta / área | Dueño | A quién pedir |
 |---|---|---|
 | `src/ingesta/**`, `dbt/**`, `dags/**` | C1 — Diana Alvarez | pedir a Data Eng |
-| `src/api/**` | C4 — Karla Monter | pedir a Backend |
+| `src/api/**` | C4 — Christian Ruiz | pedir a Backend |
 | `src/modelos/**` | C3 — Andrés González Habib | pedir a ML |
 | `.github/**` | C5 — Luis Téllez | pedir a DevOps |
 | `_Meta/**` | PM — Edgar Coronel | pedir al PO |
-| `07_Security/**` | C4 — Karla Monter | pedir a Seguridad |
+| `07_Security/**` | C4 — Christian Ruiz | pedir a Seguridad |
 
 > **Regla 7 del vault:** todo cambio de **esquema, seguridad o CI/CD** requiere **revisión
 > humana explícita** antes de mergear.

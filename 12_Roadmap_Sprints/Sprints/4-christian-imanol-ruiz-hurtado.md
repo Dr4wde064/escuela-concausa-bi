@@ -5,9 +5,9 @@ owner: "Christian Imanol Ruiz Hurtado"
 status: approved
 version: "1.0"
 traces_up: ["01_Product/PRD", "02_Requirements/User_Stories"]
-traces_down: ["US-411", "US-413", "US-414"]
+traces_down: ["US-401", "US-402", "US-403", "US-404"]
 last_reviewed: "2026-07-31"
-tags: [sprint, plan, celula-4, nivel-medio]
+tags: [sprint, plan, celula-4, nivel-alto]
 ---
 
 # FARO · Plan de trabajo individual
@@ -15,15 +15,15 @@ tags: [sprint, plan, celula-4, nivel-medio]
 
 > **Proyecto:** FARO — Escuela como Sensor Social
 > **Célula:** Celula 4 — Backend, API & Seguridad · **Peso en rúbrica:** 1.5 pts
-> **Rol:** Desarrollador backend · Endpoints y RBAC · **Nivel asignado:** Medio
-> **Tech Lead de tu célula:** Karla Alejandra Monter Benitez
+> **Rol:** Tech Lead · Backend, API & Seguridad · **Nivel asignado:** Alto
+> **Tech Lead de tu célula:** Christian Imanol Ruiz Hurtado
 > **Demo en vivo:** miércoles 9 de septiembre de 2026
 
 ---
 
 ## 1. Tu misión en una frase
 
-Tienes historias de **complejidad intermedia con autonomía**. Implementas piezas completas apoyándote en el diseño de tu Tech Lead, y apoyas a los perfiles jr de tu célula cuando se atoran.
+Tienes asignadas las historias de **mayor complejidad técnica y de diseño**. Además de ejecutar, eres responsable de desbloquear a tu célula y de revisar sus PRs. Tu criterio técnico marca el estándar del equipo.
 
 ---
 
@@ -33,7 +33,7 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 |---|---|
 | **Recibes de (inputs)** | Capa **Gold** de la **Célula 1** · Modelos en MLflow de la **Célula 3** · Infra de la **Célula 5** |
 | **Entregas a (outputs)** | **Célula 2** (consume la API en el dashboard) · Agente de la **Célula 3** |
-| **Quién revisa tu código** | Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Quién revisa tu código** | Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso |
 | **Formato de entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla completa → 2 aprobaciones → merge a `main` |
 
 > **Regla de desbloqueo:** si un input tuyo no llega a tiempo, **no te quedes esperando**. Trabaja contra
@@ -44,30 +44,39 @@ Tienes historias de **complejidad intermedia con autonomía**. Implementas pieza
 
 ## 3. Tus historias de usuario
 
-### `US-411` · Implementar los endpoints de datos sobre Gold
+### `US-401` · Definir y publicar el contrato de la API (OpenAPI)
 
 | | |
 |---|---|
-| **Sprint** | S3 — Lun 17 - Dom 23 ago |
-| **Objetivo** | Rutas de lectura parametrizadas: escuelas, municipios, KPIs y series. Con paginacion, filtros y ordenamiento. |
+| **Sprint** | S1 — Lun 3 - Dom 9 ago |
+| **Objetivo** | Especificacion de TODOS los endpoints ANTES de construir, para que las Celulas 2 y 3 trabajen en paralelo con mocks. Va a `03_Architecture/API_Specification.md`. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
-### `US-413` · Endpoints administrativos protegidos
+### `US-402` · Implementar OAuth2 + JWT con refresh/access tokens
+
+| | |
+|---|---|
+| **Sprint** | S4 — Lun 24 - Dom 30 ago |
+| **Objetivo** | Login con Google y manejo seguro de tokens. Es el requisito mas delicado del PRD. |
+| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
+| **Cómo se entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
+### `US-403` · Implementar RBAC con los 2 roles del PRD
+
+| | |
+|---|---|
+| **Sprint** | S4 — Lun 24 - Dom 30 ago |
+| **Objetivo** | Rol `ciudadano` (dashboards + agente) y `analista` (pipelines, export bruto, ML avanzado), como dependencias reutilizables de FastAPI. |
+| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
+| **Cómo se entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
+
+### `US-404` · Hardening de la API
 
 | | |
 |---|---|
 | **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Relanzar pipeline, exportar datos brutos y ver metricas internas. Solo rol analista. |
-| **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
-| **Cómo se entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
-
-### `US-414` · Documentar la API en OpenAPI y publicar la coleccion
-
-| | |
-|---|---|
-| **Sprint** | S5 — Lun 31 ago - Dom 6 sep |
-| **Objetivo** | Descripciones, ejemplos de request/response y coleccion importable para que las otras celulas prueben. |
+| **Objetivo** | Rate limiting, CORS, validacion estricta con Pydantic y errores sin fuga de informacion interna. |
 | **Entregable** | Código en su carpeta + documento en el vault con frontmatter + fila en la matriz |
 | **Cómo se entrega** | Rama `feat/christian-hurtado-...` → PR con plantilla → revisión del Tech Lead → merge a `main` |
 
@@ -277,9 +286,10 @@ Actualiza esta tabla **antes de cada standup**. El PM la revisa para el tablero 
 
 | ID | Historia | Estado | % | Bloqueado por | Fecha compromiso |
 |---|---|---|---|---|---|
-| `US-411` | Implementar los endpoints de datos sobre G | ⬜ Por iniciar | 0% | — | Dom 23 ago |
-| `US-413` | Endpoints administrativos protegidos | ⬜ Por iniciar | 0% | — | Dom 6 sep |
-| `US-414` | Documentar la API en OpenAPI y publicar la | ⬜ Por iniciar | 0% | — | Dom 6 sep |
+| `US-401` | Definir y publicar el contrato de la API ( | ⬜ Por iniciar | 0% | — | Dom 9 ago |
+| `US-402` | Implementar OAuth2 + JWT con refresh/acces | ⬜ Por iniciar | 0% | — | Dom 30 ago |
+| `US-403` | Implementar RBAC con los 2 roles del PRD | ⬜ Por iniciar | 0% | — | Dom 30 ago |
+| `US-404` | Hardening de la API | ⬜ Por iniciar | 0% | — | Dom 6 sep |
 
 **Estados válidos:** ⬜ Por iniciar · 🟡 En curso · 🔵 En revisión (PR abierto) · ✅ Terminado · 🔴 Bloqueado
 

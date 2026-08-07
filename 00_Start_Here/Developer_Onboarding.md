@@ -46,15 +46,15 @@ GitHub necesaria para invitaciones, asignaciones, revisiones y `CODEOWNERS`.
 | Manuel Alejandro Serranía Reinada | Alto | Célula 2 | `mserraniaa-png` | Confirmado |
 | Marina García del Buey | Medio | Célula 2 | `marina-gdb` | Confirmado |
 | Monserrat Xcaret Miranda Olivas | Medio | Célula 2 | `monserratxmiranda` | Confirmado |
-| Eloisa González Rubio | Bajo | Célula 2 | `EloisaGonzalezRubio` | Confirmado |
+| Eloisa González Rubio | Bajo | Célula 4 | `EloisaGonzalezRubio` | Confirmado |
 | Andrés González Habib | Alto | Célula 3 | `Agh28` | Confirmado |
 | Héctor Rafael Morales Marbán | Medio | Célula 3 | `hector677-mm` | Confirmado |
 | Estefany Lucero Hernández Loredo | Bajo | Célula 3 | `stephi-coder` | Confirmado |
 | Carlos Guillermo Mayorga Tapia | Bajo | Célula 3 | — | **Pendiente de confirmar** |
-| Karla Alejandra Monter Benitez | Alto | Célula 4 | `marlakonter` | Confirmado |
-| Christian Imanol Ruiz Hurtado | Medio | Célula 4 | `ImanolRuiz00` | Confirmado |
+| Karla Alejandra Monter Benitez | Medio | Célula 4 | `marlakonter` | Confirmado |
+| Christian Imanol Ruiz Hurtado | Alto | Célula 4 | `ImanolRuiz00` | Confirmado |
 | Juan Carlos Macías Mayen | Medio | Célula 4 | `juanmmayen98` | Usuario confirmado; nivel por conciliar |
-| Oscar Antonio Quiroz Lázaro | Bajo | Célula 4 | — | **Pendiente de confirmar** |
+| Oscar Antonio Quiroz Lázaro | Bajo | Célula 2 | — | **Pendiente de confirmar** |
 | Luis Téllez Domínguez | Medio | Célula 5 | `LuisTellez03` | Confirmado |
 | Edgar Ulises Jiménez López | Bajo | Célula 5 | `EJ-by-Me` | Confirmado |
 | Alejandro Velázquez Mendoza | Bajo | Célula 5 | `avmxk01` | Confirmado |

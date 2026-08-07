@@ -44,7 +44,7 @@ tags: [ai, agent-context, ownership, celula-3]
 | Archivo / artefacto | Dueño | Protocolo |
 |---|---|---|
 | `gold.features_escuela` | Diana Alvarez (C1) | contrato de features versionado (US-104) |
-| Endpoints de inferencia ML | Karla Monter (C4) | acordar contrato de request/response |
+| Endpoints de inferencia ML | Christian Ruiz (C4) | acordar contrato de request/response |
 | Tabla de predicciones → Gold | Diana Alvarez (C1) | acordar reincorporación a Gold |
 | `02_Requirements/Traceability_Matrix.md` | PM — Edgar Coronel | actualiza su fila; el PM consolida |
 | `_index.md` de las carpetas que toca | PM / dueño de carpeta | registrar cada artefacto nuevo |
@@ -56,11 +56,11 @@ tags: [ai, agent-context, ownership, celula-3]
 | Ruta / área | Dueño | A quién pedir |
 |---|---|---|
 | `src/ingesta/**`, `dbt/**`, `dags/**` | C1 — Diana Alvarez | pedir a Data Eng |
-| `src/api/**` | C4 — Karla Monter | pedir a Backend |
+| `src/api/**` | C4 — Christian Ruiz | pedir a Backend |
 | `superset/**` | C2 — Manuel Serranía | pedir a BI |
 | `.github/**` | C5 — Luis Téllez | pedir a DevOps |
 | `_Meta/**` | PM — Edgar Coronel | pedir al PO |
-| `07_Security/**` | C4 — Karla Monter | pedir a Seguridad |
+| `07_Security/**` | C4 — Christian Ruiz | pedir a Seguridad |
 
 > **Regla 7 del vault:** todo cambio de **esquema, seguridad o CI/CD** requiere **revisión
 > humana explícita** antes de mergear.

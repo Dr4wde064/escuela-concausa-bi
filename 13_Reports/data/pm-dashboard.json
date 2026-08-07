@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-08-06T17:01:56+00:00",
+    "generated_at": "2026-08-07T04:11:27+00:00",
     "generated_date": "2026-08-06",
-    "commit": "71f8116",
+    "commit": "aa1f82a",
     "branch": "feat/edgar-tablero-control-v2",
     "working_tree": "modified",
-    "source_fingerprint": "d559498977b0",
+    "source_fingerprint": "34c33445f6b8",
     "source": "Fuentes canónicas del vault",
     "offline": true,
     "schema_version": "2.2"
@@ -660,7 +660,7 @@
     {
       "id": "US-221",
       "title": "Construir los gráficos base de KPIs",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S3",
       "req": "REQ-002",
@@ -677,7 +677,7 @@
     {
       "id": "US-222",
       "title": "Construir DB-07 Calidad y cobertura de datos",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S4",
       "req": "REQ-002",
@@ -694,7 +694,7 @@
     {
       "id": "US-223",
       "title": "Construir DB-10 Monitor del pipeline",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-002",
@@ -711,7 +711,7 @@
     {
       "id": "US-224",
       "title": "Documentar el manual de usuario de los dashboards",
-      "owner": "Eloisa González Rubio",
+      "owner": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-002",
@@ -949,7 +949,7 @@
     {
       "id": "US-401",
       "title": "Definir y publicar el contrato de la API (OpenAPI)",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S1",
       "req": "REQ-004",
@@ -966,7 +966,7 @@
     {
       "id": "US-402",
       "title": "Implementar OAuth2 + JWT con refresh/access tokens",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S4",
       "req": "REQ-004",
@@ -983,7 +983,7 @@
     {
       "id": "US-403",
       "title": "Implementar RBAC con los 2 roles del PRD",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S4",
       "req": "REQ-004",
@@ -1000,7 +1000,7 @@
     {
       "id": "US-404",
       "title": "Hardening de la API",
-      "owner": "Karla Alejandra Monter Benitez",
+      "owner": "Christian Imanol Ruiz Hurtado",
       "level": "Alto",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1017,7 +1017,7 @@
     {
       "id": "US-411",
       "title": "Implementar los endpoints de datos sobre Gold",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S3",
       "req": "REQ-004",
@@ -1051,7 +1051,7 @@
     {
       "id": "US-413",
       "title": "Endpoints administrativos protegidos",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1068,7 +1068,7 @@
     {
       "id": "US-414",
       "title": "Documentar la API en OpenAPI y publicar la colección",
-      "owner": "Christian Imanol Ruiz Hurtado",
+      "owner": "Karla Alejandra Monter Benitez",
       "level": "Medio",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1119,7 +1119,7 @@
     {
       "id": "US-421",
       "title": "Implementar el esqueleto de FastAPI y healthcheck",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S3",
       "req": "REQ-004",
@@ -1136,7 +1136,7 @@
     {
       "id": "US-422",
       "title": "Escribir pruebas unitarias y de integración de la API",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S4",
       "req": "REQ-004",
@@ -1153,7 +1153,7 @@
     {
       "id": "US-423",
       "title": "Pruebas de seguridad de la autenticación",
-      "owner": "Oscar Antonio Quiroz Lázaro",
+      "owner": "Eloisa González Rubio",
       "level": "Bajo",
       "sprint": "S5",
       "req": "REQ-004",
@@ -1601,32 +1601,33 @@
     },
     {
       "name": "Christian Imanol Ruiz Hurtado",
-      "level": "Medio",
+      "level": "Alto",
       "cell": "Célula 4",
       "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Desarrollador backend · Endpoints y RBAC",
-      "mission": "Tienes historias de complejidad intermedia con autonomía. Implementas piezas completas apoyándote en el diseño de tu Tech Lead, y apoyas a los perfiles jr de tu célula cuando se atoran.",
+      "role": "Tech Lead · Backend, API & Seguridad",
+      "mission": "Tienes asignadas las historias de mayor complejidad técnica y de diseño. Además de ejecutar, eres responsable de desbloquear a tu célula y de revisar sus PRs. Tu criterio técnico marca el estándar del equipo.",
       "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
       "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
       "delivery": "Rama feat/christian-hurtado-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-christian-imanol-ruiz-hurtado.md",
       "github_user": "ImanolRuiz00",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/ImanolRuiz00",
       "assigned_story_ids": [
-        "US-411",
-        "US-413",
-        "US-414"
+        "US-401",
+        "US-402",
+        "US-403",
+        "US-404"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 3,
+      "stories": 4,
       "done": 0,
-      "wip": 0,
+      "wip": 1,
       "blocked": 0,
-      "progress": 0.0
+      "progress": 16.2
     },
     {
       "name": "Deni Garrido Fragoso",
@@ -1787,28 +1788,27 @@
     {
       "name": "Eloisa González Rubio",
       "level": "Bajo",
-      "cell": "Célula 2",
-      "cell_group": "Célula 2 · Analytics & Business Intelligence",
-      "role": "Analista BI jr · Gráficos, mapas y KPIs",
+      "cell": "Célula 4",
+      "cell_group": "Célula 4 · Backend, API & Seguridad",
+      "role": "Desarrolladora jr · Pruebas de API",
       "mission": "Tienes historias acotadas y bien definidas, pensadas para que aprendas haciendo. Cada una tiene un resultado claro y verificable. Pedir ayuda temprano no es debilidad: es el comportamiento correcto. Si a las 2 horas sigues atorado, escribe en el canal de tu célula.",
-      "inputs": "Capa Gold y cubos de la Célula 1 · Endpoints de la Célula 4 · Predicciones de la Célula 3",
-      "outputs": "Dashboard final para el pitch · Manual de usuario",
-      "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
+      "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
+      "reviewer": "Christian Imanol Ruiz Hurtado (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/eloisa-rubio-... → PR con plantilla completa → 2 aprobaciones → merge a main",
-      "plan_path": "12_Roadmap_Sprints/Sprints/2-eloisa-gonzalez-rubio.md",
+      "plan_path": "12_Roadmap_Sprints/Sprints/4-eloisa-gonzalez-rubio.md",
       "github_user": "EloisaGonzalezRubio",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/EloisaGonzalezRubio",
       "assigned_story_ids": [
-        "US-221",
-        "US-222",
-        "US-223",
-        "US-224"
+        "US-421",
+        "US-422",
+        "US-423"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 4,
+      "stories": 3,
       "done": 0,
       "wip": 0,
       "blocked": 0,
@@ -1933,33 +1933,32 @@
     },
     {
       "name": "Karla Alejandra Monter Benitez",
-      "level": "Alto",
+      "level": "Medio",
       "cell": "Célula 4",
       "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Tech Lead · Backend, API & Seguridad",
-      "mission": "Tienes asignadas las historias de mayor complejidad técnica y de diseño. Además de ejecutar, eres responsable de desbloquear a tu célula y de revisar sus PRs. Tu criterio técnico marca el estándar del equipo.",
+      "role": "Desarrolladora backend · Endpoints y RBAC",
+      "mission": "Tienes historias de complejidad intermedia con autonomía. Implementas piezas completas apoyándote en el diseño de tu Tech Lead, y apoyas a los perfiles jr de tu célula cuando se atoran.",
       "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
       "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso",
+      "reviewer": "Christian Imanol Ruiz Hurtado (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/karla-benitez-... → PR con plantilla completa → 2 aprobaciones → merge a main",
       "plan_path": "12_Roadmap_Sprints/Sprints/4-karla-alejandra-monter-benitez.md",
       "github_user": "marlakonter",
       "github_status": "Confirmado",
       "github_profile": "https://github.com/marlakonter",
       "assigned_story_ids": [
-        "US-401",
-        "US-402",
-        "US-403",
-        "US-404"
+        "US-411",
+        "US-413",
+        "US-414"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 4,
+      "stories": 3,
       "done": 0,
-      "wip": 1,
+      "wip": 0,
       "blocked": 0,
-      "progress": 16.2
+      "progress": 0.0
     },
     {
       "name": "Luis Enrique García Vázquez",
@@ -2116,27 +2115,28 @@
     {
       "name": "Oscar Antonio Quiroz Lázaro",
       "level": "Bajo",
-      "cell": "Célula 4",
-      "cell_group": "Célula 4 · Backend, API & Seguridad",
-      "role": "Desarrollador jr · Pruebas de API",
+      "cell": "Célula 2",
+      "cell_group": "Célula 2 · Analytics & Business Intelligence",
+      "role": "Analista BI jr · Gráficos, mapas y KPIs",
       "mission": "Tienes historias acotadas y bien definidas, pensadas para que aprendas haciendo. Cada una tiene un resultado claro y verificable. Pedir ayuda temprano no es debilidad: es el comportamiento correcto. Si a las 2 horas sigues atorado, escribe en el canal de tu célula.",
-      "inputs": "Capa Gold de la Célula 1 · Modelos en MLflow de la Célula 3 · Infra de la Célula 5",
-      "outputs": "Célula 2 (consume la API en el dashboard) · Agente de la Célula 3",
-      "reviewer": "Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
+      "inputs": "Capa Gold y cubos de la Célula 1 · Endpoints de la Célula 4 · Predicciones de la Célula 3",
+      "outputs": "Dashboard final para el pitch · Manual de usuario",
+      "reviewer": "Manuel Alejandro Serranía Reinada (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso)",
       "delivery": "Rama feat/oscar-lazaro-... → PR con plantilla completa → 2 aprobaciones → merge a main",
-      "plan_path": "12_Roadmap_Sprints/Sprints/4-oscar-antonio-quiroz-lazaro.md",
+      "plan_path": "12_Roadmap_Sprints/Sprints/2-oscar-antonio-quiroz-lazaro.md",
       "github_user": "",
       "github_status": "Pendiente de confirmar",
       "github_profile": "",
       "assigned_story_ids": [
-        "US-421",
-        "US-422",
-        "US-423"
+        "US-221",
+        "US-222",
+        "US-223",
+        "US-224"
       ],
       "pr_count": null,
       "pr_open": 0,
       "pr_merged": 0,
-      "stories": 3,
+      "stories": 4,
       "done": 0,
       "wip": 0,
       "blocked": 0,
@@ -2172,10 +2172,10 @@
     {
       "name": "Célula 2 · Analytics & Business Intelligence",
       "members": [
-        "Eloisa González Rubio",
         "Manuel Alejandro Serranía Reinada",
         "Marina García del Buey",
-        "Monserrat Xcaret Miranda Olivas"
+        "Monserrat Xcaret Miranda Olivas",
+        "Oscar Antonio Quiroz Lázaro"
       ],
       "stories": 17,
       "done": 0,
@@ -2201,9 +2201,9 @@
       "name": "Célula 4 · Backend, API & Seguridad",
       "members": [
         "Christian Imanol Ruiz Hurtado",
+        "Eloisa González Rubio",
         "Juan Carlos Macías Mayen",
-        "Karla Alejandra Monter Benitez",
-        "Oscar Antonio Quiroz Lázaro"
+        "Karla Alejandra Monter Benitez"
       ],
       "stories": 13,
       "done": 0,
@@ -2500,7 +2500,7 @@
     {
       "deliverable": "API, autenticación y seguridad",
       "r": "Célula 4",
-      "a": "Karla Alejandra Monter Benitez",
+      "a": "Christian Imanol Ruiz Hurtado",
       "c": "Células 1 y 3",
       "i": "PO · Célula 2",
       "gate": "2026-08-30"

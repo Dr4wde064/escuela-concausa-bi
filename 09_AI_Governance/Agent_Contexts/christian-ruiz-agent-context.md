@@ -21,10 +21,10 @@ tags: [ai, agent-context, ownership, celula-4]
 |---|---|
 | **Nombre** | Christian Imanol Ruiz Hurtado |
 | **Célula** | Celula 4 — Backend, API & Seguridad |
-| **Nivel** | Medio |
-| **Rol** | Desarrollador backend · Endpoints y RBAC |
-| **Tech Lead de la célula** | Karla Alejandra Monter Benitez |
-| **Quién revisa su código** | Karla Alejandra Monter Benitez (Tech Lead, compuerta técnica) → Edgar Coronel (PM, compuerta de proceso) |
+| **Nivel** | Alto |
+| **Rol** | Tech Lead · Backend, API & Seguridad |
+| **Tech Lead de la célula** | Christian Imanol Ruiz Hurtado |
+| **Quién revisa su código** | Edgar Edmundo Coronel Navarrete (PM) — compuerta técnica y de proceso |
 | **Requisito(s) que cubre** | REQ-004 (Backend, API y autenticación avanzada) |
 
 ---
@@ -33,6 +33,7 @@ tags: [ai, agent-context, ownership, celula-4]
 
 - `src/api/**`
 - `03_Architecture/API_Specification.md`
+- `07_Security/**` (secretos y políticas)
 - Su propio plan de sprint y su DevLog en `_DevLog/`.
 
 ---
@@ -68,9 +69,10 @@ tags: [ai, agent-context, ownership, celula-4]
 
 | ID | Sprint | Objetivo |
 |---|---|---|
-| US-411 | S3 | Rutas de lectura parametrizadas: escuelas, municipios, KPIs y series. Con paginacion, filtros y ordenamiento. |
-| US-413 | S5 | Relanzar pipeline, exportar datos brutos y ver metricas internas. Solo rol analista. |
-| US-414 | S5 | Descripciones, ejemplos de request/response y coleccion importable para que las otras celulas prueben. |
+| US-401 | S1 | Especificacion de TODOS los endpoints ANTES de construir, para que las Celulas 2 y 3 trabajen en paralelo con mocks. Va a `03_Architecture/API_Specification.md`. |
+| US-402 | S4 | Login con Google y manejo seguro de tokens. Es el requisito mas delicado del PRD. |
+| US-403 | S4 | Rol `ciudadano` (dashboards + agente) y `analista` (pipelines, export bruto, ML avanzado), como dependencias reutilizables de FastAPI. |
+| US-404 | S5 | Rate limiting, CORS, validacion estricta con Pydantic y errores sin fuga de informacion interna. |
 
 ---
 
