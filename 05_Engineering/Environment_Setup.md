@@ -10,6 +10,9 @@ tags: [engineering, setup]
 
 > → [[05_Engineering/_index]] · secretos en [[07_Security/Secrets_Policy]]
 
+> **Documento canónico de setup: [[00_Start_Here/Developer_Onboarding]].** Esta nota es complementaria
+> (variables y comandos rápidos); no se duplica aquí el paso a paso del onboarding (regla 1 del vault).
+
 ## Requisitos
 - Python 3.11 · Airflow · dbt · Postgres · Superset · MLflow · FastAPI · Docker · GCP
 
@@ -26,7 +29,7 @@ Todas documentadas en `.env.example`. Ninguna con valor real en el repo.
 ## Comandos comunes
 | Acción | Comando |
 |---|---|
-| Dev | |
-| Test | |
-| Lint | |
-| Build | |
+| Dev | `docker compose up -d` |
+| Test | `pytest tests/ -q` |
+| Lint | `python _Meta/scripts/vault_lint.py .` |
+| Build | `docker compose build` |

@@ -16,7 +16,7 @@ tags: [roadmap, plan, sprints]
 # FARO — Escuela como Sensor Social
 ## Plan Maestro de Proyecto · Inteligencia de Negocios · MTIIA Anáhuac
 
-> **Repositorio sugerido:** `faro-escuela-sensor`
+> **Repositorio sugerido:** `escuela-concausa-bi`
 > **Equipo:** 21 integrantes en 5 células + PO
 > **Ventana:** lunes 3 de agosto → **demo en vivo miércoles 9 de septiembre de 2026**
 > **Profesor:** Dr. José Gustavo Fuentes

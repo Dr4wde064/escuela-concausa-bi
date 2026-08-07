@@ -23,12 +23,19 @@ INLINE_CODE = re.compile(r"`[^`]*`")
 # Archivos que legítimamente no llevan frontmatter (se copian a otro sitio o son raíz)
 FM_EXEMPT = {"README.md", "PULL_REQUEST_TEMPLATE.md"}
 
+# Directorios que NO son artefactos del vault: salida generada (graphify-out/) o ambientes y
+# cachés locales (ya en .gitignore). Se excluyen del linter para no reportar, p. ej., cada
+# LICENSE.md dentro de .venv/site-packages/ como problema del vault.
+EXCLUDED_DIRS = (
+    "/.git", "/.obsidian", "/graphify-out",
+    "/.venv", "/venv", "/node_modules",
+    "/.pytest_cache", "/.ruff_cache", "/__pycache__",
+)
+
 
 def find_md(root):
     for dirpath, _, files in os.walk(root):
-        # graphify-out/ es SALIDA GENERADA por Graphify (regenerable en cada corrida),
-        # no artefacto del vault: queda fuera del alcance del linter (no aplica Definition of Filed).
-        if "/.git" in dirpath or "/.obsidian" in dirpath or "/graphify-out" in dirpath:
+        if any(d in dirpath for d in EXCLUDED_DIRS):
             continue
         for f in files:
             if f.endswith(".md"):

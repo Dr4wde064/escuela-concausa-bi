@@ -193,18 +193,22 @@ el ciclo siguiente, para evitar fuga de información temporal. Registro y versio
 
 ## 12. Los 10 dashboards (Superset)
 
-| ID | Dashboard | Propósito |
+| ID | Dashboard | Historia que lo construye |
 |---|---|---|
-| DB-01 | Panorama de matrícula | KPIs globales y tendencia de matrícula en las 4 entidades |
-| DB-02 | Mapa de riesgo escolar | Escuelas por nivel de riesgo predicho (ML-01) |
-| DB-03 | Driver dominante | Distribución del driver que explica el riesgo (ML-02) |
-| DB-04 | Perfiles de escuela | Clusters y sus características (ML-03) |
-| DB-05 | Detalle por escuela (CCT) | Ficha 360° de un plantel: riesgo, driver, recomendación |
-| DB-06 | Comparador de entidades/municipios | Benchmarking territorial |
-| DB-07 | **Mapa de vacíos de datos** | `indice_completitud_drivers` y `SIN_DATO` como hallazgo social |
-| DB-08 | Recomendaciones prescriptivas | Qué intervención sugiere cada driver dominante |
-| DB-09 | Monitor de ingesta / calidad | Frescura de fuentes y resultados de Great Expectations |
-| DB-10 | Panel ejecutivo / pitch | Vista síntesis para la demo y la audiencia |
+| DB-01 | Ejecutivo | US-203 |
+| DB-02 | Mapa de riesgo territorial | US-203 |
+| DB-03 | Ficha de escuela (drill-down por CCT) | US-212 |
+| DB-04 | Comparador de municipios | US-212 |
+| DB-05 | Análisis por driver | US-213 |
+| DB-06 | Predicciones | US-204 |
+| DB-07 | **Calidad y cobertura de datos** (`indice_completitud_drivers` y `SIN_DATO`) | US-222 |
+| DB-08 | Explorador del cubo | US-213 |
+| DB-09 | Recomendaciones prescriptivas | US-204 |
+| DB-10 | Monitor del pipeline | US-223 |
+
+> **Catálogo canónico (regla 1).** Estos nombres se homologaron con `02_Requirements/User_Stories.md`
+> y las fichas de sprint de la Célula 2 (reporte de Sprint 1), que era la versión vigente en ejecución.
+> **Pendiente de ratificación final de Manuel (TL C2)**; si ajusta algún nombre, se corrige en este mismo PR.
 
 ---
 
